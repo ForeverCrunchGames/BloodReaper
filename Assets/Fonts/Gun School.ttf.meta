@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 006c12b0e1e1f4381815c5865b33f4ea
+timeCreated: 1484821485
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Gun School
+  fontNames:
+  - Gun School
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
