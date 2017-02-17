@@ -91,6 +91,11 @@ public class PlayerMOD : MonoBehaviour {
 
     public Animator Intro;
     public bool isIntroEnded;
+    public bool isGodModeOn;
+    public GameObject UIgodMode;
+
+    public AudioSource hit;
+    public AudioSource sword;
 
 	void Start() 
     {   
@@ -130,10 +135,24 @@ public class PlayerMOD : MonoBehaviour {
                 Time.timeScale = 1;
                 //Debug.Log("Running game");
 
+                if (Input.GetKeyDown(KeyCode.F10))
+                {
+                    isGodModeOn = !isGodModeOn;
+                }
+
                 CalculateVelocity();
                 HandleWallSliding();
                 AngularSliding();
-                LifeLogic();
+                if (!isGodModeOn)
+                {
+                    LifeLogic();
+                    UIgodMode.SetActive(false);
+                }
+                else
+                {
+                    UIgodMode.SetActive(true);
+
+                }
                 AttackLogic();
                 StrongAttackLogic();
 
@@ -329,6 +348,7 @@ public class PlayerMOD : MonoBehaviour {
         currentLife = maxLife;
         DieParticles.SetActive(true);
         DieParticles2.SetActive(true);
+        hit.Play();
     }
     void UpdateDead()
     {
@@ -556,6 +576,7 @@ public class PlayerMOD : MonoBehaviour {
     {
         currentLife -= damage;
         isInmune = true;
+        hit.Play();
     }
 
 
@@ -608,6 +629,8 @@ public class PlayerMOD : MonoBehaviour {
         Debug.Log("CATAPUM!");
         Player.SetTrigger("AtackBasic");
         isAttacking = true;
+        sword.Play();
+
     }
     public void AttackLogic()
     {
