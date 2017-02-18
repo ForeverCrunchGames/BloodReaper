@@ -16792,6 +16792,89 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1cbe1822214237a42ba67d18fe233052, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &872381027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1140247215267072, guid: d6bb3c522307846869bcaa425e4b0f5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 872381028}
+  - component: {fileID: 872381030}
+  - component: {fileID: 872381029}
+  m_Layer: 0
+  m_Name: GodMode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &872381028
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224047042001563948, guid: d6bb3c522307846869bcaa425e4b0f5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872381027}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.178648, y: 0.178648, z: 0.178648}
+  m_Children: []
+  m_Father: {fileID: 875316354}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 232.5, y: 48.2}
+  m_SizeDelta: {x: 735.8, y: 630.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &872381029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114420354270793728, guid: d6bb3c522307846869bcaa425e4b0f5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872381027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.99909276, g: 1, b: 0.9890611, a: 0.31937608}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 131
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 131
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: GOD MODE
+--- !u!222 &872381030
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 222818754801367696, guid: d6bb3c522307846869bcaa425e4b0f5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872381027}
+--- !u!224 &875316354 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224394370423402564, guid: d6bb3c522307846869bcaa425e4b0f5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 955990227}
 --- !u!1001 &875657478
 Prefab:
   m_ObjectHideFlags: 0
@@ -18066,6 +18149,11 @@ Prefab:
       propertyPath: sword
       value: 
       objectReference: {fileID: 698763753}
+    - target: {fileID: 114599334548951146, guid: d6bb3c522307846869bcaa425e4b0f5b,
+        type: 2}
+      propertyPath: UIgodMode
+      value: 
+      objectReference: {fileID: 872381027}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6bb3c522307846869bcaa425e4b0f5b, type: 2}
   m_IsPrefabParent: 0
@@ -25525,11 +25613,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4203478238337838, guid: 53112091bd648423797a334081426c91, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 79.16
+      value: 67.36
       objectReference: {fileID: 0}
     - target: {fileID: 4203478238337838, guid: 53112091bd648423797a334081426c91, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -40.25
+      value: -36.06
       objectReference: {fileID: 0}
     - target: {fileID: 4203478238337838, guid: 53112091bd648423797a334081426c91, type: 2}
       propertyPath: m_LocalPosition.z
@@ -31593,7 +31681,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1963328431}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 79b106f7c0d5742059ea3ac88929dfa6, type: 3}
