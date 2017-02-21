@@ -21,6 +21,7 @@ public class MainMenuLogic : MonoBehaviour
 	void Start () 
     {
         //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
 
         State = 1;
         titleScreen.SetActive(true);
@@ -29,7 +30,6 @@ public class MainMenuLogic : MonoBehaviour
         menu2.SetActive(false);
         menu3.SetActive(false);
         menuTesting.SetActive(false);
-        //Cursor.visible = false;
 	}
 	
 	void Update () 
