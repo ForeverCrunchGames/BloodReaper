@@ -23,7 +23,6 @@ public class SpawnerLogic : MonoBehaviour
     public int maxEnemies = 5;
     public int spawnDirection; //0 left, 1 right, 2 intercalate
     public GameObject enemyPrefab;
-    public GameObject[] enemiesArray;
     public int counter = -1;
 
 
@@ -76,7 +75,7 @@ public class SpawnerLogic : MonoBehaviour
 
         if (counter < maxEnemies)
         {
-            enemiesArray[counter] = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+            Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
         }
         else if (counter >= maxEnemies)
             counter = maxEnemies;
