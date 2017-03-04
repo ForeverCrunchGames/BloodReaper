@@ -6,7 +6,9 @@ public class DoorScriptMod : MonoBehaviour {
     public Animator anim;
     public GameObject doorCollider;
     public GameObject key;
+    public GameObject effect;
     public float elimColliderDelay;
+    public float elimEffectDelay;
 
     [HideInInspector]
     public bool isKeyCollected = false;
@@ -26,12 +28,15 @@ public class DoorScriptMod : MonoBehaviour {
         {
             counter += Time.deltaTime;
 
+            if (counter >= elimEffectDelay)
+            {
+                Destroy(effect);
+            }
+
             if (counter >= elimColliderDelay)
             {
                 Destroy(doorCollider);
                 Destroy(key);
-
-                //return;
             }
         }
     }
