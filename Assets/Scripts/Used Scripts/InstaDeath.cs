@@ -3,21 +3,20 @@ using UnityEngine;
 
 public class InstaDeath : MonoBehaviour {
 
-    public bool ignoreTrigger;
+    PlayerMOD player;
 
-    public PlayerMOD Player;
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (ignoreTrigger)
-            return;
-
         if (other.tag == "Player")
         {
-            Player.SetDead();
+            player.SetDead();
 
-            Debug.Log("Insta Death");
+            Debug.Log("Death by falling to Abysm");
         }
 
     }

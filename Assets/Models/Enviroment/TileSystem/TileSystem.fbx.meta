@@ -173,7 +173,7 @@ ModelImporter:
     4300062: Tile_034
     4300064: Tile_035
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

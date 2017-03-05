@@ -29,6 +29,7 @@ public class PlayerMOD : MonoBehaviour {
     public Vector3 spawn;
     public float maxLife = 100;
     public bool isLifeDecreasing = true;
+    public bool isPlayerOverpowered = true;
     public float lifeDecreasingVelocity = 1; //Life unit decreasing per second
     public float currentLife;
     private float storeLife;
@@ -89,7 +90,7 @@ public class PlayerMOD : MonoBehaviour {
     public GameObject DieParticles;
     public GameObject DieParticles2;
 
-    public Animator Intro;
+    //public Animator Intro;
     public bool isIntroEnded;
     public bool isGodModeOn;
     public GameObject UIgodMode;
@@ -133,7 +134,6 @@ public class PlayerMOD : MonoBehaviour {
             if (!isLevelEnded)
             {
                 Time.timeScale = 1;
-                //Debug.Log("Running game");
 
                 if (Input.GetKeyDown(KeyCode.F10))
                 {
@@ -141,8 +141,15 @@ public class PlayerMOD : MonoBehaviour {
                 }
 
                 CalculateVelocity();
-                HandleWallSliding();
+
+                if (isPlayerOverpowered == true)
+                {
+                    HandleWallSliding();
+                    //AttackLogic();
+                }
+
                 AngularSliding();
+
                 if (!isGodModeOn)
                 {
                     LifeLogic();
@@ -153,8 +160,6 @@ public class PlayerMOD : MonoBehaviour {
                     UIgodMode.SetActive(true);
 
                 }
-                AttackLogic();
-                StrongAttackLogic();
 
                 collectionableUI.text = ("Collectionable: " + isCollectionableCollected);
                 playerScoreUI.text = ("Score: " + playerScore);
@@ -227,7 +232,7 @@ public class PlayerMOD : MonoBehaviour {
                     if (timerIntro >= 2.7f)
                     {
                         timerIntro = 0;
-                        Intro.enabled = !Intro.enabled;
+                        //Intro.enabled = !Intro.enabled;
                         isIntroEnded = true;
 
                     }
