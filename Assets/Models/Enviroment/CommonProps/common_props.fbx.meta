@@ -32,6 +32,7 @@ ModelImporter:
     100048: tree_02
     100050: trunk_pathblocker_01
     100052: stairs_01
+    100054: tutorialStone_01
     400000: bush_01
     400002: bush_02
     400004: //RootNode
@@ -59,6 +60,7 @@ ModelImporter:
     400048: tree_02
     400050: trunk_pathblocker_01
     400052: stairs_01
+    400054: tutorialStone_01
     2300000: bush_01
     2300002: bush_02
     2300004: crystal_little_01
@@ -85,6 +87,7 @@ ModelImporter:
     2300046: tree_02
     2300048: trunk_pathblocker_01
     2300050: stairs_01
+    2300052: tutorialStone_01
     3300000: bush_01
     3300002: bush_02
     3300004: crystal_little_01
@@ -111,6 +114,7 @@ ModelImporter:
     3300046: tree_02
     3300048: trunk_pathblocker_01
     3300050: stairs_01
+    3300052: tutorialStone_01
     4300000: rock_little_01
     4300002: rock_little_03
     4300004: rock_little_02
@@ -137,6 +141,7 @@ ModelImporter:
     4300046: bush_01
     4300048: spikes_01
     4300050: stairs_01
+    4300052: tutorialStone_01
   materials:
     importMaterials: 1
     materialName: 0
