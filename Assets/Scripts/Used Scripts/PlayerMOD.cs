@@ -145,8 +145,8 @@ public class PlayerMOD : MonoBehaviour {
                 if (isPlayerOverpowered == true)
                 {
                     HandleWallSliding();
-                    //AttackLogic();
                 }
+                AttackLogic();
 
                 AngularSliding();
 
@@ -154,6 +154,7 @@ public class PlayerMOD : MonoBehaviour {
                 {
                     LifeLogic();
                     UIgodMode.SetActive(false);
+
                 }
                 else
                 {
@@ -192,17 +193,56 @@ public class PlayerMOD : MonoBehaviour {
                 }
 
                 //Movment
-                controller.Move (velocity * Time.deltaTime, directionalInput);
-
-                if (controller.collisions.above || controller.collisions.below) 
+                if (!isGodModeOn)
                 {
-                    if (controller.collisions.slidingDownMaxSlope) 
+                    controller.Move(velocity * Time.deltaTime, directionalInput);
+
+                    if (controller.collisions.above || controller.collisions.below)
                     {
-                        velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;
-                    } 
-                    else 
+                        if (controller.collisions.slidingDownMaxSlope)
+                        {
+                            velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;
+                        }
+                        else
+                        {
+                            velocity.y = 0;
+                        }
+                    }
+                }
+                else
+                {
+                    //GodMode Fly
+
+                    float sensibility = 0.5f;
+                    float sensibilityHigh = 2;
+
+                    float currentSensibility;
+
+                    if (Input.GetButton("Fire3"))
                     {
-                        velocity.y = 0;
+                        currentSensibility = sensibilityHigh;
+                    }
+                    else
+                    {
+                        currentSensibility = sensibility;
+                    }
+
+                    if (directionalInput.x < -0.5)
+                    {
+                        transform.Translate(-currentSensibility, 0, 0);
+                    }
+                    else if (directionalInput.x > 0.5)
+                    {
+                        transform.Translate(currentSensibility, 0, 0);
+                    }
+
+                    if (directionalInput.y < -0.5)
+                    {
+                        transform.Translate(0, -currentSensibility, 0);
+                    }
+                    else if (directionalInput.y > 0.5)
+                    {
+                        transform.Translate(0, currentSensibility, 0);
                     }
                 }
 

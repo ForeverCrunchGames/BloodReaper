@@ -11,6 +11,7 @@ TagManager:
   - Win
   - SpawnerHitPoint
   - SpawnerHeal
+  - Inventory
   layers:
   - Default
   - TransparentFX

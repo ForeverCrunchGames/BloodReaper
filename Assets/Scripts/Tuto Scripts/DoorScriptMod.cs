@@ -9,6 +9,8 @@ public class DoorScriptMod : MonoBehaviour {
     public GameObject effect;
     public float elimColliderDelay;
     public float elimEffectDelay;
+    public int color; //1 blue, 2 magenta, 3 yellow;
+    InventorySystem _inventory;
 
     [HideInInspector]
     public bool isKeyCollected = false;
@@ -18,6 +20,7 @@ public class DoorScriptMod : MonoBehaviour {
 
     void Start()
     {
+        _inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventorySystem>();
         key.SetActive(false);
         doorCollider.SetActive(true);
     }
@@ -26,6 +29,8 @@ public class DoorScriptMod : MonoBehaviour {
     {
         if (isDoorOpened == true)
         {
+            _inventory.ItemUsed(color);
+
             counter += Time.deltaTime;
 
             if (counter >= elimEffectDelay)

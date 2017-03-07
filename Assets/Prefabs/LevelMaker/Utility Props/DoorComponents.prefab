@@ -289,8 +289,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400005459554650}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4752774926494446}
   m_RootOrder: 0
@@ -301,7 +301,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1465693664665192}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -309,7 +309,7 @@ Transform:
   - {fileID: 4998343860479896}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4580370643689566
 Transform:
   m_ObjectHideFlags: 1
@@ -429,7 +429,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1556155069314474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.9, y: -0.1, z: 0}
+  m_LocalPosition: {x: 4, y: 1.2, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4752774926494446}
@@ -754,9 +754,10 @@ MonoBehaviour:
   anim: {fileID: 95825188438944230}
   doorCollider: {fileID: 1706257481723352}
   key: {fileID: 1069492283764810}
-  effect: {fileID: 0}
+  effect: {fileID: 1325046319741776}
   elimColliderDelay: 0.8
   elimEffectDelay: 0
+  color: 1
   isKeyCollected: 0
 --- !u!114 &114285842857377392
 MonoBehaviour:
@@ -770,6 +771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 114235944117289044}
+  color: 1
 --- !u!114 &114660866009267838
 MonoBehaviour:
   m_ObjectHideFlags: 1
