@@ -39,6 +39,18 @@ ModelImporter:
     100062: Tile_034
     100064: Tile_035
     100066: Tile_036
+    100068: Tile_002_1
+    100070: Tile_005_1
+    100072: Tile_005_2
+    100074: Tile_005_3
+    100076: Tile_005_4
+    100078: Tile_005_5
+    100080: Tile_029_1
+    100082: Tile_029_2
+    100084: Tile_Back_001
+    100086: Tile_Back_002
+    100088: Tile_Back_003
+    100090: Tile_Back_004
     400000: Platform_01
     400002: Platform_02
     400004: Platform_03
@@ -73,6 +85,18 @@ ModelImporter:
     400062: Tile_034
     400064: Tile_035
     400066: Tile_036
+    400068: Tile_002_1
+    400070: Tile_005_1
+    400072: Tile_005_2
+    400074: Tile_005_3
+    400076: Tile_005_4
+    400078: Tile_005_5
+    400080: Tile_029_1
+    400082: Tile_029_2
+    400084: Tile_Back_001
+    400086: Tile_Back_002
+    400088: Tile_Back_003
+    400090: Tile_Back_004
     2300000: Platform_01
     2300002: Platform_02
     2300004: Platform_03
@@ -106,6 +130,18 @@ ModelImporter:
     2300060: Tile_034
     2300062: Tile_035
     2300064: Tile_036
+    2300066: Tile_002_1
+    2300068: Tile_005_1
+    2300070: Tile_005_2
+    2300072: Tile_005_3
+    2300074: Tile_005_4
+    2300076: Tile_005_5
+    2300078: Tile_029_1
+    2300080: Tile_029_2
+    2300082: Tile_Back_001
+    2300084: Tile_Back_002
+    2300086: Tile_Back_003
+    2300088: Tile_Back_004
     3300000: Platform_01
     3300002: Platform_02
     3300004: Platform_03
@@ -139,6 +175,18 @@ ModelImporter:
     3300060: Tile_034
     3300062: Tile_035
     3300064: Tile_036
+    3300066: Tile_002_1
+    3300068: Tile_005_1
+    3300070: Tile_005_2
+    3300072: Tile_005_3
+    3300074: Tile_005_4
+    3300076: Tile_005_5
+    3300078: Tile_029_1
+    3300080: Tile_029_2
+    3300082: Tile_Back_001
+    3300084: Tile_Back_002
+    3300086: Tile_Back_003
+    3300088: Tile_Back_004
     4300000: Tile_001
     4300002: Tile_002
     4300004: Tile_003
@@ -172,6 +220,18 @@ ModelImporter:
     4300060: Tile_033
     4300062: Tile_034
     4300064: Tile_035
+    4300066: Tile_002_1
+    4300068: Tile_005_1
+    4300070: Tile_005_2
+    4300072: Tile_005_4
+    4300074: Tile_005_5
+    4300076: Tile_005_3
+    4300078: Tile_029_1
+    4300080: Tile_029_2
+    4300082: Tile_Back_001
+    4300084: Tile_Back_002
+    4300086: Tile_Back_003
+    4300088: Tile_Back_004
   materials:
     importMaterials: 0
     materialName: 0
