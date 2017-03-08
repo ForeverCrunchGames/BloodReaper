@@ -9,18 +9,53 @@ public class InventorySystem : MonoBehaviour {
     public GameObject item_key_yellow;
     public GameObject item_key_magenta;
 
+//    int[] positions;
+//    public GameObject[] icons;
+//
+//    public bool[] isPositionFree;
+//
+//    public Vector3 iconsPos;
+//    public float spacer;
+//    public int position;
+//
+    //    struct IconData{}
+
     // Use this for initialization
 	void Start () 
     {
         item_collectionable.SetActive(false); 
         item_key_blue.SetActive(false);
         item_key_yellow.SetActive(false);
-        item_key_magenta.SetActive(false); 
+        item_key_magenta.SetActive(false);
+
+//        for (int i = 0; i < isPositionFree.Length; i++)
+//        {
+//            isPositionFree[i] = true;
+//        }
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
+//        for (int i = 0; i < icons.Length; i++)
+//        {
+//            if (icons[i].activeSelf == true)
+//            {
+//                for (int j = 0; j < isPositionFree.Length; j++)
+//                {
+//                    if (isPositionFree[j] == true)
+//                    {
+//                        icons[i].transform.position.x = iconsPos.x + spacer * i; 
+//                        isPositionFree[j] = false;
+//                    }
+//                }
+//            }
+//
+//            if (icons[i].activeSelf == false)
+//            {
+//                
+//            }
+//        }
 
 	}
 
@@ -28,7 +63,7 @@ public class InventorySystem : MonoBehaviour {
     {
         if (item == 0)
         {
-            item_collectionable.SetActive(true);               
+            item_collectionable.SetActive(true);
         }
         else if (item == 1)
         {
