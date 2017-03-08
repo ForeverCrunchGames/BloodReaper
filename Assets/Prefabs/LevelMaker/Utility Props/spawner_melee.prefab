@@ -43,7 +43,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1320386198602234
 GameObject:
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 4299971564052046}
   - component: {fileID: 114658501488093872}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: spawner_melee
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -223,7 +223,7 @@ GameObject:
   m_TagString: SpawnerHitPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4036197959150694
 Transform:
@@ -298,7 +298,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1497032157529138}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.7335205, y: 8.398289, z: 0.102684945}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4320164787409402}
@@ -356,7 +356,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1320386198602234}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.484, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4119028737019918}
@@ -419,7 +419,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c2830e6050f8e7d4892a9f9fc5b7ed26, type: 2}
+  - {fileID: 2100000, guid: f4f052ead81cb44d68b5bd4516f7e268, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -450,7 +450,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c2830e6050f8e7d4892a9f9fc5b7ed26, type: 2}
+  - {fileID: 2100000, guid: f4f052ead81cb44d68b5bd4516f7e268, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -481,7 +481,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 89b28127016c441b3baee78d4b27e34f, type: 2}
+  - {fileID: 2100000, guid: 775c856490bd74ed49d99f35b3f05739, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -533,7 +533,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 1.46}
   serializedVersion: 2
-  m_Size: {x: 4, y: 3}
+  m_Size: {x: 3, y: 3}
 --- !u!61 &61310161765953720
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -545,7 +545,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 1.48}
+  m_Offset: {x: 0, y: 1}
   serializedVersion: 2
   m_Size: {x: 1, y: 1.5}
 --- !u!114 &114574565597322298
@@ -588,7 +588,7 @@ MonoBehaviour:
     type: 2}
   spawnPoint: {fileID: 4647190714577750}
   spawnRate: 2
-  lifeRegenSpeed: 10
+  lifeRegenSpeed: 20
   maxEnemies: 5
 --- !u!114 &114996489973333356
 MonoBehaviour:
@@ -3294,7 +3294,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1474701123
+  randomSeed: 1715755861
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5931,7 +5931,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 589179164
+  randomSeed: 297828886
   InitialModule:
     serializedVersion: 3
     enabled: 1

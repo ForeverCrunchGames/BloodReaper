@@ -11,7 +11,6 @@ public class SpawnerLogic : MonoBehaviour
     public GameObject healParticles;
     public GameObject splashEffect;
 
-    [HideInInspector]
     public bool isDestroyed = false;
     [HideInInspector]
     public bool isDestroyedState = true;
@@ -33,6 +32,8 @@ public class SpawnerLogic : MonoBehaviour
     // Use this for initialization
     void Start () 
     {
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
+
         explosionParticles.SetActive(false);
         healParticles.SetActive(false);
         splashEffect.SetActive(true);

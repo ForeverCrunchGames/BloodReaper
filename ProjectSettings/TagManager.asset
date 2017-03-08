@@ -12,6 +12,7 @@ TagManager:
   - SpawnerHitPoint
   - SpawnerHeal
   - Inventory
+  - Attack
   layers:
   - Default
   - TransparentFX
