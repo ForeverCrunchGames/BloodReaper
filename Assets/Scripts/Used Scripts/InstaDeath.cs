@@ -14,9 +14,12 @@ public class InstaDeath : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            player.SetDead();
+            if (player.state != PlayerMOD.States.DEAD)
+            {
+                player.SetDead();
 
-            Debug.Log("Death by falling to Abysm");
+                Debug.Log("Death by falling to Abysm");
+            }
         }
 
     }

@@ -27,12 +27,18 @@ public class PlayerMOD : MonoBehaviour {
 
     [Header("Stats")]
     public Vector3 spawn;
+
+    public int deadCounter;
+    public Text deadCounterText;
+
     public float maxLife = 100;
     public bool isLifeDecreasing = true;
-    public bool isPlayerOverpowered = true;
     public float lifeDecreasingVelocity = 1; //Life unit decreasing per second
     public float currentLife;
     private float storeLife;
+
+    public bool isPlayerOverpowered = true;
+
     public int playerScore;
     public GameObject scoreUI;
     public GameObject playerUI;
@@ -97,6 +103,7 @@ public class PlayerMOD : MonoBehaviour {
 
     public AudioSource hit;
     public AudioSource sword;
+    public AudioSource avraeScream;
 
 	void Start() 
     {   
@@ -164,6 +171,7 @@ public class PlayerMOD : MonoBehaviour {
 
                 collectionableUI.text = ("Collectionable: " + isCollectionableCollected);
                 playerScoreUI.text = ("Score: " + playerScore);
+                deadCounterText.text = ("" + deadCounter);
 
                 if (wallSliding)
                 {
@@ -394,6 +402,8 @@ public class PlayerMOD : MonoBehaviour {
         DieParticles.SetActive(true);
         DieParticles2.SetActive(true);
         hit.Play();
+        deadCounter += 1;
+        avraeScream.Play();
     }
     void UpdateDead()
     {

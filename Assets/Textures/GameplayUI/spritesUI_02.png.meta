@@ -1,9 +1,24 @@
 fileFormatVersion: 2
 guid: 8ce15f6ffb5a84501bff88d549a9c0f0
-timeCreated: 1488877600
+timeCreated: 1488972144
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: spritesUI_02_0
+    21300002: spritesUI_02_1
+    21300004: spritesUI_02_2
+    21300006: deathCounter_02
+    21300008: spritesUI_02_4
+    21300010: spritesUI_02_5
+    21300012: deathCounter_04
+    21300014: spritesUI_02_7
+    21300016: spritesUI_02_8
+    21300018: deathCounter_05
+    21300020: spritesUI_02_10
+    21300022: deathCounter_01
+    21300024: deathCounter_03
+    21300026: spritesUI_02_13
+    21300028: spritesUI_02_14
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -68,7 +83,202 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spritesUI_02_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 370
+        width: 227
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesUI_02_1
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 370
+        width: 226
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesUI_02_2
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 370
+        width: 227
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: deathCounter_02
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 207
+        width: 104
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesUI_02_4
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 330
+        width: 6
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesUI_02_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 337
+        width: 6
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: deathCounter_04
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 207
+        width: 104
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesUI_02_7
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 344
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesUI_02_8
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 334
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: deathCounter_05
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 207
+        width: 104
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesUI_02_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 340
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: deathCounter_01
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 207
+        width: 104
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: deathCounter_03
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 207
+        width: 104
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesUI_02_13
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 38
+        width: 122
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesUI_02_14
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 38
+        width: 122
+        height: 157
+      alignment: 9
+      pivot: {x: 0.50000024, y: 0.49999994}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
