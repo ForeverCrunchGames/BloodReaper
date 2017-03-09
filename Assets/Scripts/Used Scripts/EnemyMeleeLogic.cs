@@ -176,6 +176,7 @@ public class EnemyMeleeLogic : MonoBehaviour
         enemyBounds.SetActive(false);
         enemyExplosion.SetActive(true);
         _spawner.LostOne ();
+        Destroy(gameObject, 1);
     }
 
     void SetIdle()
@@ -208,5 +209,13 @@ public class EnemyMeleeLogic : MonoBehaviour
         direction *= -1;
         currentVelocity *= -1;
         enemyGraphics.transform.localScale = new Vector3(transform.localScale.x * direction, transform.localScale.y, transform.localScale.z);
+    }
+
+    void OnTriggerEnter2D (Collider2D other)
+    {
+        if (other.tag == "Hazzard")
+        {
+            SetDamage(1000);
+        }
     }
 }

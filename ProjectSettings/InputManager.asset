@@ -156,7 +156,7 @@ InputManager:
     negativeButton: 
     positiveButton: space
     altNegativeButton: 
-    altPositiveButton: enter
+    altPositiveButton: return
     gravity: 1000
     dead: 0.001
     sensitivity: 1000

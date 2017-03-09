@@ -4,6 +4,7 @@ using UnityEngine;
 public class InstaDeath : MonoBehaviour {
 
     PlayerMOD player;
+    EnemyMeleeLogic melee;
 
     void Start()
     {
@@ -16,11 +17,13 @@ public class InstaDeath : MonoBehaviour {
         {
             if (player.state != PlayerMOD.States.DEAD)
             {
+                if (player.isGodModeOn == false)
+                {
                 player.SetDead();
 
-                Debug.Log("Death by falling to Abysm");
+                Debug.Log("Insta Death!");
+                }
             }
         }
-
     }
 }

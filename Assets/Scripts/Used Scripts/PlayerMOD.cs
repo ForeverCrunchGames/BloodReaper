@@ -130,6 +130,9 @@ public class PlayerMOD : MonoBehaviour {
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
 		minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
+
+        //Cursor
+        Cursor.visible = false;
 	}
 
 	void Update() 
@@ -423,9 +426,9 @@ public class PlayerMOD : MonoBehaviour {
     {
         state = States.PAUSE;
         optionsUI.SetActive(true);
-        //Time.timeScale = 0;
         pause = true;
         pauseTimer = 0;
+        Cursor.visible = true;
 
         Debug.Log("Set Pause");
     }
@@ -453,6 +456,7 @@ public class PlayerMOD : MonoBehaviour {
         Time.timeScale = 1;
         pause = false;
         pauseTimer = 0;
+        Cursor.visible = false;
 
         Debug.Log("Exit Pause");
     }

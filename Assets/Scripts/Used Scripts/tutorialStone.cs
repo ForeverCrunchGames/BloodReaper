@@ -13,6 +13,7 @@ public class tutorialStone : MonoBehaviour {
     void Start () 
     {
         animator = GetComponent<Animator>();
+        animator.SetTrigger("close");
         state = 0;
 	}
 	
