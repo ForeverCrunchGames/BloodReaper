@@ -269,11 +269,11 @@ public class PlayerMOD : MonoBehaviour {
 
                 if (controller.collisions.below)
                 {
-                    Player.SetBool("isJumping", false);
+                    //Player.SetBool("isJumping", false);
                 }
                 else
                 {
-                    Player.SetBool("isJumping", true);
+                    //Player.SetBool("isJumping", true);
                 }
 
                 if (!isIntroEnded)
@@ -359,7 +359,7 @@ public class PlayerMOD : MonoBehaviour {
     }
     void UpdateIdle()
     {
-        if (!((velocity.x <= animRunSensibility && velocity.x >= -animRunSensibility))) //|| (controller.collisions.left == true) || (controller.collisions.right == true)))
+        if (!((velocity.x <= animRunSensibility && velocity.x >= -animRunSensibility) || (controller.collisions.left == true) || (controller.collisions.right == true)))
         {
             SetRun();
         }
@@ -372,7 +372,7 @@ public class PlayerMOD : MonoBehaviour {
     }
     void UpdateRun()
     {
-        if ((velocity.x <= animRunSensibility && velocity.x >= -animRunSensibility)) // || (controller.collisions.left == true) || (controller.collisions.right == true))
+        if ((velocity.x <= animRunSensibility && velocity.x >= -animRunSensibility) || (controller.collisions.left == true) || (controller.collisions.right == true))
         {
             Player.SetBool("isRunning", false);
             SetIdle();
@@ -685,8 +685,20 @@ public class PlayerMOD : MonoBehaviour {
 
     public void Attack()
     {
+        int random;
+
+        random = Random.Range(0, 2);
+
+        if (random == 0)
+        {
+            Player.SetTrigger("AtackBasic");
+        }
+        else if (random == 1)
+        {
+            Player.SetTrigger("AtackBasic2");
+        }
+
         Debug.Log("CATAPUM!");
-        Player.SetTrigger("AtackBasic");
         isAttacking = true;
         sword.Play();
 
