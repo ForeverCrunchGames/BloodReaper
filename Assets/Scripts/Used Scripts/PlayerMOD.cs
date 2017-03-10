@@ -359,7 +359,7 @@ public class PlayerMOD : MonoBehaviour {
     }
     void UpdateIdle()
     {
-        if (!((velocity.x <= animRunSensibility && velocity.x >= -animRunSensibility) || (controller.collisions.left == true) || (controller.collisions.right == true)))
+        if (!((velocity.x <= animRunSensibility && velocity.x >= -animRunSensibility))) //|| (controller.collisions.left == true) || (controller.collisions.right == true)))
         {
             SetRun();
         }
@@ -372,7 +372,7 @@ public class PlayerMOD : MonoBehaviour {
     }
     void UpdateRun()
     {
-        if ((velocity.x <= animRunSensibility && velocity.x >= -animRunSensibility) || (controller.collisions.left == true) || (controller.collisions.right == true))
+        if ((velocity.x <= animRunSensibility && velocity.x >= -animRunSensibility)) // || (controller.collisions.left == true) || (controller.collisions.right == true))
         {
             Player.SetBool("isRunning", false);
             SetIdle();
