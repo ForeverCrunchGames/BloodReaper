@@ -512,6 +512,12 @@ Prefab:
       propertyPath: m_Name
       value: tutorialStone_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 212746815837563072, guid: 3e48f393e3d054629915dec9699acd07,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 889ca1dc18a67c14293388be87ca12e6,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e48f393e3d054629915dec9699acd07, type: 2}
   m_IsPrefabParent: 0
@@ -8120,6 +8126,12 @@ Prefab:
       propertyPath: m_Name
       value: tutorialStone_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 212746815837563072, guid: 3e48f393e3d054629915dec9699acd07,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 01fd6ed939877c44ebd09cb66bec318f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e48f393e3d054629915dec9699acd07, type: 2}
   m_IsPrefabParent: 0
@@ -11822,6 +11834,12 @@ Prefab:
       propertyPath: m_Name
       value: tutorialStone_01_enemies
       objectReference: {fileID: 0}
+    - target: {fileID: 212746815837563072, guid: 3e48f393e3d054629915dec9699acd07,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ed110e26c062876409e3109d467c74c4,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e48f393e3d054629915dec9699acd07, type: 2}
   m_IsPrefabParent: 0
