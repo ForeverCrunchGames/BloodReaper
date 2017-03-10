@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CollectionableLogic : MonoBehaviour {
 
-    public PlayerMOD Player;
+    PlayerMOD Player;
 
     // Use this for initialization
-	void Start () {
-		
+	void Start () 
+    {
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
 	}
 	
 	// Update is called once per frame

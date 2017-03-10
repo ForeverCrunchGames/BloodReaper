@@ -3011,7 +3011,7 @@ MonoBehaviour:
   deadCounterText: {fileID: 114365802035543128}
   maxLife: 100
   isLifeDecreasing: 1
-  lifeDecreasingVelocity: 2
+  lifeDecreasingVelocity: 4
   currentLife: 0
   isPlayerOverpowered: 1
   playerScore: 0

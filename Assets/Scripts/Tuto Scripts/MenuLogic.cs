@@ -24,6 +24,7 @@ public class MenuLogic : MonoBehaviour
     public void  GoMenu()
     {
         player.ExitPause();
+        Cursor.visible = true;
         SceneManager.LoadScene("Main menu");
     }
 

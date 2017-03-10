@@ -17,6 +17,7 @@ public class WinLogic : MonoBehaviour {
         {
             //SceneManager.LoadScene ("Menu");
             Player.isLevelEnded = true;
+            Cursor.visible = true;
             Debug.Log("Win");
         }
 

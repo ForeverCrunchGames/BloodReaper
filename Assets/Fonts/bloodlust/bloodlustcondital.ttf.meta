@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 00ab41b0915524791b7d8a300da01ec0
+timeCreated: 1489107873
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bloodlust Condensed Italic
+  fontNames:
+  - Bloodlust Condensed Italic
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
