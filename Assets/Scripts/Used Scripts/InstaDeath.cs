@@ -3,22 +3,27 @@ using UnityEngine;
 
 public class InstaDeath : MonoBehaviour {
 
-    public bool ignoreTrigger;
+    PlayerMOD player;
+    EnemyMeleeLogic melee;
 
-    public PlayerMOD Player;
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (ignoreTrigger)
-            return;
-
         if (other.tag == "Player")
         {
-            Player.SetDead();
+            if (player.state != PlayerMOD.States.DEAD)
+            {
+                if (player.isGodModeOn == false)
+                {
+                player.SetDead();
 
-            Debug.Log("Insta Death");
+                Debug.Log("Insta Death!");
+                }
+            }
         }
-
     }
 }

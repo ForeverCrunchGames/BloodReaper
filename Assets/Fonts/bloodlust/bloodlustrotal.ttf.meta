@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 5207441345bde47158cc73a1e1eb519e
+timeCreated: 1489107873
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bloodlust Rotalic
+  fontNames:
+  - Bloodlust Rotalic
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -11,6 +11,9 @@ TagManager:
   - Win
   - SpawnerHitPoint
   - SpawnerHeal
+  - Inventory
+  - Attack
+  - Hazzard
   layers:
   - Default
   - TransparentFX
@@ -29,7 +32,7 @@ TagManager:
   - Attack
   - RecieveDamage
   - TargetAttack
-  - 
+  - Hazzard
   - 
   - 
   - 

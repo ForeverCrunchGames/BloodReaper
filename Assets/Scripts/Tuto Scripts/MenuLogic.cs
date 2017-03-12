@@ -6,27 +6,25 @@ public class MenuLogic : MonoBehaviour
 {
 
 	private AudioSource clic;
-    public  PlayerMOD player;
+    public GameObject options;
+    PlayerMOD player;
 
 	public void Start ()
 	{
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
         clic = GetComponent<AudioSource>();
+        options.SetActive(false);
     }
-
-	void Update ()
-	{
-        
-	}
 
 	public void LoadScene(int numScene)
     {
-        //Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
-        //player.isOptionsMenu = false;
 	}
 
     public void  GoMenu()
     {
+        player.ExitPause();
+        Cursor.visible = true;
         SceneManager.LoadScene("Main menu");
     }
 
@@ -34,5 +32,10 @@ public class MenuLogic : MonoBehaviour
     {
 		clic.Play ();
 	}
+
+    public void Options()
+    {
+        options.SetActive(true);
+    }
         
 }

@@ -1,0 +1,212 @@
+fileFormatVersion: 2
+guid: 4e28fd844907e4c29908473169c0650d
+timeCreated: 1488645439
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bush_01
+    100002: bush_02
+    100004: //RootNode
+    100006: crystal_little_01
+    100008: crystal_little_02
+    100010: crystal_little_03
+    100012: crystal_medium_01
+    100014: crystal_medium_03
+    100016: crystal_medium_04
+    100018: rock_big_01
+    100020: rock_big_02
+    100022: rock_big_03
+    100024: rock_little_01
+    100026: rock_little_02
+    100028: rock_little_03
+    100030: rock_medium_01
+    100032: rock_medium_02
+    100034: rock_medium_03
+    100036: rock_pathblocker_01
+    100038: spikes_01
+    100040: spines_01
+    100042: spines_02
+    100044: spines_03
+    100046: tree_01
+    100048: tree_02
+    100050: trunk_pathblocker_01
+    100052: stairs_01
+    100054: tutorialStone_01
+    400000: bush_01
+    400002: bush_02
+    400004: //RootNode
+    400006: crystal_little_01
+    400008: crystal_little_02
+    400010: crystal_little_03
+    400012: crystal_medium_01
+    400014: crystal_medium_03
+    400016: crystal_medium_04
+    400018: rock_big_01
+    400020: rock_big_02
+    400022: rock_big_03
+    400024: rock_little_01
+    400026: rock_little_02
+    400028: rock_little_03
+    400030: rock_medium_01
+    400032: rock_medium_02
+    400034: rock_medium_03
+    400036: rock_pathblocker_01
+    400038: spikes_01
+    400040: spines_01
+    400042: spines_02
+    400044: spines_03
+    400046: tree_01
+    400048: tree_02
+    400050: trunk_pathblocker_01
+    400052: stairs_01
+    400054: tutorialStone_01
+    2300000: bush_01
+    2300002: bush_02
+    2300004: crystal_little_01
+    2300006: crystal_little_02
+    2300008: crystal_little_03
+    2300010: crystal_medium_01
+    2300012: crystal_medium_03
+    2300014: crystal_medium_04
+    2300016: rock_big_01
+    2300018: rock_big_02
+    2300020: rock_big_03
+    2300022: rock_little_01
+    2300024: rock_little_02
+    2300026: rock_little_03
+    2300028: rock_medium_01
+    2300030: rock_medium_02
+    2300032: rock_medium_03
+    2300034: rock_pathblocker_01
+    2300036: spikes_01
+    2300038: spines_01
+    2300040: spines_02
+    2300042: spines_03
+    2300044: tree_01
+    2300046: tree_02
+    2300048: trunk_pathblocker_01
+    2300050: stairs_01
+    2300052: tutorialStone_01
+    3300000: bush_01
+    3300002: bush_02
+    3300004: crystal_little_01
+    3300006: crystal_little_02
+    3300008: crystal_little_03
+    3300010: crystal_medium_01
+    3300012: crystal_medium_03
+    3300014: crystal_medium_04
+    3300016: rock_big_01
+    3300018: rock_big_02
+    3300020: rock_big_03
+    3300022: rock_little_01
+    3300024: rock_little_02
+    3300026: rock_little_03
+    3300028: rock_medium_01
+    3300030: rock_medium_02
+    3300032: rock_medium_03
+    3300034: rock_pathblocker_01
+    3300036: spikes_01
+    3300038: spines_01
+    3300040: spines_02
+    3300042: spines_03
+    3300044: tree_01
+    3300046: tree_02
+    3300048: trunk_pathblocker_01
+    3300050: stairs_01
+    3300052: tutorialStone_01
+    4300000: rock_little_01
+    4300002: rock_little_03
+    4300004: rock_little_02
+    4300006: rock_medium_01
+    4300008: rock_medium_02
+    4300010: rock_medium_03
+    4300012: rock_big_01
+    4300014: rock_big_02
+    4300016: rock_big_03
+    4300018: tree_01
+    4300020: tree_02
+    4300022: crystal_little_01
+    4300024: crystal_little_02
+    4300026: crystal_little_03
+    4300028: crystal_medium_01
+    4300030: crystal_medium_03
+    4300032: crystal_medium_04
+    4300034: spines_01
+    4300036: spines_02
+    4300038: spines_03
+    4300040: rock_pathblocker_01
+    4300042: trunk_pathblocker_01
+    4300044: bush_02
+    4300046: bush_01
+    4300048: spikes_01
+    4300050: stairs_01
+    4300052: tutorialStone_01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

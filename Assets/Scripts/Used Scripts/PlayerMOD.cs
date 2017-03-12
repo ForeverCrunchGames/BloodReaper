@@ -27,11 +27,18 @@ public class PlayerMOD : MonoBehaviour {
 
     [Header("Stats")]
     public Vector3 spawn;
+
+    public int deadCounter;
+    public Text deadCounterText;
+
     public float maxLife = 100;
     public bool isLifeDecreasing = true;
     public float lifeDecreasingVelocity = 1; //Life unit decreasing per second
     public float currentLife;
     private float storeLife;
+
+    public bool isPlayerOverpowered = true;
+
     public int playerScore;
     public GameObject scoreUI;
     public GameObject playerUI;
@@ -89,8 +96,14 @@ public class PlayerMOD : MonoBehaviour {
     public GameObject DieParticles;
     public GameObject DieParticles2;
 
-    public Animator Intro;
+    //public Animator Intro;
     public bool isIntroEnded;
+    public bool isGodModeOn;
+    public GameObject UIgodMode;
+
+    public AudioSource hit;
+    public AudioSource sword;
+    public AudioSource avraeScream;
 
 	void Start() 
     {   
@@ -117,6 +130,9 @@ public class PlayerMOD : MonoBehaviour {
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
 		minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
+
+        //Cursor
+        Cursor.visible = false;
 	}
 
 	void Update() 
@@ -128,17 +144,37 @@ public class PlayerMOD : MonoBehaviour {
             if (!isLevelEnded)
             {
                 Time.timeScale = 1;
-                //Debug.Log("Running game");
+
+                if (Input.GetKeyDown(KeyCode.F10))
+                {
+                    isGodModeOn = !isGodModeOn;
+                }
 
                 CalculateVelocity();
-                HandleWallSliding();
-                AngularSliding();
-                LifeLogic();
+
+                if (isPlayerOverpowered == true)
+                {
+                    HandleWallSliding();
+                }
                 AttackLogic();
-                StrongAttackLogic();
+
+                AngularSliding();
+
+                if (!isGodModeOn)
+                {
+                    LifeLogic();
+                    UIgodMode.SetActive(false);
+
+                }
+                else
+                {
+                    UIgodMode.SetActive(true);
+
+                }
 
                 collectionableUI.text = ("Collectionable: " + isCollectionableCollected);
                 playerScoreUI.text = ("Score: " + playerScore);
+                deadCounterText.text = ("" + deadCounter);
 
                 if (wallSliding)
                 {
@@ -168,17 +204,56 @@ public class PlayerMOD : MonoBehaviour {
                 }
 
                 //Movment
-                controller.Move (velocity * Time.deltaTime, directionalInput);
-
-                if (controller.collisions.above || controller.collisions.below) 
+                if (!isGodModeOn)
                 {
-                    if (controller.collisions.slidingDownMaxSlope) 
+                    controller.Move(velocity * Time.deltaTime, directionalInput);
+
+                    if (controller.collisions.above || controller.collisions.below)
                     {
-                        velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;
-                    } 
-                    else 
+                        if (controller.collisions.slidingDownMaxSlope)
+                        {
+                            velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;
+                        }
+                        else
+                        {
+                            velocity.y = 0;
+                        }
+                    }
+                }
+                else
+                {
+                    //GodMode Fly
+
+                    float sensibility = 0.5f;
+                    float sensibilityHigh = 2;
+
+                    float currentSensibility;
+
+                    if (Input.GetButton("Fire3"))
                     {
-                        velocity.y = 0;
+                        currentSensibility = sensibilityHigh;
+                    }
+                    else
+                    {
+                        currentSensibility = sensibility;
+                    }
+
+                    if (directionalInput.x < -0.5)
+                    {
+                        transform.Translate(-currentSensibility, 0, 0);
+                    }
+                    else if (directionalInput.x > 0.5)
+                    {
+                        transform.Translate(currentSensibility, 0, 0);
+                    }
+
+                    if (directionalInput.y < -0.5)
+                    {
+                        transform.Translate(0, -currentSensibility, 0);
+                    }
+                    else if (directionalInput.y > 0.5)
+                    {
+                        transform.Translate(0, currentSensibility, 0);
                     }
                 }
 
@@ -194,11 +269,11 @@ public class PlayerMOD : MonoBehaviour {
 
                 if (controller.collisions.below)
                 {
-                    Player.SetBool("isJumping", false);
+                    //Player.SetBool("isJumping", false);
                 }
                 else
                 {
-                    Player.SetBool("isJumping", true);
+                    //Player.SetBool("isJumping", true);
                 }
 
                 if (!isIntroEnded)
@@ -208,7 +283,7 @@ public class PlayerMOD : MonoBehaviour {
                     if (timerIntro >= 2.7f)
                     {
                         timerIntro = 0;
-                        Intro.enabled = !Intro.enabled;
+                        //Intro.enabled = !Intro.enabled;
                         isIntroEnded = true;
 
                     }
@@ -329,6 +404,9 @@ public class PlayerMOD : MonoBehaviour {
         currentLife = maxLife;
         DieParticles.SetActive(true);
         DieParticles2.SetActive(true);
+        hit.Play();
+        deadCounter += 1;
+        avraeScream.Play();
     }
     void UpdateDead()
     {
@@ -348,9 +426,9 @@ public class PlayerMOD : MonoBehaviour {
     {
         state = States.PAUSE;
         optionsUI.SetActive(true);
-        //Time.timeScale = 0;
         pause = true;
         pauseTimer = 0;
+        Cursor.visible = true;
 
         Debug.Log("Set Pause");
     }
@@ -378,6 +456,7 @@ public class PlayerMOD : MonoBehaviour {
         Time.timeScale = 1;
         pause = false;
         pauseTimer = 0;
+        Cursor.visible = false;
 
         Debug.Log("Exit Pause");
     }
@@ -556,6 +635,7 @@ public class PlayerMOD : MonoBehaviour {
     {
         currentLife -= damage;
         isInmune = true;
+        hit.Play();
     }
 
 
@@ -605,9 +685,23 @@ public class PlayerMOD : MonoBehaviour {
 
     public void Attack()
     {
+        int random;
+
+        random = Random.Range(0, 2);
+
+        if (random == 0)
+        {
+            Player.SetTrigger("AtackBasic");
+        }
+        else if (random == 1)
+        {
+            Player.SetTrigger("AtackBasic2");
+        }
+
         Debug.Log("CATAPUM!");
-        Player.SetTrigger("AtackBasic");
         isAttacking = true;
+        sword.Play();
+
     }
     public void AttackLogic()
     {

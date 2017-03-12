@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 0d21c47b39b2e46d994b2825f81f9e37
+timeCreated: 1489107873
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bloodlust Academy Italic
+  fontNames:
+  - Bloodlust Academy Italic
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

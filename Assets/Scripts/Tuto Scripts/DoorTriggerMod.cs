@@ -5,34 +5,25 @@ public class DoorTriggerMod : MonoBehaviour
 {
 
 	public DoorScriptMod door;
-    public PlayerMOD player;
+    public int color; //1 blue, 2 magenta, 3 yellow;
+    InventorySystem _inventory;
 
-	public bool ignoreTrigger;
-    public int score = 100;
-
+    void Start()
+    {
+        _inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventorySystem>();
+    }
 	void OnTriggerEnter2D(Collider2D other)
     {
-
-		if (ignoreTrigger)
-						return;
-
-		if (other.tag == "Player")
-						door.DoorOpens ();
-        gameObject.SetActive(false);
-        Debug.Log("Collision");
-        player.AddScore(score);
-
+        if (other.tag == "Player")
+        {
+            KeyCollected();
+        }
 	}
-    
-	void OnDrawGizmos()
-	{
-		if (!ignoreTrigger) {
-			BoxCollider2D box = GetComponent<BoxCollider2D>();
 
-			Gizmos.DrawWireCube(transform.position, new Vector2(box.size.x,box.size.y));
-
-				}
-
-
-	}
+    void KeyCollected()
+    {
+        door.isKeyCollected = true;
+        _inventory.ItemColleted(color);
+        Destroy(gameObject);
+    }
 }

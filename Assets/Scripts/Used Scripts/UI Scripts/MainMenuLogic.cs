@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuLogic : MonoBehaviour 
 {
-
     public GameObject startText;
 
     public GameObject titleScreen;
@@ -13,6 +12,7 @@ public class MainMenuLogic : MonoBehaviour
     public GameObject menu2;
     public GameObject menu3;
     public GameObject menuTesting;
+    public GameObject options;
 
     float textCounter;
     public float startTextInterval = 1;
@@ -21,6 +21,7 @@ public class MainMenuLogic : MonoBehaviour
 	void Start () 
     {
         //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
 
         State = 1;
         titleScreen.SetActive(true);
@@ -29,7 +30,6 @@ public class MainMenuLogic : MonoBehaviour
         menu2.SetActive(false);
         menu3.SetActive(false);
         menuTesting.SetActive(false);
-        //Cursor.visible = false;
 	}
 	
 	void Update () 
@@ -125,6 +125,14 @@ public class MainMenuLogic : MonoBehaviour
     {
         SceneManager.LoadScene("Level 1.1", LoadSceneMode.Single);
     }
+    public void GoLevel1_2 ()
+    {
+        SceneManager.LoadScene("Level 1.2", LoadSceneMode.Single);
+    }
+    public void GoLevel1_3 ()
+    {
+        SceneManager.LoadScene("Level 1.3", LoadSceneMode.Single);
+    }
     public void GoLevel2_2 ()
     {
         SceneManager.LoadScene("Level 2.2", LoadSceneMode.Single);
@@ -141,5 +149,10 @@ public class MainMenuLogic : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void Options()
+    {
+        options.SetActive(true);
     }
 }

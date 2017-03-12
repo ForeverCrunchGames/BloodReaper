@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: f64a19458f2e344058b4a6c6d400d48a
+timeCreated: 1489107873
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bloodlust Italic
+  fontNames:
+  - Bloodlust Italic
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

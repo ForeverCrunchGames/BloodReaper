@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: c0d03296e0c43430e94fc1d49f0fc0cc
+timeCreated: 1489107873
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bloodlust Outline
+  fontNames:
+  - Bloodlust Outline
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
