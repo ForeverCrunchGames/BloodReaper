@@ -10387,7 +10387,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 79b106f7c0d5742059ea3ac88929dfa6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0e7bd39a5329a44a68cdb7f3b87e20cb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
@@ -23223,6 +23223,33 @@ Prefab:
     - target: {fileID: 4996381036975802, guid: 8662259fc404b46328c89d8e9d0915d5, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113144525509316, guid: 8662259fc404b46328c89d8e9d0915d5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113144525509316, guid: 8662259fc404b46328c89d8e9d0915d5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114103353771430830, guid: 8662259fc404b46328c89d8e9d0915d5,
+        type: 2}
+      propertyPath: isLifeDecreasing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61633210225199674, guid: 8662259fc404b46328c89d8e9d0915d5,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 61591492362198578, guid: 8662259fc404b46328c89d8e9d0915d5,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927793490134250, guid: 8662259fc404b46328c89d8e9d0915d5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.067
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8662259fc404b46328c89d8e9d0915d5, type: 2}

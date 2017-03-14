@@ -57,7 +57,7 @@ PlayerSettings:
   androidShowActivityIndicatorOnLoading: -1
   tizenShowActivityIndicatorOnLoading: -1
   iosAppInBackgroundBehavior: 0
-  displayResolutionDialog: 0
+  displayResolutionDialog: 2
   iosAllowHTTPDownload: 1
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
@@ -206,13 +206,13 @@ PlayerSettings:
     height: 180
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
-  resolutionDialogBanner: {fileID: 2800000, guid: eb39b21ba112547629d6fdd95f987406,
+  resolutionDialogBanner: {fileID: 2800000, guid: a8272224bf4a246348b3581566ee5eea,
     type: 3}
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: eb39b21ba112547629d6fdd95f987406, type: 3}
+      m_Icon: {fileID: 2800000, guid: f6339fc2cd6c4442a92bdf6413d05814, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching:

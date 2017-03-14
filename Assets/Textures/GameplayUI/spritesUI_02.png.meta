@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 guid: 8ce15f6ffb5a84501bff88d549a9c0f0
-timeCreated: 1488972144
+timeCreated: 1489452031
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spritesUI_02_0
-    21300002: spritesUI_02_1
-    21300004: spritesUI_02_2
+    21300000: score_back_01
+    21300002: score_back_02
+    21300004: score_back_03
     21300006: deathCounter_02
     21300008: spritesUI_02_4
     21300010: spritesUI_02_5
@@ -17,8 +17,9 @@ TextureImporter:
     21300020: spritesUI_02_10
     21300022: deathCounter_01
     21300024: deathCounter_03
-    21300026: spritesUI_02_13
-    21300028: spritesUI_02_14
+    21300026: deathCounter_back_01
+    21300028: deathCounter_back_03
+    21300030: deathCounter_back_02
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -85,7 +86,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesUI_02_0
+      name: score_back_01
       rect:
         serializedVersion: 2
         x: 40
@@ -93,25 +94,25 @@ TextureImporter:
         width: 227
         height: 144
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesUI_02_1
+      name: score_back_02
       rect:
         serializedVersion: 2
         x: 291
         y: 370
-        width: 226
+        width: 227
         height: 144
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesUI_02_2
+      name: score_back_03
       rect:
         serializedVersion: 2
         x: 540
@@ -119,7 +120,7 @@ TextureImporter:
         width: 227
         height: 144
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -145,7 +146,7 @@ TextureImporter:
         width: 6
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -158,7 +159,7 @@ TextureImporter:
         width: 6
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -166,7 +167,7 @@ TextureImporter:
       name: deathCounter_04
       rect:
         serializedVersion: 2
-        x: 346
+        x: 345
         y: 207
         width: 104
         height: 160
@@ -184,7 +185,7 @@ TextureImporter:
         width: 6
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -197,7 +198,7 @@ TextureImporter:
         width: 9
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -223,7 +224,7 @@ TextureImporter:
         width: 5
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -254,7 +255,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesUI_02_13
+      name: deathCounter_back_01
       rect:
         serializedVersion: 2
         x: 12
@@ -267,15 +268,28 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesUI_02_14
+      name: deathCounter_back_03
       rect:
         serializedVersion: 2
         x: 252
         y: 38
         width: 122
         height: 157
-      alignment: 9
-      pivot: {x: 0.50000024, y: 0.49999994}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: deathCounter_back_02
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 38
+        width: 122
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

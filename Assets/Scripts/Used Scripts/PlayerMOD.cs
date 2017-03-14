@@ -31,11 +31,17 @@ public class PlayerMOD : MonoBehaviour {
     public int deadCounter;
     public Text deadCounterText;
 
+    public bool isTimePaused = false;
+    private float time;
+    public Text timeUI;
+
     public float maxLife = 100;
     public bool isLifeDecreasing = true;
     public float lifeDecreasingVelocity = 1; //Life unit decreasing per second
     public float currentLife;
     private float storeLife;
+    private float secondaryLife;
+    private float secondaryLifeSmooth = 2;
 
     public bool isPlayerOverpowered = true;
 
@@ -43,9 +49,10 @@ public class PlayerMOD : MonoBehaviour {
     public GameObject scoreUI;
     public GameObject playerUI;
     public GameObject optionsUI;
+    public GameObject hitUI;
     public bool pause;
     public Image lifeUI;
-    public Text collectionableUI;
+    public Image lifeSecondaryUI;
     public Text playerScoreUI;
     public bool isCollectionableCollected = false;
     public Renderer graphics;
@@ -75,6 +82,8 @@ public class PlayerMOD : MonoBehaviour {
     [Header("Animations")]
     public Animator Player;
     public float animRunSensibility;
+
+    public Animator deadCounterAnim;
 
 	float gravity;
     float maxJumpVelocity;
@@ -172,8 +181,15 @@ public class PlayerMOD : MonoBehaviour {
 
                 }
 
-                collectionableUI.text = ("Collectionable: " + isCollectionableCollected);
-                playerScoreUI.text = ("Score: " + playerScore);
+                //Time
+                if (!isTimePaused)
+                {
+                    time += Time.deltaTime;
+                }
+
+                //UI TEXTS
+                timeUI.text = ("" + (int)time);  
+                playerScoreUI.text = ("" + playerScore);
                 deadCounterText.text = ("" + deadCounter);
 
                 if (wallSliding)
@@ -407,6 +423,7 @@ public class PlayerMOD : MonoBehaviour {
         hit.Play();
         deadCounter += 1;
         avraeScream.Play();
+        deadCounterAnim.SetTrigger("dead");
     }
     void UpdateDead()
     {
@@ -593,8 +610,10 @@ public class PlayerMOD : MonoBehaviour {
     void LifeLogic()
     {
         //Draw Life UI
-        lifeUI.fillAmount = currentLife / 100;
+        lifeUI.fillAmount = currentLife/100;
+        lifeSecondaryUI.fillAmount = secondaryLife/100;
 
+        //Life descreasing
         if (isLifeDecreasing)
         {
             currentLife -= lifeDecreasingVelocity * Time.deltaTime;
@@ -605,10 +624,17 @@ public class PlayerMOD : MonoBehaviour {
         {
             currentLife = maxLife;
         }
+        //ClampSecondaryLife
+        if (secondaryLife < currentLife)
+        {
+            secondaryLife = currentLife;
+        }
 
         //Inmunity
         if (isInmune)
         {
+            hitUI.SetActive(true);
+
             graphics.material.color = Color.red; 
 
             timer += Time.deltaTime;
@@ -629,6 +655,9 @@ public class PlayerMOD : MonoBehaviour {
                 SetDead();
             }
         }
+
+        //Secondary Life Smooth Follow
+        secondaryLife = Mathf.Lerp(secondaryLife, currentLife, secondaryLifeSmooth * Time.deltaTime);
     }
 
     public void RecieveDamage (float damage)
