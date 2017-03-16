@@ -1,25 +1,21 @@
 fileFormatVersion: 2
-guid: 8ce15f6ffb5a84501bff88d549a9c0f0
-timeCreated: 1489452031
+guid: a619e7ccd92d346eb9729b4c92e16831
+timeCreated: 1489629718
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: score_back_01
-    21300002: score_back_02
-    21300004: score_back_03
-    21300006: deathCounter_02
-    21300008: spritesUI_02_4
-    21300010: spritesUI_02_5
-    21300012: deathCounter_04
-    21300014: spritesUI_02_7
-    21300016: spritesUI_02_8
-    21300018: deathCounter_05
-    21300020: spritesUI_02_10
-    21300022: deathCounter_01
-    21300024: deathCounter_03
-    21300026: deathCounter_back_01
-    21300028: deathCounter_back_03
-    21300030: deathCounter_back_02
+    21300000: counters
+    21300002: gameplay_icons_1
+    21300004: gameplay_icons_2
+    21300006: gameplay_icons_3
+    21300008: gameplay_icons_4
+    21300010: gameplay_icons_5
+    21300012: gameplay_icons_6
+    21300014: gameplay_icons_7
+    21300016: gameplay_icons_8
+    21300018: gameplay_icons_9
+    21300020: gameplay_icons_10
+    21300022: gameplay_icons_11
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -86,208 +82,130 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: score_back_01
+      name: counters
       rect:
         serializedVersion: 2
-        x: 40
-        y: 370
-        width: 227
-        height: 144
+        x: 153
+        y: 196
+        width: 371
+        height: 150
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: score_back_02
+      name: gameplay_icons_2
       rect:
         serializedVersion: 2
-        x: 291
-        y: 370
-        width: 227
-        height: 144
+        x: 0
+        y: 0
+        width: 126
+        height: 225
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: score_back_03
+      name: gameplay_icons_4
       rect:
         serializedVersion: 2
-        x: 540
-        y: 370
-        width: 227
-        height: 144
+        x: 190
+        y: 30
+        width: 144
+        height: 152
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: deathCounter_02
+      name: gameplay_icons_5
       rect:
         serializedVersion: 2
-        x: 136
-        y: 207
-        width: 104
-        height: 160
+        x: 335
+        y: 30
+        width: 144
+        height: 152
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesUI_02_4
+      name: gameplay_icons_6
       rect:
         serializedVersion: 2
-        x: 163
-        y: 330
-        width: 6
-        height: 28
+        x: 480
+        y: 31
+        width: 144
+        height: 151
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesUI_02_5
+      name: gameplay_icons_7
       rect:
         serializedVersion: 2
-        x: 200
-        y: 337
-        width: 6
-        height: 22
+        x: 642
+        y: 35
+        width: 145
+        height: 145
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: deathCounter_04
+      name: gameplay_icons_8
       rect:
         serializedVersion: 2
-        x: 345
-        y: 207
-        width: 104
-        height: 160
+        x: 823
+        y: 61
+        width: 89
+        height: 89
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesUI_02_7
+      name: gameplay_icons_9
       rect:
         serializedVersion: 2
-        x: 372
-        y: 344
-        width: 6
-        height: 16
+        x: 926
+        y: 50
+        width: 110
+        height: 111
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesUI_02_8
+      name: gameplay_icons_10
       rect:
         serializedVersion: 2
-        x: 407
-        y: 334
-        width: 9
-        height: 28
+        x: 1054
+        y: 50
+        width: 110
+        height: 111
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: deathCounter_05
+      name: gameplay_icons_11
       rect:
         serializedVersion: 2
-        x: 450
-        y: 207
-        width: 104
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: spritesUI_02_10
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 340
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: deathCounter_01
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 207
-        width: 104
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: deathCounter_03
-      rect:
-        serializedVersion: 2
-        x: 241
-        y: 207
-        width: 104
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: deathCounter_back_01
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 38
-        width: 122
-        height: 157
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: deathCounter_back_03
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 38
-        width: 122
-        height: 157
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: deathCounter_back_02
-      rect:
-        serializedVersion: 2
-        x: 131
-        y: 38
-        width: 122
-        height: 157
+        x: 1181
+        y: 50
+        width: 110
+        height: 111
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

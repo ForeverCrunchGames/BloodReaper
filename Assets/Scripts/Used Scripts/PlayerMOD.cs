@@ -41,7 +41,7 @@ public class PlayerMOD : MonoBehaviour {
     public float currentLife;
     private float storeLife;
     private float secondaryLife;
-    private float secondaryLifeSmooth = 2;
+    public float secondaryLifeSmooth = 2;
 
     public bool isPlayerOverpowered = true;
 
