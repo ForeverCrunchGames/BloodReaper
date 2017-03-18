@@ -24523,6 +24523,7 @@ GameObject:
   - component: {fileID: 1153014725}
   - component: {fileID: 1153014727}
   - component: {fileID: 1153014726}
+  - component: {fileID: 1153014728}
   m_Layer: 0
   m_Name: Attack_basic
   m_TagString: Untagged
@@ -24563,7 +24564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9879458, g: 1, b: 0.99997056, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -24585,6 +24586,24 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1153014724}
+--- !u!114 &1153014728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1153014724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff038abc2f3344eddb11a9047a8a9f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  cooldownRenderer: {fileID: 830181287}
+  PressedColor: {r: 0.98594654, g: 0, b: 0.040601168, a: 1}
+  CooldownColor: {r: 0.4238854, g: 0.42387268, b: 0.42387986, a: 1}
+  DisabledColor: {r: 1, g: 0.99997437, b: 0.9999913, a: 0.1}
+  pressedTime: 0
+  isDisabled: 0
 --- !u!1 &1155412606
 GameObject:
   m_ObjectHideFlags: 0
@@ -28692,7 +28711,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1387801884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad750b87918634583bdd55d6dd9b8794, type: 3}
+  m_Script: {fileID: 11500000, guid: 5184b8c35668b4b218c302336d1215a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0.4
@@ -44877,8 +44896,9 @@ MonoBehaviour:
   isLevelEnded: 0
   isOptionsMenu: 0
   damage: 1000000
+  cooldown: 0.1
   isAttacking: 0
-  attackTime: 0.5
+  attackTime: 0.1
   attackBounds: {fileID: 417546458}
   isStrongAttack: 0
   StrongAttackChargeTime: 1

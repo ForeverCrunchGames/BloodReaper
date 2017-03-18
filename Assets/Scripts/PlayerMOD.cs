@@ -64,6 +64,9 @@ public class PlayerMOD : MonoBehaviour {
 
     [Header("Attack")]
     public float damage;
+    public float cooldown;
+    private bool isCooldown;
+    private float cooldownCounter;
     public bool isAttacking;
     public float attackTime;
     public GameObject attackBounds;
@@ -165,6 +168,7 @@ public class PlayerMOD : MonoBehaviour {
                 {
                     HandleWallSliding();
                 }
+
                 AttackLogic();
 
                 AngularSliding();
@@ -610,8 +614,8 @@ public class PlayerMOD : MonoBehaviour {
     void LifeLogic()
     {
         //Draw Life UI
-        lifeUI.fillAmount = currentLife/100;
-        lifeSecondaryUI.fillAmount = secondaryLife/100;
+        lifeUI.fillAmount = currentLife/maxLife;
+        lifeSecondaryUI.fillAmount = secondaryLife/maxLife;
 
         //Life descreasing
         if (isLifeDecreasing)
@@ -714,41 +718,57 @@ public class PlayerMOD : MonoBehaviour {
 
     public void Attack()
     {
-        int random;
-
-        random = Random.Range(0, 2);
-
-        if (random == 0)
+        if (isCooldown == true)
         {
-            Player.SetTrigger("AtackBasic");
-        }
-        else if (random == 1)
-        {
-            Player.SetTrigger("AtackBasic2");
-        }
+            
+            int random;
 
-        Debug.Log("CATAPUM!");
-        isAttacking = true;
-        sword.Play();
+            //Random attack
+            random = Random.Range(0, 2);
+
+            if (random == 0)
+            {
+                Player.SetTrigger("AtackBasic");
+            }
+            else if (random == 1)
+            {
+                Player.SetTrigger("AtackBasic2");
+            }
+
+            Debug.Log("Basic Attack");
+            isAttacking = true;
+            sword.Play();
+        }
 
     }
     public void AttackLogic()
     {
-        if (isAttacking)
+        if (cooldownCounter >= cooldown)
         {
-            attackBounds.SetActive(true);
+            isCooldown = true;
 
-            timer += Time.deltaTime;
-
-            if (timer >= attackTime)
+            if (isAttacking)
             {
-                isAttacking = false;
-                timer = 0;
+                attackBounds.SetActive(true);
+
+                timer += Time.deltaTime;
+
+                if (timer >= attackTime)
+                {
+                    isAttacking = false;
+                    cooldownCounter = 0;
+                    timer = 0;
+                }
+            }
+            else
+            {
+                attackBounds.SetActive(false);
             }
         }
         else
         {
-            attackBounds.SetActive(false);
+            cooldownCounter += Time.deltaTime;
+            isCooldown = false;
         }
     }
 
