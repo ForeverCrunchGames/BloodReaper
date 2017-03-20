@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 114561657868776954}
   m_Layer: 8
   m_Name: ENEMY MELEE
-  m_TagString: Enemy
+  m_TagString: EnemyMelee
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

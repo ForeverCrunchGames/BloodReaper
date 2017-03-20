@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SpawnerLogic : MonoBehaviour 
 {
-    public PlayerMOD Player;
+    PlayerMOD Player;
+    ScoreSystem score;
 
     public GameObject hitPoint;
     public GameObject explosionParticles;
@@ -16,7 +17,6 @@ public class SpawnerLogic : MonoBehaviour
     public bool isDestroyedState = true;
     [HideInInspector]
     public bool isPlayerInside = false;
-    int _score = 0;
 
     [Header("Spawner Config.")]
     public GameObject enemyPrefab;
@@ -33,6 +33,7 @@ public class SpawnerLogic : MonoBehaviour
     void Start () 
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
+        score = GameObject.FindGameObjectWithTag("Manager").GetComponent<ScoreSystem>();
 
         explosionParticles.SetActive(false);
         healParticles.SetActive(false);
@@ -52,7 +53,7 @@ public class SpawnerLogic : MonoBehaviour
                 explosionParticles.SetActive(true);
                 hitPoint.SetActive(false);
                 splashEffect.SetActive(false);
-                Player.AddScore(_score);
+                score.AddScoreSpawner();
                 isDestroyedState = false;
                 CancelInvoke();
             }

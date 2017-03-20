@@ -198,7 +198,6 @@ public class EnemyMeleeLogic : MonoBehaviour
     public void SetDamage(int hit)
     {
         state = States.DAMAGE;
-        player.AddScore(100);
     }   
     void SetDead()
     {

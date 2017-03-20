@@ -53,8 +53,9 @@ public class PlayerMOD : MonoBehaviour {
     public bool pause;
     public Image lifeUI;
     public Image lifeSecondaryUI;
-    public Text playerScoreUI;
+    //public Text playerScoreUI;
     public bool isCollectionableCollected = false;
+    public GameObject collectionable;
     public Renderer graphics;
     public bool isInmune;
     public float inmuneTime = 1;
@@ -76,6 +77,7 @@ public class PlayerMOD : MonoBehaviour {
     public bool isStrongAttackCharged = false;
 
     private float timer;
+    private float deadTimer;
     private float timerIntro;
 
     [Header("Graphs")]
@@ -106,7 +108,6 @@ public class PlayerMOD : MonoBehaviour {
     public GameObject slideParticles;
     public GameObject runParticles;
     public GameObject DieParticles;
-    public GameObject DieParticles2;
 
     //public Animator Intro;
     public bool isIntroEnded;
@@ -128,7 +129,6 @@ public class PlayerMOD : MonoBehaviour {
         color = graphics.material.color;
         wallSlideParticles.SetActive(false);
         DieParticles.SetActive(false);
-        DieParticles2.SetActive(false);
         pause = false;
         isLevelEnded = false;
         playerUI.SetActive(true);
@@ -185,6 +185,12 @@ public class PlayerMOD : MonoBehaviour {
 
                 }
 
+                //Collectionable
+                if (isCollectionableCollected)
+                {
+                    collectionable.SetActive(true);
+                }
+
                 //Time
                 if (!isTimePaused)
                 {
@@ -193,7 +199,7 @@ public class PlayerMOD : MonoBehaviour {
 
                 //UI TEXTS
                 timeUI.text = ("" + (int)time);  
-                playerScoreUI.text = ("" + playerScore);
+                //playerScoreUI.text = ("" + playerScore);
                 deadCounterText.text = ("" + deadCounter);
 
                 if (wallSliding)
@@ -376,6 +382,7 @@ public class PlayerMOD : MonoBehaviour {
     void SetIdle()
     {
         state = States.IDLE;
+        Player.SetBool("isRunning", false);
     }
     void UpdateIdle()
     {
@@ -394,7 +401,6 @@ public class PlayerMOD : MonoBehaviour {
     {
         if ((velocity.x <= animRunSensibility && velocity.x >= -animRunSensibility) || (controller.collisions.left == true) || (controller.collisions.right == true))
         {
-            Player.SetBool("isRunning", false);
             SetIdle();
         }
     }
@@ -423,7 +429,6 @@ public class PlayerMOD : MonoBehaviour {
         transform.position = spawn;
         currentLife = maxLife;
         DieParticles.SetActive(true);
-        DieParticles2.SetActive(true);
         hit.Play();
         deadCounter += 1;
         avraeScream.Play();
@@ -431,14 +436,13 @@ public class PlayerMOD : MonoBehaviour {
     }
     void UpdateDead()
     {
+        deadTimer += Time.deltaTime;
 
-        timer += Time.deltaTime;
-
-        if (timer >= 1)
+        if (deadTimer >= 1)
         {
-            timer = 0;
+            deadTimer = 0;
             DieParticles.SetActive(false);
-            DieParticles2.SetActive(false);
+
             SetIdle();
         }
     }
@@ -774,7 +778,7 @@ public class PlayerMOD : MonoBehaviour {
 
     public void AddScore(int score)
     {
-        playerScore = playerScore + score;
+        playerScore += score;
     }
 
     void Flip()

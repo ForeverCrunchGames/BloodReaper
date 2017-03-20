@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class BarricadeLogic : MonoBehaviour {
 
+    ScoreSystem score;
+
     public RecieveAttack recieveAttack;
 
     // Use this for initialization
 	void Start () 
     {
-		
+        score = GameObject.FindGameObjectWithTag("Manager").GetComponent<ScoreSystem>();
 	}
 	
 	// Update is called once per frame
@@ -24,6 +26,7 @@ public class BarricadeLogic : MonoBehaviour {
             //Dissolve
 
             //Destroy barricade
+            score.AddScoreBarricade();
             Destroy(gameObject);
         }
 	}

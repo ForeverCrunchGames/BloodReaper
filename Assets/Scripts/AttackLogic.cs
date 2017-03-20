@@ -5,6 +5,9 @@ using UnityEngine;
 public class AttackLogic : MonoBehaviour {
 
     PlayerMOD player;
+    public ScoreSystem score;
+    public int state;
+    public float wait = 0.01f;
 
     void Start ()
     {
@@ -13,10 +16,24 @@ public class AttackLogic : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "EnemyMelee")
         {
-            other.GetComponentInParent<EnemyMeleeLogic>().state = EnemyMeleeLogic.States.DAMAGE;
-            player.currentLife += 5;
+            if (state == 0)
+            {
+                other.GetComponentInParent<EnemyMeleeLogic>().state = EnemyMeleeLogic.States.DAMAGE;
+                score.AddScoreEnemyMelee();
+                player.currentLife += 5;
+                state = 1;
+                //StartCoroutine(Wait());
+            } 
+            else
+            {
+                state = 0;
+            }
+          
+
+           
+
             Debug.Log ("Attacked");
         }
 
@@ -25,6 +42,12 @@ public class AttackLogic : MonoBehaviour {
             other.GetComponentInParent<SpawnerLogic>().isDestroyed = true;
             Debug.Log ("Spawn Destroyed");
         }
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(wait);
+        state = 0;
     }
         
 }
