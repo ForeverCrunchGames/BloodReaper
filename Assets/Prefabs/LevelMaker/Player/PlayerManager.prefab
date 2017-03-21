@@ -2196,6 +2196,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1659993605556022
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4243721232731204}
+  - component: {fileID: 108766663580824568}
+  m_Layer: 0
+  m_Name: Point light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1671508736379718
 GameObject:
   m_ObjectHideFlags: 1
@@ -3378,6 +3394,7 @@ Transform:
   - {fileID: 4353044233503018}
   - {fileID: 4059237223681652}
   - {fileID: 4800920209156828}
+  - {fileID: 4243721232731204}
   m_Father: {fileID: 4996381036975802}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3618,6 +3635,19 @@ Transform:
   - {fileID: 4751314012806622}
   m_Father: {fileID: 4059596536497724}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4243721232731204
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1659993605556022}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.137, y: -0.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4113144525509316}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4246267566508094
 Transform:
@@ -4247,7 +4277,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1694108984969250}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: -20}
+  m_LocalPosition: {x: 0, y: 1.5, z: -25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4996381036975802}
@@ -4786,7 +4816,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.25, g: 0.25, b: 0.25, a: 1}
+  m_BackGroundColor: {r: 0.9879458, g: 1, b: 0.99997056, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -5786,6 +5816,40 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!108 &108766663580824568
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1659993605556022}
+  m_Enabled: 1
+  serializedVersion: 7
+  m_Type: 2
+  m_Color: {r: 0.98603225, g: 0, b: 0.027086869, a: 1}
+  m_Intensity: 1.5
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &114005894129210164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7679,7 +7743,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1694108984969250}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fd999d1b2cf94a45a5b0a47ce074bef, type: 3}
   m_Name: 
@@ -7811,7 +7875,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  saturation: 0.4
+  saturation: 0.3
   selectiveCc: 1
   selectiveFromColor: {r: 0.32159328, g: 0.4523496, b: 0.37237605, a: 1}
   selectiveToColor: {r: 1, g: 1, b: 1, a: 1}
@@ -7870,7 +7934,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1694108984969250}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02536f33053638549ab5c50ff3ecc0de, type: 3}
   m_Name: 
@@ -7879,11 +7943,11 @@ MonoBehaviour:
   screenBlendMode: 0
   hdr: 1
   sepBlurSpread: 8
-  useSrcAlphaAsMask: -1.65
-  bloomIntensity: 3
+  useSrcAlphaAsMask: 0
+  bloomIntensity: 2
   bloomThreshold: 0.66
   bloomBlurIterations: 2
-  lensflares: 1
+  lensflares: 0
   hollywoodFlareBlurIterations: 2
   lensflareMode: 1
   hollyStretchWidth: 3.5
@@ -8554,9 +8618,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4113144525509316}
   distance: 25
-  height: 2
-  rotationDamping: 0
-  heightDamping: 2
+  height: 3
+  heightDamping: 5
+  widthDamping: 5
 --- !u!114 &114906819099176516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -23860,7 +23924,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -118.1, y: 0}
+  m_AnchoredPosition: {x: -109.2, y: 0}
   m_SizeDelta: {x: 161, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224761833900292632

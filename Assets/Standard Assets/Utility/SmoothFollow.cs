@@ -15,16 +15,18 @@ namespace UnityStandardAssets.Utility
 		[SerializeField]
 		private float height = 5.0f;
 
-		[SerializeField]
-		private float rotationDamping;
+		//[SerializeField]
+		//private float rotationDamping;
 		[SerializeField]
 		private float heightDamping;
+        [SerializeField]
+        private float widthDamping;
 
 		// Use this for initialization
 		void Start() { }
 
 		// Update is called once per frame
-		void LateUpdate()
+		void LateUpdate() 
 		{
 			// Early out if we don't have a target
 			if (!target)
@@ -32,16 +34,19 @@ namespace UnityStandardAssets.Utility
 
 			// Calculate the current rotation angles
 			var wantedRotationAngle = target.eulerAngles.y;
-			var wantedHeight = target.position.y + height;
+            var wantedHeight = target.position.y + height;
+			var wantedWidth = target.position.x;
 
 			var currentRotationAngle = transform.eulerAngles.y;
-			var currentHeight = transform.position.y;
+            var currentHeight = transform.position.y;
+			var currentWidth = transform.position.x;
 
 			// Damp the rotation around the y-axis
-			currentRotationAngle = Mathf.LerpAngle(currentRotationAngle, wantedRotationAngle, rotationDamping * Time.deltaTime);
+			currentRotationAngle = Mathf.LerpAngle(currentRotationAngle, wantedRotationAngle, Time.deltaTime);
 
 			// Damp the height
-			currentHeight = Mathf.Lerp(currentHeight, wantedHeight, heightDamping * Time.deltaTime);
+            currentHeight = Mathf.Lerp(currentHeight, wantedHeight, heightDamping * Time.deltaTime);
+			currentWidth = Mathf.Lerp(currentWidth, wantedWidth, widthDamping * Time.deltaTime);
 
 			// Convert the angle into a rotation
 			var currentRotation = Quaternion.Euler(0, currentRotationAngle, 0);
@@ -52,10 +57,11 @@ namespace UnityStandardAssets.Utility
 			transform.position -= currentRotation * Vector3.forward * distance;
 
 			// Set the height of the camera
-			transform.position = new Vector3(transform.position.x ,currentHeight , transform.position.z);
+            transform.position = new Vector3(currentWidth ,currentHeight , transform.position.z);
 
 			// Always look at the target
-			transform.LookAt(target);
+            transform.LookAt(target);
+
 		}
 	}
 }

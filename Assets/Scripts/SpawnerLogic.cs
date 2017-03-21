@@ -26,7 +26,7 @@ public class SpawnerLogic : MonoBehaviour
     public int maxEnemies = 5;
     int spawnDirection; //0 left, 1 right, 2 intercalate
     int _direction = -1;
-    int counter = -1;
+    public int counter = -1;
 
 
     // Use this for initialization

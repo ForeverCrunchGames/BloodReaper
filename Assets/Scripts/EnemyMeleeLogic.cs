@@ -59,7 +59,6 @@ public class EnemyMeleeLogic : MonoBehaviour
 
     public void Init(SpawnerLogic spawner){
         _spawner = spawner;
-
     }
 
     // Update is called once per frame
@@ -172,11 +171,6 @@ public class EnemyMeleeLogic : MonoBehaviour
     }
     void UpdateDamage()
     {
-        enemyGraphics.SetActive(false);
-        enemyBounds.SetActive(false);
-        enemyExplosion.SetActive(true);
-        _spawner.LostOne ();
-        Destroy(gameObject, 1);
     }
 
     void SetIdle()
@@ -195,9 +189,14 @@ public class EnemyMeleeLogic : MonoBehaviour
     {
         state = States.ATTACK;
     }   
-    public void SetDamage(int hit)
+    public void SetDamage(int damage)
     {
         state = States.DAMAGE;
+        enemyGraphics.SetActive(false);
+        enemyBounds.SetActive(false);
+        enemyExplosion.SetActive(true);
+        _spawner.LostOne ();
+        Destroy(gameObject, 0.5f);
     }   
     void SetDead()
     {
@@ -214,7 +213,10 @@ public class EnemyMeleeLogic : MonoBehaviour
     {
         if (other.tag == "Hazzard")
         {
-            SetDamage(1000);
+            if (state != States.DAMAGE)
+            {
+                SetDamage(1000);
+            }
         }
     }
 }

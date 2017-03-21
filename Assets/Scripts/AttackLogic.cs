@@ -20,7 +20,8 @@ public class AttackLogic : MonoBehaviour {
         {
             if (state == 0)
             {
-                other.GetComponentInParent<EnemyMeleeLogic>().state = EnemyMeleeLogic.States.DAMAGE;
+                other.GetComponentInParent<EnemyMeleeLogic>().SetDamage(1);
+
                 score.AddScoreEnemyMelee();
                 player.currentLife += 5;
                 state = 1;
