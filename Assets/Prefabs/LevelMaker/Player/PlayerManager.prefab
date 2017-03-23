@@ -6137,9 +6137,9 @@ MonoBehaviour:
   timeToJumpApex: 0.3
   accelerationTimeAirborne: 0.2
   accelerationTimeGrounded: 0.1
-  moveSpeed: 13
+  moveSpeed: 10
   wallJumpClimb: {x: 10, y: 25}
-  wallJumpOff: {x: 40, y: 25}
+  wallJumpOff: {x: 25, y: 25}
   wallLeap: {x: 15, y: 25}
   wallSlideSpeedMax: 10
   wallStickTime: 0.05
@@ -6183,6 +6183,7 @@ MonoBehaviour:
   Player: {fileID: 95013003634900686}
   animRunSensibility: 0.1
   deadCounterAnim: {fileID: 95131802205639856}
+  velocity: {x: 0, y: 0, z: 0}
   wallSlideParticles: {fileID: 1534806835762126}
   slideParticles: {fileID: 1274575763427204}
   runParticles: {fileID: 0}
@@ -7878,7 +7879,7 @@ MonoBehaviour:
   saturation: 0.3
   selectiveCc: 1
   selectiveFromColor: {r: 0.32159328, g: 0.4523496, b: 0.37237605, a: 1}
-  selectiveToColor: {r: 1, g: 1, b: 1, a: 1}
+  selectiveToColor: {r: 0.81604886, g: 0.8967911, b: 0.99955046, a: 1}
   mode: 0
   updateTextures: 1
   colorCorrectionCurvesShader: {fileID: 4800000, guid: 62bcade1028c24ca1a39760ed84b9487,
@@ -7934,17 +7935,17 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1694108984969250}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02536f33053638549ab5c50ff3ecc0de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tweakMode: 0
-  screenBlendMode: 0
-  hdr: 1
-  sepBlurSpread: 8
+  screenBlendMode: 1
+  hdr: 2
+  sepBlurSpread: 3
   useSrcAlphaAsMask: 0
-  bloomIntensity: 2
+  bloomIntensity: 1
   bloomThreshold: 0.66
   bloomBlurIterations: 2
   lensflares: 0
@@ -8613,14 +8614,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1694108984969250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76806479d916a64aa03f8e3eba7912f, type: 3}
+  m_Script: {fileID: 11500000, guid: a7ad38042f1f6417e839e9663dc0e838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4113144525509316}
-  distance: 25
   height: 3
-  heightDamping: 5
-  widthDamping: 5
+  maxZoom: 30
+  minZoom: 15
+  velocityToZoom: 8
+  heightDamping: 2
+  widthDamping: 3
+  zoomDamping: 0.5
 --- !u!114 &114906819099176516
 MonoBehaviour:
   m_ObjectHideFlags: 1

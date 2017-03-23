@@ -93,7 +93,7 @@ public class PlayerMOD : MonoBehaviour {
 	float gravity;
     float maxJumpVelocity;
     float minJumpVelocity;
-	Vector3 velocity;
+	public Vector3 velocity;
 	float velocityXSmoothing;
 
     Controller2DMOD controller;

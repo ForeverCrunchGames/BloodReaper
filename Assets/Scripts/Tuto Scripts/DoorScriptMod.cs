@@ -49,7 +49,11 @@ public class DoorScriptMod : MonoBehaviour {
 	public void DoorOpens()
 	{
         isDoorOpened = true;
-        key.SetActive(true);
+
+        if (!key)
+            return;
+        else key.SetActive(true);
+
         anim.SetTrigger("OpenDoor");
     }
 
