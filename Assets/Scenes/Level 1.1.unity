@@ -1136,6 +1136,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 5.34
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &106235841 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4283427868872146, guid: 6966b09d8fb0e40d7acfdd1ee9e9584d,
@@ -1593,6 +1594,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 4
   delayY: 7.05
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &136043177 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4377215060751984, guid: 794ae97a170054bc6afbdbd0c861f9cc,
@@ -2278,6 +2280,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 5.34
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &214101270 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4283427868872146, guid: 6966b09d8fb0e40d7acfdd1ee9e9584d,
@@ -5684,7 +5687,7 @@ Prefab:
     - target: {fileID: 224247212392057800, guid: 8e96956dca1f84320b42041e4802480d,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 530.89
       objectReference: {fileID: 0}
     - target: {fileID: 224247212392057800, guid: 8e96956dca1f84320b42041e4802480d,
         type: 2}
@@ -5846,6 +5849,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 0.2
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &498774375
 Prefab:
   m_ObjectHideFlags: 0
@@ -6152,6 +6156,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 4
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &548241261
 Prefab:
   m_ObjectHideFlags: 0
@@ -16055,6 +16060,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 4
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1400461569 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4283427868872146, guid: 6966b09d8fb0e40d7acfdd1ee9e9584d,
@@ -17319,6 +17325,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 0.2
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1527949037 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4017607418333124, guid: 5458d3619447e4f02a8ba2ee841025b3,
@@ -17345,6 +17352,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 0.2
   delayY: 5.11
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &1530350895
 Prefab:
   m_ObjectHideFlags: 0
@@ -19850,6 +19858,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 4
   delayY: 5.87
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &1720985297
 Prefab:
   m_ObjectHideFlags: 0
@@ -20703,6 +20712,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 4
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1788176591 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4283427868872146, guid: 6966b09d8fb0e40d7acfdd1ee9e9584d,
@@ -21959,6 +21969,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 5.34
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &1885639623
 Prefab:
   m_ObjectHideFlags: 0
@@ -22133,6 +22144,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 5.34
   delayY: 5.87
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1897712899 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4283427868872146, guid: 6966b09d8fb0e40d7acfdd1ee9e9584d,

@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class SinusMovment : MonoBehaviour {
 
-    [Range(0f, 10f)]
+    [Range(0f, 100f)]
     public float velocityX = 1f;
-    [Range(0f, 10f)]
+    [Range(0f, 100f)]
     public float distanceX = 5f;
-    [Range(0f, 10f)]
+    [Range(0f, 100f)]
     public float delayX = 0;
-    [Range(0f, 10f)]
+    [Range(0f, 100f)]
     public float velocityY = 1f;
-    [Range(0f, 10f)]
+    [Range(0f, 100f)]
     public float distanceY = 5f;
     [Range(0f, 10f)]
     public float delayY = 0;
 
-    private Vector3 startPosition;
+    public Vector3 startPosition;
    
 	// Use this for initialization
 	void Start () 

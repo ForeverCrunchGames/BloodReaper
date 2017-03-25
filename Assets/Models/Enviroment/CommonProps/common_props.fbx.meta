@@ -33,6 +33,8 @@ ModelImporter:
     100050: trunk_pathblocker_01
     100052: stairs_01
     100054: tutorialStone_01
+    100056: valla_01
+    100058: valla_04
     400000: bush_01
     400002: bush_02
     400004: //RootNode
@@ -61,6 +63,8 @@ ModelImporter:
     400050: trunk_pathblocker_01
     400052: stairs_01
     400054: tutorialStone_01
+    400056: valla_01
+    400058: valla_04
     2300000: bush_01
     2300002: bush_02
     2300004: crystal_little_01
@@ -88,6 +92,8 @@ ModelImporter:
     2300048: trunk_pathblocker_01
     2300050: stairs_01
     2300052: tutorialStone_01
+    2300054: valla_01
+    2300056: valla_04
     3300000: bush_01
     3300002: bush_02
     3300004: crystal_little_01
@@ -115,6 +121,8 @@ ModelImporter:
     3300048: trunk_pathblocker_01
     3300050: stairs_01
     3300052: tutorialStone_01
+    3300054: valla_01
+    3300056: valla_04
     4300000: rock_little_01
     4300002: rock_little_03
     4300004: rock_little_02
@@ -142,6 +150,8 @@ ModelImporter:
     4300048: spikes_01
     4300050: stairs_01
     4300052: tutorialStone_01
+    4300054: valla_01
+    4300056: valla_04
   materials:
     importMaterials: 1
     materialName: 0
@@ -166,7 +176,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

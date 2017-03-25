@@ -96,6 +96,9 @@ public class PlayerMOD : MonoBehaviour {
 	public Vector3 velocity;
 	float velocityXSmoothing;
 
+    private float jumpCounter;
+    public float jumpTimeAnim;
+
     Controller2DMOD controller;
 
 	Vector2 directionalInput;
@@ -118,6 +121,8 @@ public class PlayerMOD : MonoBehaviour {
     public AudioSource sword;
     public AudioSource avraeScream;
 
+    public Transform upperBody;
+
 	void Start() 
     {   
         //Calls
@@ -134,9 +139,6 @@ public class PlayerMOD : MonoBehaviour {
         playerUI.SetActive(true);
         scoreUI.SetActive(false);
         optionsUI.SetActive(false);
-
-        //Anims
-        animRunSensibility = 5f;
 
         //Gravity start calculation
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
@@ -284,6 +286,12 @@ public class PlayerMOD : MonoBehaviour {
                 }
 
                 //Animation Controllers
+
+                if (Input.GetButtonDown("Jump"))
+                {
+                    SetJump();
+                }
+
                 if (velocity.y > 0)
                 {
                     Player.SetBool("VelocityUp", true);
@@ -293,13 +301,20 @@ public class PlayerMOD : MonoBehaviour {
                     Player.SetBool("VelocityUp", false);
                 }
 
+                //Detect floor
                 if (controller.collisions.below)
                 {
-                    //Player.SetBool("isJumping", false);
+                    Player.SetBool("isJumping", false);
+                    jumpCounter = 0;
                 }
                 else
                 {
-                    //Player.SetBool("isJumping", true);
+                    jumpCounter += Time.deltaTime;
+
+                    if (jumpTimeAnim < jumpCounter)
+                    {
+                        Player.SetBool("isJumping", true);
+                    }   
                 }
 
                 if (!isIntroEnded)
@@ -390,6 +405,7 @@ public class PlayerMOD : MonoBehaviour {
         {
             SetRun();
         }
+            
     }
     //------------------------------
     void SetRun()
@@ -403,16 +419,20 @@ public class PlayerMOD : MonoBehaviour {
         {
             SetIdle();
         }
+            
     }
     //------------------------------
     void SetJump()
     {
         state = States.JUMP;
-        Player.SetBool("isJumping", true);
+        Player.SetTrigger("JumpPush");
     }
     void UpdateJump()
     {
-        
+        if (Player.GetBool("isJumping") == false)
+        {
+            SetIdle();
+        }
     }
     //------------------------------
     void UpdateAttack()
@@ -728,15 +748,20 @@ public class PlayerMOD : MonoBehaviour {
             int random;
 
             //Random attack
-            random = Random.Range(0, 2);
+            random = Random.Range(0, 3);
 
             if (random == 0)
             {
                 Player.SetTrigger("AtackBasic");
+                //Player.Play("Attack01")
             }
             else if (random == 1)
             {
                 Player.SetTrigger("AtackBasic2");
+            }
+            else if (random == 2)
+            {
+                Player.SetTrigger("AttackBasic3");
             }
 
             Debug.Log("Basic Attack");

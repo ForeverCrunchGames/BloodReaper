@@ -135,24 +135,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 23212499624905148, guid: 8662259fc404b46328c89d8e9d0915d5,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 411f449fcb54540e4b8f897c5664a315, type: 2}
-    - target: {fileID: 23030392461857042, guid: 8662259fc404b46328c89d8e9d0915d5,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 39d28dfa027fa4acb93e69cfddebd54b, type: 2}
-    - target: {fileID: 4113144525509316, guid: 8662259fc404b46328c89d8e9d0915d5, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4113144525509316, guid: 8662259fc404b46328c89d8e9d0915d5, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8662259fc404b46328c89d8e9d0915d5, type: 2}
   m_IsPrefabParent: 0
@@ -991,6 +973,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 5.34
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &112471703
 Prefab:
   m_ObjectHideFlags: 0
@@ -1062,7 +1045,7 @@ Prefab:
     - target: {fileID: 224247212392057800, guid: 8e96956dca1f84320b42041e4802480d,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 224247212392057800, guid: 8e96956dca1f84320b42041e4802480d,
         type: 2}
@@ -1453,6 +1436,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 4
   delayY: 7.05
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &134076800
 Prefab:
   m_ObjectHideFlags: 0
@@ -2128,6 +2112,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 5.34
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &207740359 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4283427868872146, guid: 6966b09d8fb0e40d7acfdd1ee9e9584d,
@@ -4796,6 +4781,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 0.2
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &500723363
 Prefab:
   m_ObjectHideFlags: 0
@@ -5441,6 +5427,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 4
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &549308234 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4741510626107136, guid: 83511d3ecf00a4a9c931a76518e6efbf,
@@ -14868,6 +14855,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 4
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &1399577084
 Prefab:
   m_ObjectHideFlags: 0
@@ -15913,6 +15901,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 0.2
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &1529285318
 Prefab:
   m_ObjectHideFlags: 0
@@ -15980,6 +15969,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 0.2
   delayY: 5.11
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &1530183650
 Prefab:
   m_ObjectHideFlags: 0
@@ -17992,6 +17982,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 4
   delayY: 5.87
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1714057218 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4262495908514286, guid: 063920d297612416484f72fdeb835adf,
@@ -18744,6 +18735,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 4
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &1791101155
 Prefab:
   m_ObjectHideFlags: 0
@@ -20002,6 +19994,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 5.34
   delayY: 10
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &1883625985
 Prefab:
   m_ObjectHideFlags: 0
@@ -20207,6 +20200,7 @@ MonoBehaviour:
   velocityY: 0
   distanceY: 5.34
   delayY: 5.87
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1897208650 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4262495908514286, guid: 063920d297612416484f72fdeb835adf,

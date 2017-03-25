@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackLogic : MonoBehaviour {
 
     PlayerMOD player;
+    MainCamera cam;
     public ScoreSystem score;
     public int state;
     public float wait = 0.01f;
@@ -12,6 +13,7 @@ public class AttackLogic : MonoBehaviour {
     void Start ()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MainCamera>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -22,6 +24,12 @@ public class AttackLogic : MonoBehaviour {
             {
                 other.GetComponentInParent<EnemyMeleeLogic>().SetDamage(1);
 
+                cam.isShaking = true;
+                cam.shakeTime = 0.2f;
+                cam.shakePower = 0.1f;
+
+                Time.timeScale = 0.5f;
+
                 score.AddScoreEnemyMelee();
                 player.currentLife += 5;
                 state = 1;
@@ -30,6 +38,7 @@ public class AttackLogic : MonoBehaviour {
             else
             {
                 state = 0;
+                Time.timeScale = 1;
             }
           
 
