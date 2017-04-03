@@ -9,7 +9,7 @@ public class SpawnerLogic : MonoBehaviour
 
     public GameObject hitPoint;
     public GameObject explosionParticles;
-    public GameObject healParticles;
+    public ParticleSystem healParticles;
     public GameObject splashEffect;
 
     public bool isDestroyed = false;
@@ -24,7 +24,7 @@ public class SpawnerLogic : MonoBehaviour
     public float spawnRate = 2;
     public float lifeRegenSpeed = 10;
     public int maxEnemies = 5;
-    int spawnDirection; //0 left, 1 right, 2 intercalate
+    public int spawnDirection; //0 left, 1 right, 2 intercalate, 3 random
     int _direction = -1;
     public int counter = -1;
 
@@ -36,7 +36,8 @@ public class SpawnerLogic : MonoBehaviour
         score = GameObject.FindGameObjectWithTag("Manager").GetComponent<ScoreSystem>();
 
         explosionParticles.SetActive(false);
-        healParticles.SetActive(false);
+        //healParticles.SetActive(false);
+        healParticles.Stop();
         splashEffect.SetActive(true);
         hitPoint.SetActive(true);
 
@@ -60,13 +61,15 @@ public class SpawnerLogic : MonoBehaviour
 
             if (isPlayerInside == true)
             {
-                healParticles.SetActive(true);
+                //healParticles.SetActive(true);
+                healParticles.Play();
                 Player.currentLife += lifeRegenSpeed * Time.deltaTime;
                 Player.spawn = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
             }
             else
             {
-                healParticles.SetActive(false);
+                //healParticles.SetActive(false);
+                healParticles.Stop();
             }
         }
         else
@@ -88,17 +91,17 @@ public class SpawnerLogic : MonoBehaviour
             //Spawn direction
             if (spawnDirection == 0)
             {
+                go.GetComponent<EnemyMeleeLogic> ().changeDirection = true;
             }
             else if (spawnDirection == 1)
             {
             }
-            else
-            {
-                _direction *= -1;
-
-                if (_direction == -1)
+            else if (spawnDirection == 2)
+            {   
+                if (counter % 2 == 0)
                 {
-                }       
+                    go.GetComponent<EnemyMeleeLogic> ().changeDirection = true;
+                }
             }
         }
         else if (counter >= maxEnemies)

@@ -90,6 +90,10 @@ public class PlayerMOD : MonoBehaviour {
 
     public Animator deadCounterAnim;
 
+    public bool isIntroAnim;
+    public bool isDeadAnim;
+    public int deadState;
+
 	float gravity;
     float maxJumpVelocity;
     float minJumpVelocity;
@@ -111,6 +115,7 @@ public class PlayerMOD : MonoBehaviour {
     public GameObject slideParticles;
     public GameObject runParticles;
     public GameObject DieParticles;
+    public GameObject swordMesh;
 
     //public Animator Intro;
     public bool isIntroEnded;
@@ -122,6 +127,9 @@ public class PlayerMOD : MonoBehaviour {
     public AudioSource avraeScream;
 
     public Transform upperBody;
+
+
+    public bool isScripted;
 
 	void Start() 
     {   
@@ -155,7 +163,7 @@ public class PlayerMOD : MonoBehaviour {
         //////////////////////////////
         if (!pause)
         {
-            if (!isLevelEnded)
+            if (!isLevelEnded || !isDeadAnim || !isScripted)
             {
                 Time.timeScale = 1;
 
@@ -169,6 +177,11 @@ public class PlayerMOD : MonoBehaviour {
                 if (isPlayerOverpowered == true)
                 {
                     HandleWallSliding();
+                    swordMesh.SetActive(true);
+                }
+                else
+                {
+                    swordMesh.SetActive(false);
                 }
 
                 AttackLogic();
@@ -446,24 +459,47 @@ public class PlayerMOD : MonoBehaviour {
     public void SetDead()
     {
         state = States.DEAD;
-        transform.position = spawn;
-        currentLife = maxLife;
-        DieParticles.SetActive(true);
-        hit.Play();
-        deadCounter += 1;
-        avraeScream.Play();
-        deadCounterAnim.SetTrigger("dead");
     }
     void UpdateDead()
     {
-        deadTimer += Time.deltaTime;
-
-        if (deadTimer >= 1)
+        if (deadState == 0)
         {
-            deadTimer = 0;
-            DieParticles.SetActive(false);
+            hit.Play();
+            Player.SetTrigger("SetDead");
+            isDeadAnim = true;
 
-            SetIdle();
+            deadState = 1;
+        }
+        else if (deadState == 1)
+        {
+            //deadAnimTime
+            deadTimer += Time.deltaTime;
+
+            if (deadTimer >= 0.8f)
+            {
+                transform.position = spawn;
+                currentLife = maxLife;
+                deadCounter += 1;
+
+                avraeScream.Play();
+                deadCounterAnim.SetTrigger("dead");
+
+                deadTimer = 0;
+                deadState = 2;
+            }
+        }
+        else if (deadState == 2)
+        {
+            deadTimer += Time.deltaTime;
+
+            if (deadTimer >= 1.5f)
+            {
+                isDeadAnim = false;
+                deadTimer = 0;
+                deadState = 0;
+
+                SetIdle();
+            }
         }
     }
     //------------------------------
@@ -506,7 +542,7 @@ public class PlayerMOD : MonoBehaviour {
         Debug.Log("Exit Pause");
     }
     //------------------------------
-    void SetScore()
+    public void SetScore()
     {
         state = States.SCORE;
         scoreUI.SetActive(true);
@@ -702,38 +738,6 @@ public class PlayerMOD : MonoBehaviour {
     }
     public void StrongAttackLogic()
     {
-//        if (Input.GetButtonDown("Fire2"))
-//        {
-//            isStrongAttack = true;
-//            Player.SetBool("isAttackStrong", true);
-//
-//            if (isStrongAttackCharged)
-//            {
-//            }
-//            else
-//            {
-//                timer = +Time.deltaTime; 
-//
-//                if (timer >= StrongAttackChargeTime)
-//                {
-//                    isStrongAttackCharged = true;
-//                    timer = 0;
-//                }
-//            }
-//        }
-//        else
-//        {
-//            if (isStrongAttackCharged)
-//            {
-//                Player.SetTrigger("AttackStrong");
-//                isStrongAttack = false;
-//                isStrongAttackCharged = false;
-//            }
-//
-//            isStrongAttack = false;
-//            Player.SetBool("isAttackStrong", false);
-//            timer = 0;
-//        }
     }
 
     public void Defense()

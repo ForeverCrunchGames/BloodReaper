@@ -10,9 +10,14 @@ public class EnemyMeleeLogic : MonoBehaviour
 
     public PlayerMOD player;
 
+    public GameObject explosionPrefab;
+    public GameObject splatterPrefab;
+
+    public Transform spawnPoint;
+
     public GameObject enemyGraphics;
     public GameObject enemyBounds;
-    public GameObject enemyExplosion;
+    //public GameObject enemyExplosion;
     public GameObject enemySight;
 
     public float enemieVelocity = 1f;
@@ -46,6 +51,8 @@ public class EnemyMeleeLogic : MonoBehaviour
 
     public Collider2D attack;
 
+    public bool changeDirection;
+
     // Use this for initialization
     void Start () 
     {
@@ -54,7 +61,7 @@ public class EnemyMeleeLogic : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
         rb = GetComponent<Rigidbody2D>();
-        enemyExplosion.SetActive(false);
+        //enemyExplosion.SetActive(false);
     }
 
     public void Init(SpawnerLogic spawner){
@@ -64,11 +71,25 @@ public class EnemyMeleeLogic : MonoBehaviour
     // Update is called once per frame
     void Update () 
     {
+        if (changeDirection == true)
+        {
+            ChangeDirection();
+            changeDirection = false;
+        }
+
         rb.velocity = new Vector2 (currentVelocity, rb.velocity.y);
 
         isObstacle = Physics2D.Raycast (transform.position, new Vector2(direction, 0), obstacleDisDet, obstacleMask);
         isFloor = Physics2D.Raycast (new Vector2(transform.position.x + 1 * direction, transform.position.y),  Vector2.down, floorDisDet, obstacleMask);
-        //isGrounded = Physics2D.Raycast (transform.position, Vector2.down, obstacleDisDet, obstacleMask);
+
+        if (player.isFacingRight == false)
+        {
+            spawnPoint.transform.rotation = new Quaternion(0, 0, 0, 0);
+        }
+        else if (player.isFacingRight == true)
+        {
+            spawnPoint.transform.rotation = new Quaternion(0, 0, 180, 0);
+        }
 
         switch (state)
         {
@@ -90,11 +111,6 @@ public class EnemyMeleeLogic : MonoBehaviour
             case States.DAMAGE:
                 {
                     UpdateDamage();
-                    break;  
-                }
-            case States.DEAD:
-                {
-                    //UpdateDead();
                     break;  
                 }
             default:
@@ -171,6 +187,7 @@ public class EnemyMeleeLogic : MonoBehaviour
     }
     void UpdateDamage()
     {
+        Destroy(gameObject);
     }
 
     void SetIdle()
@@ -192,16 +209,14 @@ public class EnemyMeleeLogic : MonoBehaviour
     public void SetDamage(int damage)
     {
         state = States.DAMAGE;
-        enemyGraphics.SetActive(false);
-        enemyBounds.SetActive(false);
-        enemyExplosion.SetActive(true);
+        Instantiate(explosionPrefab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(splatterPrefab, spawnPoint.position, spawnPoint.rotation);
+
+        //enemyGraphics.SetActive(false);
+        //enemyBounds.SetActive(false);
+        //enemyExplosion.SetActive(true);
         _spawner.LostOne ();
-        Destroy(gameObject, 0.5f);
     }   
-    void SetDead()
-    {
-        state = States.DEAD;
-    }     
     public void ChangeDirection()
     {
         direction *= -1;
