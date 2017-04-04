@@ -821,6 +821,7 @@ MonoBehaviour:
   velocityY: 5
   distanceY: 0.15
   delayY: 0
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114271550494445358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -829,11 +830,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1171755066283116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f27f1f453ff85bc4ba40b13446d102b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 91764eac8482f4f6abae53eea0b4a99d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 114766862050524358}
-  color: 1
+  door: {fileID: 0}
+  color: 0
 --- !u!114 &114631678340730942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -854,14 +855,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1002153705010866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a7f66464966c0346bae28e282617632, type: 3}
+  m_Script: {fileID: 11500000, guid: 6074eaf8367924aa89d108a45a57ac2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 95790016353427576}
-  doorCollider: {fileID: 1738323665292750}
-  key: {fileID: 1393369435938076}
-  effect: {fileID: 1818467378401400}
-  elimColliderDelay: 0.8
+  anim: {fileID: 0}
+  doorCollider: {fileID: 0}
+  key: {fileID: 0}
+  effect: {fileID: 0}
+  elimColliderDelay: 0
   elimEffectDelay: 0
-  color: 1
+  color: 0
   isKeyCollected: 0
