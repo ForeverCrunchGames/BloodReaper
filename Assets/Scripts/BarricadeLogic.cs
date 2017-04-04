@@ -5,6 +5,8 @@ using UnityEngine;
 public class BarricadeLogic : MonoBehaviour {
 
     ScoreSystem score;
+    public GameObject bounds;
+
 
     public RecieveAttack recieveAttack;
 
@@ -27,7 +29,9 @@ public class BarricadeLogic : MonoBehaviour {
 
             //Destroy barricade
             score.AddScoreBarricade();
-            Destroy(gameObject);
+            bounds.SetActive(false);
+            Debug.Log("Barricade destroyed");
+            //Destroy(gameObject);
         }
 	}
 }

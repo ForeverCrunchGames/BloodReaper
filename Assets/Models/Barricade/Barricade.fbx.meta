@@ -1,15 +1,49 @@
 fileFormatVersion: 2
-guid: 36716164817da49b192ce3a7388a5e6c
-timeCreated: 1491138466
+guid: 7d75761250adf45c38225b1354f0461d
+timeCreated: 1491293463
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: barricade_little
+    100004: barricade_side
+    100006: tablo_01
+    100008: tablo_02
+    100010: tablo_03
+    100012: tablo_04
+    100014: tablo_05
+    100016: tablo_06
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: altar
+    400002: barricade_little
+    400004: barricade_side
+    400006: tablo_01
+    400008: tablo_02
+    400010: tablo_03
+    400012: tablo_04
+    400014: tablo_05
+    400016: tablo_06
+    2300000: barricade_side
+    2300002: tablo_01
+    2300004: tablo_02
+    2300006: tablo_03
+    2300008: tablo_04
+    2300010: tablo_05
+    2300012: tablo_06
+    3300000: barricade_side
+    3300002: tablo_01
+    3300004: tablo_02
+    3300006: tablo_03
+    3300008: tablo_04
+    3300010: tablo_05
+    3300012: tablo_06
+    4300000: tablo_01
+    4300002: tablo_02
+    4300004: tablo_03
+    4300006: tablo_04
+    4300008: tablo_05
+    4300010: tablo_06
+    4300012: barricade_side
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -54,7 +88,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -73,7 +107,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

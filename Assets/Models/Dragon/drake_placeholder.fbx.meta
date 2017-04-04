@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ea73d87e6bd3a4b8fa79b8de79c7b9cf
-timeCreated: 1491154472
+guid: f674c4089c9a049008f9a1d80da3953e
+timeCreated: 1491326130
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: ensia
+    4300000: dents
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -54,7 +54,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
