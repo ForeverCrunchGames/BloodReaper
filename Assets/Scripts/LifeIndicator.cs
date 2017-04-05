@@ -9,7 +9,7 @@ public class LifeIndicator : MonoBehaviour {
 
     MainCamera cam;
 
-    public SinusMovment lifebarMov;
+    public SinusMovmentLifeBar lifebarMov;
 
     Image thisImage;
 

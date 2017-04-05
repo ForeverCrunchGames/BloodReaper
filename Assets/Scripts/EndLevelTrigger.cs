@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EndLevelTrigger : MonoBehaviour {
 
-    GameObject playerObj;
     PlayerMOD player;
 
 
@@ -14,7 +13,6 @@ public class EndLevelTrigger : MonoBehaviour {
     // Use this for initialization
 	void Start () 
     {
-        playerObj = GameObject.FindGameObjectWithTag("Player");
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
 	}
 	

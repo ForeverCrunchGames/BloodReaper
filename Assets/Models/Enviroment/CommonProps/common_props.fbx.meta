@@ -35,6 +35,91 @@ ModelImporter:
     100054: tutorialStone_01
     100056: valla_01
     100058: valla_04
+    100060: Bush_Fence
+    100062: crystal_big_01
+    100064: polySurface14
+    100066: polySurface15
+    100068: polySurface16
+    100070: polySurface17
+    100072: polySurface18
+    100074: polySurface19
+    100076: polySurface2
+    100078: polySurface20
+    100080: polySurface21
+    100082: polySurface22
+    100084: polySurface23
+    100086: polySurface24
+    100088: polySurface25
+    100090: polySurface26
+    100092: polySurface27
+    100094: polySurface28
+    100096: polySurface29
+    100098: polySurface3
+    100100: polySurface30
+    100102: polySurface31
+    100104: polySurface32
+    100106: polySurface33
+    100108: polySurface34
+    100110: polySurface35
+    100112: polySurface36
+    100114: polySurface37
+    100116: polySurface38
+    100118: polySurface39
+    100120: polySurface4
+    100122: polySurface5
+    100124: polySurface6
+    100126: polySurface7
+    100128: polySurface8
+    100130: Spikes_Center
+    100132: Spikes_Corner
+    100134: spikes_Hazard
+    100136: Spikes_Left
+    100138: Spikes_Right
+    100140: Stone_Of_Knowladge
+    100142: transform1
+    100144: transform10
+    100146: transform11
+    100148: transform12
+    100150: transform13
+    100152: transform14
+    100154: transform15
+    100156: transform16
+    100158: transform17
+    100160: transform18
+    100162: transform19
+    100164: transform2
+    100166: transform20
+    100168: transform21
+    100170: transform22
+    100172: transform23
+    100174: transform24
+    100176: transform25
+    100178: transform26
+    100180: transform27
+    100182: transform28
+    100184: transform29
+    100186: transform3
+    100188: transform30
+    100190: transform31
+    100192: transform32
+    100194: transform33
+    100196: transform34
+    100198: transform35
+    100200: transform36
+    100202: transform4
+    100204: transform5
+    100206: transform6
+    100208: transform7
+    100210: transform8
+    100212: transform9
+    100214: Tree_01
+    100216: Tree_02
+    100218: Tree_03
+    100220: tree_03
+    100222: valla_03
+    100224: Veg_Tree_01
+    100226: Veg_Tree_02
+    100228: Veg_Tree_03
     400000: bush_01
     400002: bush_02
     400004: //RootNode
@@ -65,6 +150,91 @@ ModelImporter:
     400054: tutorialStone_01
     400056: valla_01
     400058: valla_04
+    400060: Bush_Fence
+    400062: crystal_big_01
+    400064: polySurface14
+    400066: polySurface15
+    400068: polySurface16
+    400070: polySurface17
+    400072: polySurface18
+    400074: polySurface19
+    400076: polySurface2
+    400078: polySurface20
+    400080: polySurface21
+    400082: polySurface22
+    400084: polySurface23
+    400086: polySurface24
+    400088: polySurface25
+    400090: polySurface26
+    400092: polySurface27
+    400094: polySurface28
+    400096: polySurface29
+    400098: polySurface3
+    400100: polySurface30
+    400102: polySurface31
+    400104: polySurface32
+    400106: polySurface33
+    400108: polySurface34
+    400110: polySurface35
+    400112: polySurface36
+    400114: polySurface37
+    400116: polySurface38
+    400118: polySurface39
+    400120: polySurface4
+    400122: polySurface5
+    400124: polySurface6
+    400126: polySurface7
+    400128: polySurface8
+    400130: Spikes_Center
+    400132: Spikes_Corner
+    400134: spikes_Hazard
+    400136: Spikes_Left
+    400138: Spikes_Right
+    400140: Stone_Of_Knowladge
+    400142: transform1
+    400144: transform10
+    400146: transform11
+    400148: transform12
+    400150: transform13
+    400152: transform14
+    400154: transform15
+    400156: transform16
+    400158: transform17
+    400160: transform18
+    400162: transform19
+    400164: transform2
+    400166: transform20
+    400168: transform21
+    400170: transform22
+    400172: transform23
+    400174: transform24
+    400176: transform25
+    400178: transform26
+    400180: transform27
+    400182: transform28
+    400184: transform29
+    400186: transform3
+    400188: transform30
+    400190: transform31
+    400192: transform32
+    400194: transform33
+    400196: transform34
+    400198: transform35
+    400200: transform36
+    400202: transform4
+    400204: transform5
+    400206: transform6
+    400208: transform7
+    400210: transform8
+    400212: transform9
+    400214: Tree_01
+    400216: Tree_02
+    400218: Tree_03
+    400220: tree_03
+    400222: valla_03
+    400224: Veg_Tree_01
+    400226: Veg_Tree_02
+    400228: Veg_Tree_03
     2300000: bush_01
     2300002: bush_02
     2300004: crystal_little_01
@@ -94,6 +264,22 @@ ModelImporter:
     2300052: tutorialStone_01
     2300054: valla_01
     2300056: valla_04
+    2300058: Bush_Fence
+    2300060: crystal_big_01
+    2300062: polySurface18
+    2300064: Spikes_Center
+    2300066: Spikes_Corner
+    2300068: spikes_Hazard
+    2300070: Spikes_Left
+    2300072: Spikes_Right
+    2300074: Stone_Of_Knowladge
+    2300076: Tree_01
+    2300078: Tree_02
+    2300080: Tree_03
+    2300082: valla_03
+    2300084: Veg_Tree_01
+    2300086: Veg_Tree_02
+    2300088: Veg_Tree_03
     3300000: bush_01
     3300002: bush_02
     3300004: crystal_little_01
@@ -123,6 +309,22 @@ ModelImporter:
     3300052: tutorialStone_01
     3300054: valla_01
     3300056: valla_04
+    3300058: Bush_Fence
+    3300060: crystal_big_01
+    3300062: polySurface18
+    3300064: Spikes_Center
+    3300066: Spikes_Corner
+    3300068: spikes_Hazard
+    3300070: Spikes_Left
+    3300072: Spikes_Right
+    3300074: Stone_Of_Knowladge
+    3300076: Tree_01
+    3300078: Tree_02
+    3300080: Tree_03
+    3300082: valla_03
+    3300084: Veg_Tree_01
+    3300086: Veg_Tree_02
+    3300088: Veg_Tree_03
     4300000: rock_little_01
     4300002: rock_little_03
     4300004: rock_little_02
@@ -152,6 +354,22 @@ ModelImporter:
     4300052: tutorialStone_01
     4300054: valla_01
     4300056: valla_04
+    4300058: crystal_big_01
+    4300060: polySurface18
+    4300062: Tree_02
+    4300064: Tree_01
+    4300066: Tree_03
+    4300068: spikes_Hazard
+    4300070: valla_03
+    4300072: Stone_Of_Knowladge
+    4300074: Spikes_Corner
+    4300076: Spikes_Left
+    4300078: Spikes_Right
+    4300080: Spikes_Center
+    4300082: Veg_Tree_03
+    4300084: Bush_Fence
+    4300086: Veg_Tree_01
+    4300088: Veg_Tree_02
   materials:
     importMaterials: 1
     materialName: 0

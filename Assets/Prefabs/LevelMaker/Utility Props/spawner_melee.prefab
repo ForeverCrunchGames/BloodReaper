@@ -285,7 +285,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1497032157529138}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15, y: 9.5, z: 0}
+  m_LocalPosition: {x: 226.5, y: -17.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4320164787409402}
@@ -581,14 +581,14 @@ MonoBehaviour:
   explosionParticles: {fileID: 1614984555555906}
   healParticles: {fileID: 198706271225135534}
   splashEffect: {fileID: 1595899902155936}
-  isDestroyed: 0
+  isDestroyed: 1
   isDestroyedState: 1
   isPlayerInside: 0
   enemyPrefab: {fileID: 1945115285839674, guid: 53112091bd648423797a334081426c91,
     type: 2}
   spawnPoint: {fileID: 4647190714577750}
   spawnRate: 1
-  lifeRegenSpeed: 20
+  lifeRegenSpeed: 40
   maxEnemies: 5
   spawnDirection: 0
   counter: -1
