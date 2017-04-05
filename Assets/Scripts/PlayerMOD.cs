@@ -132,9 +132,14 @@ public class PlayerMOD : MonoBehaviour {
     public bool isScripted;
     public bool isPlayerHaveWallSlide;
     public bool isPlayerHaveAngularSlide;
+    public bool isAbilityLearned;
 
     public GameObject lifeBar;
     public GameObject TimeScoreUI;
+    public GameObject newAbility;
+
+    int scoreState;
+    float scoreCounter;
 
 	void Start() 
     {   
@@ -154,6 +159,7 @@ public class PlayerMOD : MonoBehaviour {
         optionsUI.SetActive(false);
         slideParticles.SetActive(false);
         TimeScoreUI.SetActive(false);
+        newAbility.SetActive(false);
 
         //Gravity start calculation
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
@@ -562,11 +568,40 @@ public class PlayerMOD : MonoBehaviour {
     public void SetScore()
     {
         state = States.SCORE;
-        scoreUI.SetActive(true);
+        //scoreUI.SetActive(true);
         playerUI.SetActive(false);
     }
     void UpdateScore()
     {
+        if (scoreState == 0)
+        {
+            if (isAbilityLearned)
+            {
+                newAbility.SetActive(true);
+                Cursor.visible = true;
+
+                scoreCounter += Time.deltaTime;
+
+                if (scoreCounter > 1)
+                {
+                    if (Input.anyKey)
+                    {
+                        scoreCounter = 0;
+                        scoreState = 1;
+                    }
+                }
+            }
+            else
+            {
+                scoreState = 1;
+            }
+        }
+        else if (scoreState == 1)
+        {
+            scoreUI.SetActive(true);
+        }
+
+
         if (Input.anyKey)
             {
                 SceneManager.LoadScene ("Main menu");
