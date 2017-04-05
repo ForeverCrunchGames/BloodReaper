@@ -130,6 +130,11 @@ public class PlayerMOD : MonoBehaviour {
 
 
     public bool isScripted;
+    public bool isPlayerHaveWallSlide;
+    public bool isPlayerHaveAngularSlide;
+
+    public GameObject lifeBar;
+    public GameObject TimeScoreUI;
 
 	void Start() 
     {   
@@ -147,6 +152,8 @@ public class PlayerMOD : MonoBehaviour {
         playerUI.SetActive(true);
         scoreUI.SetActive(false);
         optionsUI.SetActive(false);
+        slideParticles.SetActive(false);
+        TimeScoreUI.SetActive(false);
 
         //Gravity start calculation
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
@@ -163,7 +170,7 @@ public class PlayerMOD : MonoBehaviour {
         //////////////////////////////
         if (!pause)
         {
-            if (!isLevelEnded || !isDeadAnim || !isScripted)
+            if (!isLevelEnded)
             {
                 Time.timeScale = 1;
 
@@ -176,17 +183,21 @@ public class PlayerMOD : MonoBehaviour {
 
                 if (isPlayerOverpowered == true)
                 {
-                    HandleWallSliding();
+                    if (isPlayerHaveWallSlide)
+                    {
+                        HandleWallSliding();
+                    }
                     swordMesh.SetActive(true);
+                    lifeBar.SetActive(true);
+
+                    AttackLogic();
+                    AngularSliding();
                 }
                 else
                 {
                     swordMesh.SetActive(false);
+                    lifeBar.SetActive(false);
                 }
-
-                AttackLogic();
-
-                AngularSliding();
 
                 if (!isGodModeOn)
                 {
@@ -197,7 +208,6 @@ public class PlayerMOD : MonoBehaviour {
                 else
                 {
                     UIgodMode.SetActive(true);
-
                 }
 
                 //Collectionable
@@ -209,19 +219,20 @@ public class PlayerMOD : MonoBehaviour {
                 //Time
                 if (!isTimePaused)
                 {
-                    time += Time.deltaTime;
+                    if (isIntroEnded)
+                    {
+                        time += Time.deltaTime;
+                    }
                 }
 
                 //UI TEXTS
                 timeUI.text = ("" + (int)time);  
-                //playerScoreUI.text = ("" + playerScore);
                 deadCounterText.text = ("" + deadCounter);
 
                 if (wallSliding)
                 {
                     Player.SetBool("isWallSliding", true);
                     wallSlideParticles.SetActive(true);
-
                 }
                 else
                 {
@@ -247,21 +258,24 @@ public class PlayerMOD : MonoBehaviour {
                 //Movment
                 if (!isGodModeOn)
                 {
-                    controller.Move(velocity * Time.deltaTime, directionalInput);
-
-                    if (controller.collisions.above || controller.collisions.below)
+                    if (!isScripted)
                     {
-                        if (controller.collisions.slidingDownMaxSlope)
+                        controller.Move(velocity * Time.deltaTime, directionalInput);
+
+                        if (controller.collisions.above || controller.collisions.below)
                         {
-                            velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;
-                        }
-                        else
-                        {
-                            velocity.y = 0;
+                            if (controller.collisions.slidingDownMaxSlope)
+                            {
+                                velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;
+                            }
+                            else
+                            {
+                                velocity.y = 0;
+                            }
                         }
                     }
                 }
-                else
+                else if (isGodModeOn) 
                 {
                     //GodMode Fly
 
@@ -330,16 +344,17 @@ public class PlayerMOD : MonoBehaviour {
                     }   
                 }
 
+
+                //INTRO
                 if (!isIntroEnded)
                 {
                     timerIntro += Time.deltaTime;
 
-                    if (timerIntro >= 2.7f)
+                    if (timerIntro >= 5)
                     {
                         timerIntro = 0;
-                        //Intro.enabled = !Intro.enabled;
                         isIntroEnded = true;
-
+                        TimeScoreUI.SetActive(true);
                     }
                 }
                
@@ -467,6 +482,7 @@ public class PlayerMOD : MonoBehaviour {
             hit.Play();
             Player.SetTrigger("SetDead");
             isDeadAnim = true;
+            isScripted = true;
 
             deadState = 1;
         }
@@ -492,11 +508,12 @@ public class PlayerMOD : MonoBehaviour {
         {
             deadTimer += Time.deltaTime;
 
-            if (deadTimer >= 1.5f)
+            if (deadTimer >= 2f)
             {
                 isDeadAnim = false;
                 deadTimer = 0;
                 deadState = 0;
+                isScripted = false;
 
                 SetIdle();
             }

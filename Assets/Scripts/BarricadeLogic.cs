@@ -31,7 +31,7 @@ public class BarricadeLogic : MonoBehaviour {
             score.AddScoreBarricade();
             bounds.SetActive(false);
             Debug.Log("Barricade destroyed");
-            //Destroy(gameObject);
+            enabled = false;
         }
 	}
 }

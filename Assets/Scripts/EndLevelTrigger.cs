@@ -5,25 +5,24 @@ using UnityEngine;
 public class EndLevelTrigger : MonoBehaviour {
 
     PlayerMOD player;
-
+    MainCamera cam;
 
     public GameObject handle;
     public Animator anim;
+
+    int state;
 
     // Use this for initialization
 	void Start () 
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MainCamera>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    void OnTriggerEnter2D(Collider2D other)
+	void Update () 
     {
-        if (other.tag == "Player")
+        if (state == 1)
         {
             player.transform.parent = handle.transform;
             anim.SetTrigger("Exit");
@@ -34,6 +33,25 @@ public class EndLevelTrigger : MonoBehaviour {
             player.isScripted = true;
             player.SetScore();
             Cursor.visible = true;
+
+            //Ocultar player, emparentar a la nau, allunyar zoom, iniciar anim nau +  volar
+
+            //Esperar
+
+            //New abitie unlocked!
+
+            //Stats
+        }
+	}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            if (state == 0)
+            {
+                state = 1;
+            }
         }
     }
 }
