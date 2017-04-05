@@ -5,10 +5,12 @@ using UnityEngine;
 public class EndLevelTrigger : MonoBehaviour {
 
     PlayerMOD player;
+    GameObject playerObj;
     MainCamera cam;
 
     public GameObject handle;
     public Animator anim;
+    public Animator anim2;
 
     int state;
 
@@ -17,6 +19,7 @@ public class EndLevelTrigger : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MainCamera>();
+        playerObj = GameObject.FindGameObjectWithTag("PlayerGraphics");
 	}
 	
 	// Update is called once per frame
@@ -24,6 +27,8 @@ public class EndLevelTrigger : MonoBehaviour {
     {
         if (state == 1)
         {
+            player.SetScore();
+            player.isLifeDecreasing = false;
             player.transform.parent = handle.transform;
             anim.SetTrigger("Exit");
             anim.SetBool("TrapDoor_Close", true);
@@ -31,16 +36,13 @@ public class EndLevelTrigger : MonoBehaviour {
             anim.SetBool("Wings_Open", true);
             anim.SetFloat("HelicesVelocity", 3);
             player.isScripted = true;
-            player.SetScore();
             Cursor.visible = true;
-
-            //Ocultar player, emparentar a la nau, allunyar zoom, iniciar anim nau +  volar
-
-            //Esperar
-
-            //New abitie unlocked!
-
-            //Stats
+            cam.minZoom = 200;
+            cam.maxZoom = 200;
+            cam.velocityToZoom = 2;
+            anim2.SetTrigger("exit");
+            state = 2;
+            playerObj.SetActive(false);
         }
 	}
 
