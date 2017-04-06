@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuLogic : MonoBehaviour 
 {
-    public GameObject startText;
-
-    public GameObject titleScreen;
     public GameObject menu1;
     public GameObject menu2;
     public GameObject menu3;
@@ -16,16 +13,24 @@ public class MainMenuLogic : MonoBehaviour
 
     float textCounter;
     public float startTextInterval = 1;
-    public int State;
+    int State;
+
+    //Warning
+    public GameObject warningObj;
+    public GameObject warningHandle;
+    public Animator warningAnim;
+    int subState;
+    bool isWarningPassed;
+
+    //Title
+    public GameObject titleScreen;
+    public GameObject startText;
+    public Animator titleAnim;
 
 	void Start () 
     {
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
-
-        State = 1;
-        titleScreen.SetActive(true);
-
+        warningObj.SetActive(true);
+        titleScreen.SetActive(false);
         menu1.SetActive(false);
         menu2.SetActive(false);
         menu3.SetActive(false);
@@ -34,25 +39,74 @@ public class MainMenuLogic : MonoBehaviour
 	
 	void Update () 
     {
+        if (State == 0)
+        {
+            if (Input.anyKey)
+            {
+                subState = 1;
+                warningAnim.SetTrigger("out");
+            }
+
+            if (subState == 1)
+            {
+                textCounter += Time.deltaTime;
+
+                if (textCounter >= 1.5f)
+                {
+                    warningHandle.SetActive(false);
+                    warningAnim.SetTrigger("in");
+                    subState = 2;
+                }
+            }
+            else if (subState == 2)
+            {
+                textCounter += Time.deltaTime;
+
+                if (textCounter >= 2.5f)
+                {
+                    State = 1;
+                    subState = 0;
+                    titleScreen.SetActive(true);
+                    warningObj.SetActive(false);
+                    textCounter = 0;
+                }
+            }
+
+        }
         if (State == 1) //Title
         {
             if (Input.anyKey)
             {
-                SetMenu1();
-            }
-
-            //Text poping
-            /////////////
-            textCounter += Time.deltaTime;
-
-            if (textCounter >= startTextInterval * 2)
-            {
-                startText.SetActive(true);
+                subState = 1;
+                titleAnim.SetTrigger("out");
                 textCounter = 0;
             }
-            else if (textCounter >= startTextInterval)
+                
+            //Text poping
+            /////////////
+            if (subState == 0)
             {
-                startText.SetActive(false);
+                textCounter += Time.deltaTime;
+
+                if (textCounter >= startTextInterval * 2)
+                {
+                    startText.SetActive(true);
+                    textCounter = 0;
+                }
+                else if (textCounter >= startTextInterval)
+                {
+                    startText.SetActive(false);
+                }
+            }
+            else if (subState == 1)
+            {
+                textCounter += Time.deltaTime;
+
+                if (textCounter >= 1.2f)
+                {
+                    SetMenu1();
+                    textCounter = 0;
+                }
             }
             /////////////
         }
@@ -78,6 +132,11 @@ public class MainMenuLogic : MonoBehaviour
         }
 	}
 
+    public void Warning()
+    {
+        
+    }
+
     public void SetMenu1 ()
     {
         State = 2;
@@ -99,13 +158,13 @@ public class MainMenuLogic : MonoBehaviour
     public void BackToMenu2 ()
     {
         State = 3;
-        menu2.SetActive(true);
+        menu1.SetActive(true);
         menu3.SetActive(false);
     } 
     public void SetMenu3 ()
     {
         State = 4;
-        menu2.SetActive(false);
+        menu1.SetActive(false);
         menu3.SetActive(true);
     }
     public void SetTesting ()
@@ -154,5 +213,10 @@ public class MainMenuLogic : MonoBehaviour
     public void Options()
     {
         options.SetActive(true);
+    }
+
+    public void ForeverCrunch()
+    {
+        Application.OpenURL("https://github.com/ForeverCrunchGames/BloodReaper");
     }
 }

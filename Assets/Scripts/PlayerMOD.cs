@@ -783,6 +783,17 @@ public class PlayerMOD : MonoBehaviour {
         hit.Play();
     }
 
+    public void Respawn()
+    {
+        SetDead();
+        optionsUI.SetActive(false);
+        Time.timeScale = 1;
+        pause = false;
+        pauseTimer = 0;
+        Cursor.visible = false;
+
+        Debug.Log("Exit Pause");
+    }
 
     public void StrongAttack()
     {
