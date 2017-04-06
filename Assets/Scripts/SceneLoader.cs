@@ -40,6 +40,8 @@ public class SceneLoader : MonoBehaviour
                 FadeIn();
             }
         }
+
+        Debug.Log("" + _targetAlpha);
 	}
 
     public void Load(int scene)
@@ -90,5 +92,7 @@ public class SceneLoader : MonoBehaviour
         SceneManager.SetActiveScene(scene);
 
 		levelLogic.UpdateSceneState();
+
     }
+        
 }

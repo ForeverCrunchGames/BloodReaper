@@ -4,13 +4,18 @@ using System.Collections;
 
 public class MenuLogic : MonoBehaviour
 {
+    LevelLogic levelLogic;
 
 	private AudioSource clic;
     public GameObject options;
     PlayerMOD player;
 
+    int activeScreen;
+
 	public void Start ()
 	{
+        levelLogic = GameObject.FindGameObjectWithTag("LevelMnanager").GetComponent<LevelLogic>();
+
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
         clic = GetComponent<AudioSource>();
         options.SetActive(false);
@@ -18,14 +23,15 @@ public class MenuLogic : MonoBehaviour
 
 	public void ResetScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+        levelLogic.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        player.ExitPause();
 	}
 
     public void  GoMenu()
     {
         player.ExitPause();
         Cursor.visible = true;
-        SceneManager.LoadScene("Main menu");
+        levelLogic.LoadScene(1);
     }
 
 	public void PlaySound()
@@ -36,6 +42,13 @@ public class MenuLogic : MonoBehaviour
     public void Options()
     {
         options.SetActive(true);
+    }
+
+    public void LoadScene(int i)
+    {
+        levelLogic.LoadScene(i);
+        player.ExitPause();
+
     }
         
 }

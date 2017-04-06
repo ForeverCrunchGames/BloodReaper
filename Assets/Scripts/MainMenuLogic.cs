@@ -32,17 +32,43 @@ public class MainMenuLogic : MonoBehaviour
 	void Start () 
     {
         levelLogic = GameObject.FindGameObjectWithTag("LevelMnanager").GetComponent<LevelLogic>();
+        State = levelLogic.mainMenuState;
 
-        warningObj.SetActive(true);
-        titleScreen.SetActive(false);
-        menu1.SetActive(false);
-        menu2.SetActive(false);
-        menu3.SetActive(false);
-        menuTesting.SetActive(false);
+        if (State == 0)
+        {
+            warningObj.SetActive(true);
+            titleScreen.SetActive(false);
+            menu1.SetActive(false);
+            menu2.SetActive(false);
+            menu3.SetActive(false);
+            menuTesting.SetActive(false);
+        }
+        else if (State == 1)
+        {
+            warningObj.SetActive(false);
+            titleScreen.SetActive(true);
+            menu1.SetActive(false);
+            menu2.SetActive(false);
+            menu3.SetActive(false);
+            menuTesting.SetActive(false);
+        }
+        else if (State == 2)
+        {
+            warningObj.SetActive(false);
+            titleScreen.SetActive(false);
+            menu1.SetActive(false);
+            menu2.SetActive(false);
+            menu3.SetActive(true);
+            menuTesting.SetActive(false);
+        }
+
+        Cursor.visible = true;
+
 	}
-	
 	void Update () 
     {
+        levelLogic.mainMenuState = State;
+
         if (State == 0)
         {
             if (Input.anyKey)
@@ -226,6 +252,6 @@ public class MainMenuLogic : MonoBehaviour
 
     public void ForeverCrunch()
     {
-        Application.OpenURL("https://github.com/ForeverCrunchGames/BloodReaper");
+        Application.OpenURL("https://forevercrunchgames.wixsite.com/bloodreaper");
     }
 }

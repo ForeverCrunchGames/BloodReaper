@@ -5,6 +5,7 @@ using System.Collections;
 public class ScoreManager : MonoBehaviour {
 
     PlayerMOD player;
+    LevelLogic levelLogic;
 
     public GameObject textObj;
     public GameObject finalStatsObj;
@@ -18,6 +19,8 @@ public class ScoreManager : MonoBehaviour {
     // Use this for initialization
 	void Start () 
     {
+        levelLogic = GameObject.FindGameObjectWithTag("LevelMnanager").GetComponent<LevelLogic>();
+
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
         textObj.SetActive(true);
         finalStatsObj.SetActive(false);
@@ -67,22 +70,16 @@ public class ScoreManager : MonoBehaviour {
 
     public void GoMenu()
     {
-        SceneManager.LoadScene("Main menu");
-        scoreState = 0;
-        player.isScoreScreen = false;
+        levelLogic.LoadScene(1);
     }
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
-        scoreState = 0;
-        player.isScoreScreen = false;
+        levelLogic.NextScene();
     }
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
-        scoreState = 0;
-        player.isScoreScreen = false;
+        levelLogic.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

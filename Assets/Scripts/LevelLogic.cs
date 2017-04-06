@@ -18,6 +18,10 @@ public class LevelLogic : MonoBehaviour
 
     bool introScene;
 
+    public int mainMenuState;
+    public bool isLvl1Done;
+    public bool isLvl2Done;
+
 	void Awake()
 	{
 		GameObject go = Instantiate(sceneLoaderGO, Vector3.zero, Quaternion.identity, this.transform) as GameObject;
@@ -27,7 +31,7 @@ public class LevelLogic : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		UpdateSceneState();
+        UpdateSceneState();
 
         if (SceneManager.sceneCount == 1)
         {

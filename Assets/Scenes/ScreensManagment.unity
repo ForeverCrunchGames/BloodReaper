@@ -203,6 +203,9 @@ MonoBehaviour:
   backScene: 0
   currentScene: 0
   nextScene: 0
+  mainMenuState: 0
+  isLvl1Done: 0
+  isLvl2Done: 0
 --- !u!4 &1520617861
 Transform:
   m_ObjectHideFlags: 0

@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4279461426830422}
   - component: {fileID: 198960015588420712}
   - component: {fileID: 199565165831060782}
-  - component: {fileID: 114432232483616084}
   m_Layer: 0
   m_Name: blood_splatter
   m_TagString: Untagged
@@ -42,18 +41,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114432232483616084
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1638747880269694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 998e37620a287d943a0c8e2497426570, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyTime: 1
 --- !u!198 &198960015588420712
 ParticleSystem:
   m_ObjectHideFlags: 1
