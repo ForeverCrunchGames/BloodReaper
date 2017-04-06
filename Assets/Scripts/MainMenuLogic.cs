@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuLogic : MonoBehaviour 
 {
+    public LevelLogic levelLogic;
+
     public GameObject menu1;
     public GameObject menu2;
     public GameObject menu3;
@@ -29,6 +31,8 @@ public class MainMenuLogic : MonoBehaviour
 
 	void Start () 
     {
+        levelLogic = GameObject.FindGameObjectWithTag("LevelMnanager").GetComponent<LevelLogic>();
+
         warningObj.SetActive(true);
         titleScreen.SetActive(false);
         menu1.SetActive(false);
@@ -204,6 +208,11 @@ public class MainMenuLogic : MonoBehaviour
     {
         SceneManager.LoadScene("CombatArena", LoadSceneMode.Single);
     }
+    public void LoadScene(int i)
+    {
+        levelLogic.LoadScene(i);
+    }
+
 
     public void ExitGame()
     {

@@ -17,6 +17,7 @@ TagManager:
   - EnemyMelee
   - Manager
   - PlayerGraphics
+  - LevelMnanager
   layers:
   - Default
   - TransparentFX
