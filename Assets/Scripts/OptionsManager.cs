@@ -7,8 +7,12 @@ public class OptionsManager : MonoBehaviour {
 
     public Dropdown resolutionDropdown;
     public Dropdown qualityDropdown;
-
+    public Slider sliderVolume;
+    public Slider sliderGamma;
     public Animator popup;
+
+    public Color ambientDarkest;
+    public Color ambientLightest;
 
 	// Use this for initialization
 	void Start () 
@@ -17,8 +21,8 @@ public class OptionsManager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update () 
+    {
 	}
 
     public void SetResolution()
@@ -109,6 +113,16 @@ public class OptionsManager : MonoBehaviour {
         popup.SetTrigger("popupinverse");
 
         StartCoroutine(SetInactive());
+    }
+
+    public void Volume()
+    {
+        AudioListener.volume = sliderVolume.value;
+    }
+
+    public void Gamma()
+    {
+        RenderSettings.ambientLight = Color.Lerp(ambientDarkest, ambientLightest, sliderGamma.value);
     }
 
     IEnumerator SetInactive() {
