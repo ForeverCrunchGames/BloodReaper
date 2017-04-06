@@ -140,6 +140,7 @@ public class PlayerMOD : MonoBehaviour {
 
     int scoreState;
     float scoreCounter;
+    public bool isScoreScreen;
 
 	void Start() 
     {   
@@ -160,6 +161,7 @@ public class PlayerMOD : MonoBehaviour {
         slideParticles.SetActive(false);
         TimeScoreUI.SetActive(false);
         newAbility.SetActive(false);
+        lifeBar.SetActive(false);
 
         //Gravity start calculation
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
@@ -193,11 +195,15 @@ public class PlayerMOD : MonoBehaviour {
                     {
                         HandleWallSliding();
                     }
+
                     swordMesh.SetActive(true);
-                    lifeBar.SetActive(true);
 
                     AttackLogic();
-                    AngularSliding();
+
+                    if (isPlayerHaveAngularSlide)
+                    {
+                        AngularSliding();
+                    }
                 }
                 else
                 {
@@ -259,6 +265,11 @@ public class PlayerMOD : MonoBehaviour {
                 if (Input.GetKeyUp(KeyCode.Escape))
                 {
                     SetPause();
+                }
+
+                if (isScoreScreen)
+                {
+                    pause = false;
                 }
 
                 //Movment
@@ -361,9 +372,13 @@ public class PlayerMOD : MonoBehaviour {
                         timerIntro = 0;
                         isIntroEnded = true;
                         TimeScoreUI.SetActive(true);
+
+                        if (isLifeDecreasing)
+                        {
+                            lifeBar.SetActive(true);
+                        }
                     }
                 }
-               
             }
             else if (isLevelEnded)
             {
@@ -568,44 +583,45 @@ public class PlayerMOD : MonoBehaviour {
     public void SetScore()
     {
         state = States.SCORE;
-        //scoreUI.SetActive(true);
+        scoreUI.SetActive(true);
         playerUI.SetActive(false);
+        isScoreScreen = true;
     }
     void UpdateScore()
     {
-        if (scoreState == 0)
-        {
-            if (isAbilityLearned)
-            {
-                newAbility.SetActive(true);
-                Cursor.visible = true;
-
-                scoreCounter += Time.deltaTime;
-
-                if (scoreCounter > 1)
-                {
-                    if (Input.anyKey)
-                    {
-                        scoreCounter = 0;
-                        scoreState = 1;
-                    }
-                }
-            }
-            else
-            {
-                scoreState = 1;
-            }
-        }
-        else if (scoreState == 1)
-        {
-            scoreUI.SetActive(true);
-        }
-
-
-        if (Input.anyKey)
-            {
-                SceneManager.LoadScene ("Main menu");
-            }
+//        if (scoreState == 0)
+//        {
+//            if (isAbilityLearned)
+//            {
+//                newAbility.SetActive(true);
+//                Cursor.visible = true;
+//
+//                scoreCounter += Time.deltaTime;
+//
+//                if (scoreCounter > 1)
+//                {
+//                    if (Input.anyKey)
+//                    {
+//                        scoreCounter = 0;
+//                        scoreState = 1;
+//                    }
+//                }
+//            }
+//            else
+//            {
+//                scoreState = 1;
+//            }
+//        }
+//        else if (scoreState == 1)
+//        {
+//            scoreUI.SetActive(true);
+//        }
+//
+//
+//        if (Input.anyKey)
+//            {
+//                SceneManager.LoadScene ("Main menu");
+//            }
     }
     //////////////////////////////////
 
