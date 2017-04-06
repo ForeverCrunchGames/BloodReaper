@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: m_flyingShip
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _NORMALMAP
+  m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -42,13 +42,13 @@ Material:
     - first:
         name: _EmissionMap
       second:
-        m_Texture: {fileID: 2800000, guid: 06102814ccb564c60a4106604e183a0d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 22cf9b76ca62d49f2b5f746e4b369f1e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: f34eb114da5ee4c11bae07ed3c270946, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6b19a1ce94eca47b6994182792a919eb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -121,7 +121,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.9879458, g: 1, b: 0.99997056, a: 1}
+      second: {r: 0.62677187, g: 0.6291964, b: 0.6375847, a: 1}
     - first:
         name: _EmissionColor
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0, g: 0.6686689, b: 0.729, a: 1}

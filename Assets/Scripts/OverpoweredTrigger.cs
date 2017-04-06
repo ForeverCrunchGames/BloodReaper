@@ -25,6 +25,7 @@ public class OverpoweredTrigger : MonoBehaviour {
         {
             player.isPlayerOverpowered = true;
             player.isLifeDecreasing = true;
+            player.lifeBar.SetActive(true);
             sword.SetActive(false);
             enabled = !enabled;
         }

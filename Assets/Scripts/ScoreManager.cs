@@ -75,7 +75,7 @@ public class ScoreManager : MonoBehaviour {
 
     public void NextLevel()
     {
-        levelLogic.NextScene();
+        levelLogic.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void Restart()
