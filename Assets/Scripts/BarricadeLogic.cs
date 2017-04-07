@@ -7,6 +7,7 @@ public class BarricadeLogic : MonoBehaviour {
     ScoreSystem score;
     public GameObject bounds;
 
+    public AudioSource barricadeSound;
 
     public RecieveAttack recieveAttack;
 
@@ -33,5 +34,11 @@ public class BarricadeLogic : MonoBehaviour {
             Debug.Log("Barricade destroyed");
             enabled = false;
         }
+
+  
 	}
+        public void PlayBarricadeSound()
+        {
+      barricadeSound.Play();
+        }
 }
