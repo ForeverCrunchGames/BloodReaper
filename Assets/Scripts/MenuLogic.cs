@@ -5,7 +5,7 @@ using System.Collections;
 public class MenuLogic : MonoBehaviour
 {
     LevelLogic levelLogic;
-
+  public AudioSource pauseButton; 
 	private AudioSource clic;
     public GameObject options;
     PlayerMOD player;
@@ -50,5 +50,10 @@ public class MenuLogic : MonoBehaviour
         player.ExitPause();
 
     }
+
+  public void pauseSound()
+  {
+    pauseButton.Play();
+  }
         
 }

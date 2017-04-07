@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuLogic : MonoBehaviour 
 {
-    public LevelLogic levelLogic;
 
+    public AudioSource buttonSound; 
+
+    public LevelLogic levelLogic;
     public GameObject menu1;
     public GameObject menu2;
     public GameObject menu3;
@@ -253,5 +255,10 @@ public class MainMenuLogic : MonoBehaviour
     public void ForeverCrunch()
     {
         Application.OpenURL("https://forevercrunchgames.wixsite.com/bloodreaper");
+    }
+
+  public void PlayButtonSound()
+    {
+        buttonSound.Play();
     }
 }
