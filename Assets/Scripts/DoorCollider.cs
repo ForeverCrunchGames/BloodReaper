@@ -13,7 +13,7 @@ public class DoorCollider : MonoBehaviour
             if (door.isKeyCollected)
             {
                 door.DoorOpens();
-                enabled = false;
+                Destroy(gameObject);
             }
         }
     }

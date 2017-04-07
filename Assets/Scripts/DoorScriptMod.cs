@@ -6,9 +6,7 @@ public class DoorScriptMod : MonoBehaviour {
     public Animator anim;
     public GameObject doorCollider;
     public GameObject key;
-    public GameObject effect;
     public float elimColliderDelay;
-    public float elimEffectDelay;
     public int color; //1 blue, 2 magenta, 3 yellow;
     InventorySystem _inventory;
 
@@ -29,19 +27,12 @@ public class DoorScriptMod : MonoBehaviour {
     {
         if (isDoorOpened == true)
         {
-            _inventory.ItemUsed(color);
-
             counter += Time.deltaTime;
-
-            if (counter >= elimEffectDelay)
-            {
-                Destroy(effect);
-            }
 
             if (counter >= elimColliderDelay)
             {
                 Destroy(doorCollider);
-                Destroy(key);
+                enabled = !enabled;
             }
         }
     }
@@ -50,9 +41,9 @@ public class DoorScriptMod : MonoBehaviour {
 	{
         isDoorOpened = true;
 
-        if (!key)
-            return;
-        else key.SetActive(true);
+        _inventory.ItemUsed(color);
+
+        key.SetActive(true);
 
         anim.SetTrigger("OpenDoor");
     }
