@@ -125,6 +125,8 @@ public class PlayerMOD : MonoBehaviour {
     public AudioSource hit;
     public AudioSource sword;
     public AudioSource avraeScream;
+    public AudioSource win;
+    public AudioSource button;
 
     public Transform upperBody;
 
@@ -586,6 +588,7 @@ public class PlayerMOD : MonoBehaviour {
         scoreUI.SetActive(true);
         playerUI.SetActive(false);
         isScoreScreen = true;
+        win.Play();
     }
     void UpdateScore()
     {
@@ -887,6 +890,11 @@ public class PlayerMOD : MonoBehaviour {
     public void AddScore(int score)
     {
         playerScore += score;
+    }
+
+    public void ButtonSound()
+    {
+        button.Play();
     }
 
     void Flip()

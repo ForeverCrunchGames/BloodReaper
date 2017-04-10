@@ -62,7 +62,7 @@ Material:
       second:
         m_Texture: {fileID: 2800000, guid: 188f33f2f376c4f9b92ac427e96f1086, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0, y: 0.05}
     - first:
         name: _LeftTex
       second:

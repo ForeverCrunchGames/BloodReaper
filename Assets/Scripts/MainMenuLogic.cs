@@ -7,8 +7,9 @@ public class MainMenuLogic : MonoBehaviour
 {
 
     public AudioSource buttonSound; 
+    public AudioSource avraeAppears; 
 
-    public LevelLogic levelLogic;
+    LevelLogic levelLogic;
     public GameObject menu1;
     public GameObject menu2;
     public GameObject menu3;
@@ -96,6 +97,7 @@ public class MainMenuLogic : MonoBehaviour
 
                 if (textCounter >= 2.5f)
                 {
+                    avraeAppears.Play();
                     State = 1;
                     subState = 0;
                     titleScreen.SetActive(true);

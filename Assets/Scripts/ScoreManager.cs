@@ -71,6 +71,7 @@ public class ScoreManager : MonoBehaviour {
     public void GoMenu()
     {
         levelLogic.LoadScene(1);
+        AudioListener.volume = 0;
     }
 
     public void NextLevel()

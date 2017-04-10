@@ -54,7 +54,7 @@ public class SpawnerLogic : MonoBehaviour
                 explosionParticles.SetActive(true);
                 hitPoint.SetActive(false);
                 splashEffect.SetActive(false);
-                score.AddScoreSpawner();
+                //score.AddScoreSpawner();
                 isDestroyedState = false;
                 CancelInvoke();
             }

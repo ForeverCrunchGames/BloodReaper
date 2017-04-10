@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class AttackLogic : MonoBehaviour {
 
+    public AudioSource hit01;
+    public AudioSource hit02;
+    public AudioSource hit03;
+
+    int random;
+
     PlayerMOD player;
     MainCamera cam;
     public ScoreSystem score;
@@ -23,6 +29,20 @@ public class AttackLogic : MonoBehaviour {
             if (state == 0)
             {
                 other.GetComponentInParent<EnemyMeleeLogic>().SetDamage(1);
+
+                random = Random.Range(0, 3);
+                if (random == 0)
+                {
+                    hit01.Play();
+                }
+                else if (random == 1)
+                {
+                    hit02.Play();
+                }
+                else if (random == 2)
+                {
+                    hit03.Play();
+                }
 
                 cam.isShaking = true;
                 cam.shakeTime = 0.2f;

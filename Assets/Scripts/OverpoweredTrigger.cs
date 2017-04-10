@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class OverpoweredTrigger : MonoBehaviour {
 
+    public AudioSource trankis;
+    public AudioSource doom;
+
     PlayerMOD player;
     public GameObject sword;
 
@@ -27,6 +30,8 @@ public class OverpoweredTrigger : MonoBehaviour {
             player.isLifeDecreasing = true;
             player.lifeBar.SetActive(true);
             sword.SetActive(false);
+            trankis.Stop();
+            doom.Play();
             enabled = !enabled;
         }
     }
