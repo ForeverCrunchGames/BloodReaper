@@ -48,7 +48,6 @@ public class MenuLogic : MonoBehaviour
     {
         levelLogic.LoadScene(i);
         player.ExitPause();
-
     }
 
   public void pauseSound()

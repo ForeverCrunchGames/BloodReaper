@@ -40,8 +40,6 @@ public class SceneLoader : MonoBehaviour
                 FadeIn();
             }
         }
-
-        Debug.Log("" + _targetAlpha);
 	}
 
     public void Load(int scene)
@@ -70,20 +68,15 @@ public class SceneLoader : MonoBehaviour
         if (scene == -1) Application.Quit();
         else
         {
-            //if (scene == LevelLogic.instance.menuScene) SceneManager.LoadScene(scene);
-            //else
-            {
                 _loading = true;
 
                 /*Load data*/
 
 				if(!levelLogic.IsLastScene())
                 {
-					SceneManager.UnloadScene(levelLogic.currentScene);
+                    SceneManager.UnloadScene(levelLogic.currentScene);
                 }
                 async = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
-
-            }
         }
     }
     void UpdateActiveScene()

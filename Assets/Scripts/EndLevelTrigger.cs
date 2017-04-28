@@ -10,7 +10,6 @@ public class EndLevelTrigger : MonoBehaviour {
 
     public GameObject handle;
     public Animator anim;
-    public Animator anim2;
 
     int state;
 
@@ -40,7 +39,6 @@ public class EndLevelTrigger : MonoBehaviour {
             cam.minZoom = 200;
             cam.maxZoom = 200;
             cam.velocityToZoom = 2;
-            anim2.SetTrigger("exit");
             state = 2;
             playerObj.SetActive(false);
         }

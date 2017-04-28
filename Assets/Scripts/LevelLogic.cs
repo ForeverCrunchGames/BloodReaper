@@ -16,6 +16,7 @@ public class LevelLogic : MonoBehaviour
 	private int _managerScene;
 	private int _sceneCountInBuildSettings;
 
+    //Storing
     bool introScene;
 
     public int mainMenuState;
@@ -38,10 +39,7 @@ public class LevelLogic : MonoBehaviour
             NextScene();
         }
     }
-	void Update()
-	{
 
-	}
 	public void UpdateSceneState()
 	{
 		_sceneCountInBuildSettings = SceneManager.sceneCountInBuildSettings;

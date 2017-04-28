@@ -25,8 +25,8 @@ Material:
         name: _DetailAlbedoMap
       second:
         m_Texture: {fileID: 2800000, guid: 4eb41f4332e2a4a6c8c69f5173599eb6, type: 3}
-        m_Scale: {x: 0, y: 0}
-        m_Offset: {x: 0, y: -0.06}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0, y: 0}
     - first:
         name: _DetailMask
       second:

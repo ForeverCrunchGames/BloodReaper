@@ -164,7 +164,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1945115285839674}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.21, y: -0.07, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4261141732661618}
@@ -453,17 +453,16 @@ MonoBehaviour:
   spawnPoint: {fileID: 4658360031303236}
   enemyGraphics: {fileID: 1766275475886924}
   enemyBounds: {fileID: 1855537447051072}
-  enemyExplosion: {fileID: 0}
   enemySight: {fileID: 1817511584967948}
-  enemieVelocity: 5
+  enemieVelocity: 3
   currentVelocity: 0
-  rageVelocity: 10
+  rageVelocity: 15
   direction: 1
   target: {fileID: 0}
   distanceFromTarget: 0
   huntRange: 10
   attackRange: 0
-  damage: 10
+  damage: 20
   isPlayerDetected: 0
   obstacleMask:
     serializedVersion: 2

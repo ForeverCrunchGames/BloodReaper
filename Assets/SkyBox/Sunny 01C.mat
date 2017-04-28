@@ -20,7 +20,7 @@ Material:
       second:
         m_Texture: {fileID: 2800000, guid: 91da8ed4f6d9a4188933c24efc5f49e0, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0, y: 0.05}
     - first:
         name: _BumpMap
       second:
@@ -68,7 +68,7 @@ Material:
       second:
         m_Texture: {fileID: 2800000, guid: 527386825cf8a45e9b54ef1e7ae9c70b, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0, y: 0.05}
     - first:
         name: _MainTex
       second:
@@ -98,7 +98,7 @@ Material:
       second:
         m_Texture: {fileID: 2800000, guid: ba6538d2d11b442bfbdeed90cf47637e, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0, y: 0.05}
     - first:
         name: _UpTex
       second:
@@ -118,6 +118,9 @@ Material:
     - first:
         name: _DstBlend
       second: 0
+    - first:
+        name: _Exposure
+      second: 1
     - first:
         name: _GlossMapScale
       second: 1
@@ -140,6 +143,9 @@ Material:
         name: _Parallax
       second: 0.02
     - first:
+        name: _Rotation
+      second: 40.9
+    - first:
         name: _SmoothnessTextureChannel
       second: 0
     - first:
@@ -161,3 +167,6 @@ Material:
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _Tint
+      second: {r: 0.5666323, g: 0.57346946, b: 0.57333034, a: 0.5}
