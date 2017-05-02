@@ -144,6 +144,12 @@ public class PlayerMOD : MonoBehaviour {
     float scoreCounter;
     public bool isScoreScreen;
 
+    public bool isRage;
+    public ParticleSystem rageParticles;
+    public float rageTime;
+    public float rageVelocity;
+    public float rageCounter;
+
 	void Start() 
     {   
         //Calls
@@ -272,6 +278,20 @@ public class PlayerMOD : MonoBehaviour {
                 if (isScoreScreen)
                 {
                     pause = false;
+                }
+
+                if (isRage)
+                {
+                    moveSpeed = rageVelocity;
+                    rageCounter += Time.deltaTime;
+                    rageParticles.Play();
+
+                    if (rageCounter >= rageTime)
+                    {
+                        isRage = false;
+                        rageParticles.Stop();
+                        moveSpeed = 8;
+                    }
                 }
 
                 //Movment

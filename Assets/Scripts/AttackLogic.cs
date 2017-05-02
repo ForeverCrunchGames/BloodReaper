@@ -44,6 +44,9 @@ public class AttackLogic : MonoBehaviour {
                     hit03.Play();
                 }
 
+                player.isRage = true;
+                player.rageCounter = 0;
+
                 cam.isShaking = true;
                 cam.shakeTime = 0.2f;
                 cam.shakePower = 0.1f;
