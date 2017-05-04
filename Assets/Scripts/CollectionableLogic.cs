@@ -5,11 +5,13 @@ using UnityEngine;
 public class CollectionableLogic : MonoBehaviour {
 
     PlayerMOD Player;
+    ScoreSystem score;
 
     // Use this for initialization
 	void Start () 
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
+        score = GameObject.FindGameObjectWithTag("Manager").GetComponent<ScoreSystem>();
 	}
 	
 	// Update is called once per frame
@@ -22,6 +24,7 @@ public class CollectionableLogic : MonoBehaviour {
         if (other.tag == "Player")
         {
             Player.isCollectionableCollected = true;
+            score.AddScoreCollectable();
             gameObject.SetActive(false);
         }
     }

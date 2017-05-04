@@ -16,6 +16,7 @@ public class ScoreSystem : MonoBehaviour {
     public int scoreEnemyMelee = 100;
     public int scoreBarricade = 100;
     public int scoreSpawner = 100;
+    public int scoreCollectable = 100;
 
     [Space]
 
@@ -103,6 +104,14 @@ public class ScoreSystem : MonoBehaviour {
     {
         scoreTotal += (float)scoreSpawner;
         scorePopCurrent += (float)scoreSpawner;
+
+        isAddScore = true;
+    }
+
+    public void AddScoreCollectable()
+    {
+        scoreTotal += (float)scoreCollectable;
+        scorePopCurrent += (float)scoreCollectable;
 
         isAddScore = true;
     }
