@@ -10,7 +10,6 @@ public class SpawnerLogic : MonoBehaviour
     public GameObject hitPoint;
     public GameObject explosionParticles;
     public ParticleSystem healParticles;
-    public GameObject splashEffect;
 
     public bool isDestroyed = false;
     [HideInInspector]
@@ -38,7 +37,6 @@ public class SpawnerLogic : MonoBehaviour
         explosionParticles.SetActive(false);
         //healParticles.SetActive(false);
         healParticles.Stop();
-        splashEffect.SetActive(true);
         hitPoint.SetActive(true);
 
         InvokeRepeating("Spawn", spawnRate, spawnRate);
@@ -53,7 +51,6 @@ public class SpawnerLogic : MonoBehaviour
             {
                 explosionParticles.SetActive(true);
                 hitPoint.SetActive(false);
-                splashEffect.SetActive(false);
                 //score.AddScoreSpawner();
                 isDestroyedState = false;
                 CancelInvoke();

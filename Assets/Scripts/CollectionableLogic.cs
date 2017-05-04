@@ -7,6 +7,8 @@ public class CollectionableLogic : MonoBehaviour {
     PlayerMOD Player;
     ScoreSystem score;
 
+    public GameObject explosionPrefab;
+
     // Use this for initialization
 	void Start () 
     {
@@ -23,9 +25,10 @@ public class CollectionableLogic : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            Instantiate(explosionPrefab, transform.position, transform.localRotation); 
             Player.isCollectionableCollected = true;
             score.AddScoreCollectable();
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }

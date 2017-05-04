@@ -33,10 +33,10 @@ public class OverpoweredTrigger : MonoBehaviour {
             trankis.Stop();
             doom.Play();
 
-            player.maxJumpHeight = 4;
-            player.gravity = -(2 * player.maxJumpHeight) / Mathf.Pow (player.timeToJumpApex, 2);
-            player.maxJumpVelocity = Mathf.Abs(player.gravity) * player.timeToJumpApex;
-            player.minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (player.gravity) * player.minJumpHeight);
+//            player.maxJumpHeight = 4;
+//            player.gravity = -(2 * player.maxJumpHeight) / Mathf.Pow (player.timeToJumpApex, 2);
+//            player.maxJumpVelocity = Mathf.Abs(player.gravity) * player.timeToJumpApex;
+//            player.minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (player.gravity) * player.minJumpHeight);
 
 
             enabled = !enabled;
