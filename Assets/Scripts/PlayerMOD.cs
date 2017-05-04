@@ -94,9 +94,9 @@ public class PlayerMOD : MonoBehaviour {
     public bool isDeadAnim;
     public int deadState;
 
-	float gravity;
-    float maxJumpVelocity;
-    float minJumpVelocity;
+	public float gravity;
+    public float maxJumpVelocity;
+    public float minJumpVelocity;
 	public Vector3 velocity;
 	float velocityXSmoothing;
 
