@@ -93,12 +93,12 @@ AnimationClip:
         tangentMode: 0
       - serializedVersion: 2
         time: 3.8333333
-        value: {x: -5.690889, y: 22.822712, z: 0}
-        inSlope: {x: 37.39411, y: -8.490536, z: 0}
-        outSlope: {x: 15.454292, y: -8.490536, z: 0}
+        value: {x: -5.690889, y: 21.409607, z: 0}
+        inSlope: {x: 37.39411, y: -16.630312, z: 0}
+        outSlope: {x: 15.454292, y: -16.630312, z: 0}
         tangentMode: 0
       - serializedVersion: 2
-        time: 4.75
+        time: 4.5
         value: {x: 0.39714867, y: -0.13, z: 0}
         inSlope: {x: 0, y: -52.29765, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -114,6 +114,12 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 4.75
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -309,6 +315,34 @@ AnimationClip:
     path: PLAYER/ParticleSystems/Rage
     classID: 1
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 3.9
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 5
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: isFallingAnim
+    path: PLAYER
+    classID: 114
+    script: {fileID: 11500000, guid: eaf761dd5461540168c2868474490538, type: 3}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -375,6 +409,12 @@ AnimationClip:
       attribute: 2086281974
       script: {fileID: 0}
       classID: 1
+      customType: 0
+      isPPtrCurve: 0
+    - path: 1759624675
+      attribute: 152200878
+      script: {fileID: 11500000, guid: eaf761dd5461540168c2868474490538, type: 3}
+      classID: 114
       customType: 0
       isPPtrCurve: 0
     - path: 3420727683
@@ -499,7 +539,7 @@ AnimationClip:
         outSlope: 15.454292
         tangentMode: 1
       - serializedVersion: 2
-        time: 4.75
+        time: 4.5
         value: 0.39714867
         inSlope: 0
         outSlope: 0
@@ -527,7 +567,7 @@ AnimationClip:
         outSlope: -8.49224
         tangentMode: 1
       - serializedVersion: 2
-        time: 4.75
+        time: 4.5
         value: -0.13
         inSlope: -52.29765
         outSlope: 0
@@ -673,6 +713,12 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
+        time: 4.75
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
         time: 5
         value: 0
         inSlope: Infinity
@@ -863,6 +909,34 @@ AnimationClip:
     path: PLAYER/ParticleSystems/Rage
     classID: 1
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 3.9
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 5
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: isFallingAnim
+    path: PLAYER
+    classID: 114
+    script: {fileID: 11500000, guid: eaf761dd5461540168c2868474490538, type: 3}
   m_EulerEditorCurves:
   - curve:
       serializedVersion: 2

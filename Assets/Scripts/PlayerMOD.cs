@@ -17,6 +17,8 @@ public class PlayerMOD : MonoBehaviour {
 	public float accelerationTimeGrounded = .1f;
 	public float moveSpeed = 6;
 
+    public bool isFallingAnim;
+
 	public Vector2 wallJumpClimb;
 	public Vector2 wallJumpOff;
 	public Vector2 wallLeap;
@@ -196,6 +198,12 @@ public class PlayerMOD : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.F10))
                 {
                     isGodModeOn = !isGodModeOn;
+                }
+
+                if (isFallingAnim == true)
+                {
+                    Player.SetTrigger("IntroFall");
+                    isFallingAnim = false;
                 }
 
                 CalculateVelocity();
