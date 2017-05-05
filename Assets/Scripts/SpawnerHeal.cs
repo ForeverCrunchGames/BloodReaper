@@ -6,12 +6,22 @@ public class SpawnerHeal : MonoBehaviour {
 
     public SpawnerLogic Spawner;
 
+    public AudioSource heal;
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            heal.Play();
+        }
+    }
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             Spawner.isPlayerInside = false;
+            heal.Stop();
         }
     }
 

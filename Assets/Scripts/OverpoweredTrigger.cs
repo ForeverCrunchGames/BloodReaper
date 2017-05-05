@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OverpoweredTrigger : MonoBehaviour {
 
-    public AudioSource trankis;
+    //public AudioSource trankis;
     public AudioSource doom;
 
     PlayerMOD player;
@@ -30,7 +30,7 @@ public class OverpoweredTrigger : MonoBehaviour {
             player.isLifeDecreasing = true;
             player.lifeBar.SetActive(true);
             sword.SetActive(false);
-            trankis.Stop();
+            //trankis.Stop();
             doom.Play();
 
 //            player.maxJumpHeight = 4;
@@ -39,7 +39,7 @@ public class OverpoweredTrigger : MonoBehaviour {
 //            player.minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (player.gravity) * player.minJumpHeight);
 
 
-            enabled = !enabled;
+            Destroy(gameObject);
         }
     }
 }

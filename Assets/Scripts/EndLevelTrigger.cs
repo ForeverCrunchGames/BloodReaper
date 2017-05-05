@@ -8,8 +8,12 @@ public class EndLevelTrigger : MonoBehaviour {
     GameObject playerObj;
     MainCamera cam;
 
+    public AudioSource shipOut;
+
     public GameObject handle;
     public Animator anim;
+    public Animator anim2;
+
 
     int state;
 
@@ -29,7 +33,7 @@ public class EndLevelTrigger : MonoBehaviour {
             player.SetScore();
             player.isLifeDecreasing = false;
             player.transform.parent = handle.transform;
-            anim.SetTrigger("Exit");
+            anim2.SetTrigger("exit");
             anim.SetBool("TrapDoor_Close", true);
             anim.SetBool("Bridge_Open", true);
             anim.SetBool("Wings_Open", true);
@@ -41,6 +45,7 @@ public class EndLevelTrigger : MonoBehaviour {
             cam.velocityToZoom = 2;
             state = 2;
             playerObj.SetActive(false);
+            shipOut.Play();
         }
 	}
 

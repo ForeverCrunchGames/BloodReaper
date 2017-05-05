@@ -124,6 +124,9 @@ public class PlayerMOD : MonoBehaviour {
 
     public AudioSource hit;
     public AudioSource sword;
+    public AudioSource sword1;
+    public AudioSource sword2;
+    public AudioSource sword3;
     public AudioSource avraeScream;
     public AudioSource win;
     public AudioSource button;
@@ -859,20 +862,23 @@ public class PlayerMOD : MonoBehaviour {
             if (random == 0)
             {
                 Player.SetTrigger("AtackBasic");
-                //Player.Play("Attack01")
+                sword1.Play();
+
             }
             else if (random == 1)
             {
                 Player.SetTrigger("AtackBasic2");
+                sword2.Play();
             }
             else if (random == 2)
             {
                 Player.SetTrigger("AttackBasic3");
+                sword3.Play();
             }
 
             Debug.Log("Basic Attack");
             isAttacking = true;
-            sword.Play();
+            //sword.Play();
         }
 
     }

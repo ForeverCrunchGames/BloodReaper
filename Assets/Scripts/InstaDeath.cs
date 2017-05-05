@@ -17,13 +17,18 @@ public class InstaDeath : MonoBehaviour {
         {
             if (player.state != PlayerMOD.States.DEAD)
             {
-                if (player.isGodModeOn == false)
-                {
+                player.RecieveDamage(101);
                 player.SetDead();
-
-                Debug.Log("Insta Death!");
-                }
             }
+//            if (player.state != PlayerMOD.States.DEAD)
+//            {
+//                if (player.isGodModeOn == false)
+//                {
+//                    player.SetDead();
+//
+//                    Debug.Log("Insta Death!");
+//                }
+//            }
         }
     }
 }

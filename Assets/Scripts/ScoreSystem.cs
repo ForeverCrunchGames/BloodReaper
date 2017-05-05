@@ -9,6 +9,8 @@ public class ScoreSystem : MonoBehaviour {
     public Text scoreUI;
     public Text scorePopUpUI;
     public GameObject PopUp;
+    public AudioSource sound1;
+    public AudioSource sound2;
 
     [Space]
 
@@ -51,6 +53,7 @@ public class ScoreSystem : MonoBehaviour {
             {
                 PopUp.SetActive(true);
                 StartCoroutine(WaitPopUp());
+                sound1.Play();
                 state = 1;
             }
             else if (state == 1)
@@ -62,8 +65,11 @@ public class ScoreSystem : MonoBehaviour {
                 scorePopCurrent = Mathf.Lerp(scorePopCurrent, 0f, timeInterpolation);
                 scoreCurrent = Mathf.Lerp(scoreCurrent, scoreTotal, timeInterpolation);
 
+                sound2.Play();
+
                 if (scorePopCurrent < 1)
                 {
+                    sound2.Stop();
                     scoreCurrent = scoreTotal;
                     scorePopCurrent = 0;
                     PopUp.SetActive(false);

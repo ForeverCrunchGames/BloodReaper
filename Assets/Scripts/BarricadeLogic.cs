@@ -32,6 +32,7 @@ public class BarricadeLogic : MonoBehaviour {
             score.AddScoreBarricade();
             bounds.SetActive(false);
             Debug.Log("Barricade destroyed");
+            PlayBarricadeSound();
             enabled = false;
         }
 
@@ -39,6 +40,6 @@ public class BarricadeLogic : MonoBehaviour {
 	}
         public void PlayBarricadeSound()
         {
-      barricadeSound.Play();
+            barricadeSound.Play();
         }
 }
