@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Controller2DMOD : RaycastController {
+public class Controller2DMOD : RaycastControllerMOD {
 
 	public float maxSlopeAngle = 80;
     public float minSlopeAngle = 30;

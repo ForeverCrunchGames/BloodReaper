@@ -28,16 +28,13 @@ public class OverpoweredTrigger : MonoBehaviour {
         {
             player.isPlayerOverpowered = true;
             player.isLifeDecreasing = true;
+            player.swordMesh.SetActive(true);
+            player.deadCounterUI.SetActive(true);
+            player.deadCounterAnim.SetTrigger("dead");
             player.lifeBar.SetActive(true);
+            player.graphics.material.SetTexture("_MainTex",player.LidricBad);
             sword.SetActive(false);
-            //trankis.Stop();
             doom.Play();
-
-//            player.maxJumpHeight = 4;
-//            player.gravity = -(2 * player.maxJumpHeight) / Mathf.Pow (player.timeToJumpApex, 2);
-//            player.maxJumpVelocity = Mathf.Abs(player.gravity) * player.timeToJumpApex;
-//            player.minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (player.gravity) * player.minJumpHeight);
-
 
             Destroy(gameObject);
         }

@@ -17,18 +17,9 @@ public class InstaDeath : MonoBehaviour {
         {
             if (player.state != PlayerMOD.States.DEAD)
             {
-                player.RecieveDamage(101);
                 player.SetDead();
+                player.screenState = PlayerMOD.ScreenStates.SCRIPTED;
             }
-//            if (player.state != PlayerMOD.States.DEAD)
-//            {
-//                if (player.isGodModeOn == false)
-//                {
-//                    player.SetDead();
-//
-//                    Debug.Log("Insta Death!");
-//                }
-//            }
         }
     }
 }
