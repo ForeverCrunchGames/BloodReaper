@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4260064946071574}
   - component: {fileID: 198460163309637908}
   - component: {fileID: 199092047601973800}
+  - component: {fileID: 114086095583820776}
   m_Layer: 0
   m_Name: blood_explosion
   m_TagString: Untagged
@@ -41,6 +42,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114086095583820776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1603497689997690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37fac21d1f093d344816942d1abce94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TimeOut: 1
+  m_DetachChildren: 0
 --- !u!198 &198460163309637908
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -96,7 +110,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 127952101
+  randomSeed: 456003395
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -498,7 +512,7 @@ ParticleSystem:
     size3D: 0
     rotation3D: 0
     gravityModifier:
-      scalar: 0
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:

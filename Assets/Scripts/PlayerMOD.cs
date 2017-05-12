@@ -36,6 +36,7 @@ public class PlayerMOD : MonoBehaviour {
     private float timer;
     private float deadTimer;
     public bool isScripted;
+    public int jumpFrameDelay;
 
     [Header("Attacks")]
     public bool enableIntro;
@@ -102,6 +103,9 @@ public class PlayerMOD : MonoBehaviour {
     public GameObject optionsUI;
     public GameObject hitUI;
     public GameObject deadCounterUI;
+    //public GameObject playerGraphics;
+    public SkinnedMeshRenderer playerMeshRenderer;
+    public SkinnedMeshRenderer swordMeshRenderer;
     public Image lifeUI;
     public Image lifeSecondaryUI;
     public GameObject UIgodMode;
@@ -165,6 +169,7 @@ public class PlayerMOD : MonoBehaviour {
         FlyingShip.SetActive(false);
         UIgodMode.SetActive(false);
         deadCounterUI.SetActive(false);
+        deadCounter = 0;
         graphics.material.SetTexture("_MainTex",LidricWell);
 
         if (isPlayerOverpowered)
@@ -285,13 +290,14 @@ public class PlayerMOD : MonoBehaviour {
                             velocity.y = 0;
                         }
                     }
-                        
-                    //ANIMATION CONTROLLERS
+
+                    //JUMP
                     if (Input.GetButtonDown("Jump"))
                     {
                         SetJump();
                     }
 
+                    //CONTROLLERS
                     if (velocity.y > 0)
                     {
                         Player.SetBool("VelocityUp", true);
@@ -403,6 +409,9 @@ public class PlayerMOD : MonoBehaviour {
                 }
             case ScreenStates.SCRIPTED:
                 {
+                    timeText.text = ("" + (int)time);  
+                    deadCounterText.text = ("" + deadCounter);
+
                     break;
                 }
         }
@@ -491,30 +500,19 @@ public class PlayerMOD : MonoBehaviour {
     public void SetDead()
     {
         state = States.DEAD;
-        screenState = PlayerMOD.ScreenStates.SCRIPTED;
+        screenState = ScreenStates.SCRIPTED;
     }
     void UpdateDead()
     {
-        CalculateVelocity();
-
-        if (controller.collisions.above || controller.collisions.below)
-        {
-            if (controller.collisions.slidingDownMaxSlope)
-            {
-                velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;
-            }
-            else
-            {
-                velocity.y = 0;
-            }
-        }
-
         if (deadState == 0)
         {
             hit.Play();
             Player.SetTrigger("SetDead");
             isDeadAnim = true;
             graphics.material.color = Color.red;
+            playerMeshRenderer.enabled = false;
+            swordMeshRenderer.enabled = false;
+            //playerGraphics.SetActive(false);
             Instantiate(splatterPrefab, transform.position, transform.rotation);
 
             deadState = 1;
@@ -525,11 +523,15 @@ public class PlayerMOD : MonoBehaviour {
 
             if (deadTimer >= 0.8f)
             {
+                playerMeshRenderer.enabled = true;
+                swordMeshRenderer.enabled = true;
+
                 transform.position = spawn;
                 currentLife = maxLife;
                 deadCounter += 1;
 
                 avraeScream.Play();
+                //playerGraphics.SetActive(true);
                 deadCounterAnim.SetTrigger("dead");
 
                 deadTimer = 0;
@@ -546,7 +548,6 @@ public class PlayerMOD : MonoBehaviour {
                 isDeadAnim = false;
                 deadTimer = 0;
                 deadState = 0;
-                isScripted = false;
 
                 SetIdle();
                 SetGameRunning();
@@ -583,6 +584,7 @@ public class PlayerMOD : MonoBehaviour {
 				velocity.y = wallLeap.y;
 			}
 		}
+
 		if (controller.collisions.below) {
 			if (controller.collisions.slidingDownMaxSlope) {
 				if (directionalInput.x != -Mathf.Sign (controller.collisions.slopeNormal.x)) { // not jumping against max slope
@@ -743,6 +745,7 @@ public class PlayerMOD : MonoBehaviour {
 
     public void Respawn()
     {
+        ExitPause();
         SetDead();
         optionsUI.SetActive(false);
         Cursor.visible = false;
@@ -762,34 +765,37 @@ public class PlayerMOD : MonoBehaviour {
 
     public void Attack()
     {
-        if (isCooldown == true)
+        if (screenState == ScreenStates.GAME_RUNNING)
         {
+            if (isCooldown == true)
+            {
             
-            int random;
+                int random;
 
-            //Random attack
-            random = Random.Range(0, 3);
+                //Random attack
+                random = Random.Range(0, 3);
 
-            if (random == 0)
-            {
-                Player.SetTrigger("AtackBasic");
-                sword1.Play();
+                if (random == 0)
+                {
+                    Player.SetTrigger("AtackBasic");
+                    sword1.Play();
 
+                }
+                else if (random == 1)
+                {
+                    Player.SetTrigger("AtackBasic2");
+                    sword2.Play();
+                }
+                else if (random == 2)
+                {
+                    Player.SetTrigger("AttackBasic3");
+                    sword3.Play();
+                }
+
+                Debug.Log("Basic Attack");
+                isAttacking = true;
+                //sword.Play();
             }
-            else if (random == 1)
-            {
-                Player.SetTrigger("AtackBasic2");
-                sword2.Play();
-            }
-            else if (random == 2)
-            {
-                Player.SetTrigger("AttackBasic3");
-                sword3.Play();
-            }
-
-            Debug.Log("Basic Attack");
-            isAttacking = true;
-            //sword.Play();
         }
 
     }
@@ -879,7 +885,7 @@ public class PlayerMOD : MonoBehaviour {
         UIgodMode.SetActive(true);
     }
 
-    void SetPause()
+    public void SetPause()
     {
         screenState = ScreenStates.GAME_PAUSED;
         optionsUI.SetActive(true);

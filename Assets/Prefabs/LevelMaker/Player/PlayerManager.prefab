@@ -1247,7 +1247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4229854566175934}
   - component: {fileID: 137206881705171800}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Lidric 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4042,7 +4042,7 @@ GameObject:
   - component: {fileID: 4927893127680900}
   - component: {fileID: 137811059413872470}
   - component: {fileID: 82271695922056686}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Espasa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7447,9 +7447,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.64, y: 0}
+  m_Offset: {x: 0.64, y: -0.11784041}
   serializedVersion: 2
-  m_Size: {x: 1.31, y: 2.18}
+  m_Size: {x: 1.31, y: 1.9443192}
 --- !u!61 &61591492362198578
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -7461,9 +7461,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.10664737}
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 1.6}
+  m_Size: {x: 0.7, y: 1.3867053}
 --- !u!61 &61633210225199674
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -7475,9 +7475,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.10309589}
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1.7}
+  m_Size: {x: 0.8, y: 1.4938083}
 --- !u!81 &81490977551245264
 AudioListener:
   m_ObjectHideFlags: 1
@@ -10503,11 +10503,12 @@ MonoBehaviour:
   isCollectionableCollected: 0
   isFacingRight: 0
   isScripted: 0
+  jumpFrameDelay: 0
   enableIntro: 1
   damage: 10000
   cooldown: 0.2
   isAttacking: 0
-  attackTime: 0.1
+  attackTime: 0.075
   isPlayerOverpowered: 0
   isPlayerHaveWallSlide: 0
   isPlayerHaveAngularSlide: 0
@@ -10526,8 +10527,8 @@ MonoBehaviour:
   isDeadAnim: 0
   deadState: 0
   jumpTimeAnim: 0.1
-  maxJumpHeight: 2.5
-  minJumpHeight: 0.1
+  maxJumpHeight: 2.75
+  minJumpHeight: 0.5
   timeToJumpApex: 0.3
   accelerationTimeAirborne: 0.2
   accelerationTimeGrounded: 0.1
@@ -10549,6 +10550,8 @@ MonoBehaviour:
   optionsUI: {fileID: 1939672013851100}
   hitUI: {fileID: 1036356178640576}
   deadCounterUI: {fileID: 1459667488712172}
+  playerMeshRenderer: {fileID: 137206881705171800}
+  swordMeshRenderer: {fileID: 137811059413872470}
   lifeUI: {fileID: 114118453184469172}
   lifeSecondaryUI: {fileID: 114675391294269084}
   UIgodMode: {fileID: 1856032185062250}
@@ -13849,6 +13852,7 @@ MonoBehaviour:
   hit01: {fileID: 82882888974314020}
   hit02: {fileID: 82975370547003802}
   hit03: {fileID: 82381938937878106}
+  enemyMeleeLifeRestore: 10
   score: {fileID: 114116546269620070}
   state: 0
   wait: 0

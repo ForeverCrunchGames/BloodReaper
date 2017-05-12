@@ -90,7 +90,7 @@ public class SpawnerLogic : MonoBehaviour
         else
         {
             //Instanciate Prefab
-            GameObject go = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+            GameObject go = Instantiate(enemyPrefab, new Vector3(spawnPoint.position.x,spawnPoint.position.y,spawnPoint.position.z + Random.Range(-3, 3)), spawnPoint.rotation);
             go.GetComponent<EnemyMeleeLogic> ().Init (this);
             go.transform.parent = transform;
             counter--;
