@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnerLogic : MonoBehaviour 
 {
     PlayerMOD Player;
-    ScoreSystem score;
+    //ScoreSystem score;
 
     public GameObject hitPoint;
     public GameObject explosionParticles;
@@ -24,7 +24,7 @@ public class SpawnerLogic : MonoBehaviour
     public float lifeRegenSpeed = 10;
     public int maxEnemies = 5;
     public int spawnDirection; //0 left, 1 right, 2 intercalate, 3 random
-    int _direction = -1;
+    //int _direction = -1;
     public int counter = -1;
 
 
@@ -32,12 +32,13 @@ public class SpawnerLogic : MonoBehaviour
     void Start () 
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
-        score = GameObject.FindGameObjectWithTag("Manager").GetComponent<ScoreSystem>();
+        //score = GameObject.FindGameObjectWithTag("Manager").GetComponent<ScoreSystem>();
 
         explosionParticles.SetActive(false);
         //healParticles.SetActive(false);
         healParticles.Stop();
         hitPoint.SetActive(true);
+        counter = maxEnemies;
 
         InvokeRepeating("Spawn", spawnRate, spawnRate);
     }
@@ -76,14 +77,23 @@ public class SpawnerLogic : MonoBehaviour
         
     void Spawn()
     {
-        counter = counter + 1;
 
-        if (counter < maxEnemies)
+        if (counter >= maxEnemies)
+        {
+            counter = maxEnemies;
+        }
+
+        if (counter <= 0)
+        {
+            counter = 0;
+        }
+        else
         {
             //Instanciate Prefab
             GameObject go = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
             go.GetComponent<EnemyMeleeLogic> ().Init (this);
             go.transform.parent = transform;
+            counter--;
 
             //Spawn direction
             if (spawnDirection == 0)
@@ -101,13 +111,11 @@ public class SpawnerLogic : MonoBehaviour
                 }
             }
         }
-        else if (counter >= maxEnemies)
-            counter = maxEnemies;
 
     }
 
     public void LostOne()
     {
-        counter--;
+        counter++;
     }
 }

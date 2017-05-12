@@ -30,6 +30,7 @@ public class EndLevelTrigger : MonoBehaviour {
     {
         if (state == 1)
         {
+            player.screenState = PlayerMOD.ScreenStates.GAME_END;
             player.SetScore();
             player.isLifeDecreasing = false;
             player.transform.parent = handle.transform;

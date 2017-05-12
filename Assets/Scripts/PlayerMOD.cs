@@ -2,127 +2,135 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.ImageEffects;
 
 [RequireComponent (typeof (Controller2DMOD))]
 public class PlayerMOD : MonoBehaviour {
 
-    public enum States { IDLE, RUN, JUMP, WALL_SLIDE, WALL_JUMP, ANGULAR_SLIDE, ATTACK, STRONG_ATTACK, PROTECT, DAMAGE, DEAD, PAUSE, SCORE }
+    Controller2DMOD controller;
+
+    public enum States { IDLE, RUN, JUMP, WALL_SLIDE, WALL_JUMP, ANGULAR_SLIDE, ATTACK, STRONG_ATTACK, PROTECT, DAMAGE, DEAD, SCORE, GODMODE }
     public States state;
 
-    [Header("Physics")]
-    public float maxJumpHeight = 4;
-	public float minJumpHeight = 1;
-	public float timeToJumpApex = .4f;
-	public float accelerationTimeAirborne = .2f;
-	public float accelerationTimeGrounded = .1f;
-	public float moveSpeed = 6;
-
-    public bool isFallingAnim;
-
-	public Vector2 wallJumpClimb;
-	public Vector2 wallJumpOff;
-	public Vector2 wallLeap;
-
-	public float wallSlideSpeedMax = 3;
-	public float wallStickTime = .25f;
-	public float timeToWallUnstick;
+    public enum ScreenStates { GAME_RUNNING, GAME_PAUSED, GAME_INTRO, GAME_END, GODMODE, SCRIPTED }
+    public ScreenStates screenState;
 
     [Header("Stats")]
     public Vector3 spawn;
-
     public int deadCounter;
-    public Text deadCounterText;
-
-    public bool isTimePaused = false;
-    private float time;
-    public Text timeUI;
-
-    public float maxLife = 100;
-    public bool isLifeDecreasing = true;
-    public float lifeDecreasingVelocity = 1; //Life unit decreasing per second
+    public bool isTimePaused;
+    public float time;
+    public float maxLife;
+    public bool isLifeDecreasing;
+    public bool isInmune;
+    public float inmuneTime;
+    private Color color;
+    public float lifeDecreasingVelocity;
     public float currentLife;
     private float storeLife;
     private float secondaryLife;
-    public float secondaryLifeSmooth = 2;
-
-    public bool isPlayerOverpowered = true;
-
+    public float secondaryLifeSmooth;
     public int playerScore;
-    public GameObject scoreUI;
-    public GameObject playerUI;
-    public GameObject optionsUI;
-    public GameObject hitUI;
-    public bool pause;
-    public Image lifeUI;
-    public Image lifeSecondaryUI;
-    //public Text playerScoreUI;
-    public bool isCollectionableCollected = false;
-    public GameObject collectionable;
-    public Renderer graphics;
-    public bool isInmune;
-    public float inmuneTime = 1;
-    private Color color;
-    public bool isLevelEnded;
-    public bool isOptionsMenu;
+    public bool isCollectionableCollected;
+    public bool isFacingRight;
+    private float timer;
+    private float deadTimer;
+    public bool isScripted;
 
-    [Header("Attack")]
+    [Header("Attacks")]
+    public bool enableIntro;
     public float damage;
     public float cooldown;
     private bool isCooldown;
     private float cooldownCounter;
     public bool isAttacking;
     public float attackTime;
-    public GameObject attackBounds;
+    public bool isPlayerOverpowered;
+    public bool isPlayerHaveWallSlide;
+    Vector2 directionalInput;
+    bool wallSliding;
+    int wallDirX;
+    public bool isPlayerHaveAngularSlide;
+    int SlidingState;
+    public bool isAbilityLearned;
+    public bool isRage;
+    public float rageTime;
+    public float rageVelocity;
+    public float rageCounter;
 
-    public bool isStrongAttack = false;
-    public float StrongAttackChargeTime = 1f;
-    public bool isStrongAttackCharged = false;
+    [Header("States")]
+    public bool isLevelEnded;
+    public bool isOptionsMenu;
+    public bool isIntroEnded;
+    public bool isGodModeOn;
+    int scoreState;
+    float scoreCounter;
+    public bool isScoreScreen;
 
-    private float timer;
-    private float deadTimer;
-    private float timerIntro;
-
-    [Header("Graphs")]
-    public Transform graphicsTransform;
-    public bool isFacingRight;
-
-    [Header("Animations")]
-    public Animator Player;
+    [Header("Animation Controllers")]
+    public bool introFallAnim;
     public float animRunSensibility;
-
-    public Animator deadCounterAnim;
-
-    public bool isIntroAnim;
     public bool isDeadAnim;
     public int deadState;
-
-	public float gravity;
-    public float maxJumpVelocity;
-    public float minJumpVelocity;
-	public Vector3 velocity;
-	float velocityXSmoothing;
-
     private float jumpCounter;
     public float jumpTimeAnim;
 
-    Controller2DMOD controller;
+    [Header("Player Physics")]
+    public float maxJumpHeight;
+    public float minJumpHeight;
+    public float timeToJumpApex;
+    public float accelerationTimeAirborne;
+    public float accelerationTimeGrounded;
+    public float moveSpeed;
+    public Vector2 wallJumpClimb;
+    public Vector2 wallJumpOff;
+    public Vector2 wallLeap;
+    public float wallSlideSpeedMax;
+    public float wallStickTime;
+    public float timeToWallUnstick;
+    public float gravity;
+    public float maxJumpVelocity;
+    public float minJumpVelocity;
+    public Vector3 velocity;
+    float velocityXSmoothing;
 
-	Vector2 directionalInput;
-	bool wallSliding;
-	int wallDirX;
+    [Header("Definitions")]
+    public Text deadCounterText;
+    public Text timeText;
+    public GameObject scoreUI;
+    public GameObject playerUI;
+    public GameObject optionsUI;
+    public GameObject hitUI;
+    public GameObject deadCounterUI;
+    public Image lifeUI;
+    public Image lifeSecondaryUI;
+    public GameObject UIgodMode;
+    public GameObject collectionable;
+    public Renderer graphics;
+    public GameObject attackBounds;
+    public Transform graphicsTransform;
 
-    int SlidingState = 0;
+    public GameObject splatterPrefab;
 
     public GameObject wallSlideParticles;
     public GameObject slideParticles;
-    public GameObject runParticles;
     public GameObject DieParticles;
+    public ParticleSystem rageParticles;
     public GameObject swordMesh;
+    public GameObject lifeBar;
+    public GameObject TimeScoreUI;
+    public GameObject newAbility;
+    public GameObject FlyingShip;
 
-    //public Animator Intro;
-    public bool isIntroEnded;
-    public bool isGodModeOn;
-    public GameObject UIgodMode;
+    public Texture2D LidricWell;
+    public Texture2D LidricBad;
+
+    public Animator Player;
+    public Animator deadCounterAnim;
+    public Animator playerManagerAnim;
+
+    public BlurOptimized blurEffect;
+    public AudioLowPassFilter lowpassFilter; 
 
     public AudioSource hit;
     public AudioSource sword;
@@ -132,28 +140,6 @@ public class PlayerMOD : MonoBehaviour {
     public AudioSource avraeScream;
     public AudioSource win;
     public AudioSource button;
-
-    public Transform upperBody;
-
-
-    public bool isScripted;
-    public bool isPlayerHaveWallSlide;
-    public bool isPlayerHaveAngularSlide;
-    public bool isAbilityLearned;
-
-    public GameObject lifeBar;
-    public GameObject TimeScoreUI;
-    public GameObject newAbility;
-
-    int scoreState;
-    float scoreCounter;
-    public bool isScoreScreen;
-
-    public bool isRage;
-    public ParticleSystem rageParticles;
-    public float rageTime;
-    public float rageVelocity;
-    public float rageCounter;
 
 	void Start() 
     {   
@@ -166,15 +152,36 @@ public class PlayerMOD : MonoBehaviour {
         color = graphics.material.color;
         wallSlideParticles.SetActive(false);
         DieParticles.SetActive(false);
-        pause = false;
         isLevelEnded = false;
         playerUI.SetActive(true);
         scoreUI.SetActive(false);
         optionsUI.SetActive(false);
         slideParticles.SetActive(false);
-        TimeScoreUI.SetActive(false);
+        TimeScoreUI.SetActive(true);
         newAbility.SetActive(false);
-        lifeBar.SetActive(false);
+        lifeBar.SetActive(true);
+        swordMesh.SetActive(false);
+        playerManagerAnim.enabled = false;
+        FlyingShip.SetActive(false);
+        UIgodMode.SetActive(false);
+        deadCounterUI.SetActive(false);
+        graphics.material.SetTexture("_MainTex",LidricWell);
+
+        if (isPlayerOverpowered)
+        {
+            graphics.material.SetTexture("_MainTex",LidricBad);
+            swordMesh.SetActive(true);
+            isLifeDecreasing = true;
+        }
+
+        if (enableIntro == true)
+        {
+            screenState = ScreenStates.GAME_INTRO;
+            playerManagerAnim.enabled = true;
+            FlyingShip.SetActive(true);
+            lifeBar.SetActive(false);
+            TimeScoreUI.SetActive(false);
+        }
 
         //Gravity start calculation
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
@@ -187,147 +194,137 @@ public class PlayerMOD : MonoBehaviour {
 
 	void Update() 
     {
-		//AlwaysUpdate
-        //////////////////////////////
-        if (!pause)
+        switch (screenState)
         {
-            if (!isLevelEnded)
-            {
-                Time.timeScale = 1;
-
-                if (Input.GetKeyDown(KeyCode.F10))
+            case ScreenStates.GAME_RUNNING:
                 {
-                    isGodModeOn = !isGodModeOn;
-                }
-
-                if (isFallingAnim == true)
-                {
-                    Player.SetTrigger("IntroFall");
-                    isFallingAnim = false;
-                }
-
-                CalculateVelocity();
-
-                if (isPlayerOverpowered == true)
-                {
-                    if (isPlayerHaveWallSlide)
+                    //PAUSE SWITCH
+                    if (Input.GetKeyUp(KeyCode.Escape))
                     {
-                        HandleWallSliding();
+                        SetPause();
                     }
 
-                    swordMesh.SetActive(true);
-
-                    AttackLogic();
-
-                    if (isPlayerHaveAngularSlide)
+                    //GODMODE SWITCH
+                    if (Input.GetKeyDown(KeyCode.F10))
                     {
-                        AngularSliding();
+                        SetGodMode();
                     }
-                }
-                else
-                {
-                    swordMesh.SetActive(false);
-                    lifeBar.SetActive(false);
-                }
 
-                if (!isGodModeOn)
-                {
+                    CalculateVelocity();
                     LifeLogic();
-                    UIgodMode.SetActive(false);
 
-                }
-                else
-                {
-                    UIgodMode.SetActive(true);
-                }
-
-                //Collectionable
-                if (isCollectionableCollected)
-                {
-                    collectionable.SetActive(true);
-                }
-
-                //Time
-                if (!isTimePaused)
-                {
-                    if (isIntroEnded)
+                    //PLAYER POWERS LOGIC
+                    if (isPlayerOverpowered == true)
                     {
-                        time += Time.deltaTime;
-                    }
-                }
+                        AttackLogic();
 
-                //UI TEXTS
-                timeUI.text = ("" + (int)time);  
-                deadCounterText.text = ("" + deadCounter);
+//                        if (isRage)
+//                        {
+//                            moveSpeed = rageVelocity;
+//                            rageCounter += Time.deltaTime;
+//                            rageParticles.Play();
+//
+//                            if (rageCounter >= rageTime)
+//                            {
+//                                isRage = false;
+//
+//                                rageParticles.Stop();
+//                                moveSpeed = 8;
+//                            }
+//                        }
 
-                if (wallSliding)
-                {
-                    Player.SetBool("isWallSliding", true);
-                    wallSlideParticles.SetActive(true);
-                }
-                else
-                {
-                    Player.SetBool("isWallSliding", false);
-                    wallSlideParticles.SetActive(false);
-                }
-
-                //Flip
-                if (controller.currentSlopeAngle == controller.maxSlopeAngle)
-                {
-                    if (!isFacingRight && velocity.x < 0)
-                        Flip();
-                    else if (isFacingRight && velocity.x > 0)
-                        Flip();
-                }
-
-                //Pause
-                if (Input.GetKeyUp(KeyCode.Escape))
-                {
-                    SetPause();
-                }
-
-                if (isScoreScreen)
-                {
-                    pause = false;
-                }
-
-                if (isRage)
-                {
-                    moveSpeed = rageVelocity;
-                    rageCounter += Time.deltaTime;
-                    rageParticles.Play();
-
-                    if (rageCounter >= rageTime)
-                    {
-                        isRage = false;
-                        rageParticles.Stop();
-                        moveSpeed = 8;
-                    }
-                }
-
-                //Movment
-                if (!isGodModeOn)
-                {
-                    if (!isScripted)
-                    {
-                        controller.Move(velocity * Time.deltaTime, directionalInput);
-
-                        if (controller.collisions.above || controller.collisions.below)
+                        if (isPlayerHaveWallSlide)
                         {
-                            if (controller.collisions.slidingDownMaxSlope)
+                            HandleWallSliding();
+
+                            if (wallSliding)
                             {
-                                velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;
+                                Player.SetBool("isWallSliding", true);
+                                wallSlideParticles.SetActive(true);
                             }
                             else
                             {
-                                velocity.y = 0;
+                                Player.SetBool("isWallSliding", false);
+                                wallSlideParticles.SetActive(false);
                             }
                         }
+
+                        if (isPlayerHaveAngularSlide)
+                        {
+                            AngularSliding();
+                        }
                     }
+
+                    //UI TEXTS
+                    timeText.text = ("" + (int)time);  
+                    deadCounterText.text = ("" + deadCounter);
+
+                    //COUNTDOWN
+                    time += Time.deltaTime;
+
+                    //PLAYER FLIP
+                    if (controller.currentSlopeAngle == controller.maxSlopeAngle)
+                    {
+                        if (!isFacingRight && velocity.x < 0)
+                            Flip();
+                        else if (isFacingRight && velocity.x > 0)
+                            Flip();
+                    }
+
+                    //PLAYER MOVMENT
+                    controller.Move(velocity * Time.deltaTime, directionalInput);
+
+                    if (controller.collisions.above || controller.collisions.below)
+                    {
+                        if (controller.collisions.slidingDownMaxSlope)
+                        {
+                            velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;
+                        }
+                        else
+                        {
+                            velocity.y = 0;
+                        }
+                    }
+                        
+                    //ANIMATION CONTROLLERS
+                    if (Input.GetButtonDown("Jump"))
+                    {
+                        SetJump();
+                    }
+
+                    if (velocity.y > 0)
+                    {
+                        Player.SetBool("VelocityUp", true);
+                    }
+                    else
+                    {
+                        Player.SetBool("VelocityUp", false);
+                    }
+                        
+                    if (controller.collisions.below)
+                    {
+                        Player.SetBool("isJumping", false);
+                        jumpCounter = 0;
+                    }
+                    else
+                    {
+                        jumpCounter += Time.deltaTime;
+
+                        if (jumpTimeAnim < jumpCounter)
+                        {
+                            Player.SetBool("isJumping", true);
+                        }   
+                    }
+
+                    break;  
                 }
-                else if (isGodModeOn) 
+            case ScreenStates.GODMODE:
                 {
-                    //GodMode Fly
+                    if (Input.GetKeyDown(KeyCode.F10))
+                    {
+                        SetGameRunning();
+                        UIgodMode.SetActive(false);
+                    }
 
                     float sensibility = 0.5f;
                     float sensibilityHigh = 2;
@@ -360,63 +357,54 @@ public class PlayerMOD : MonoBehaviour {
                     {
                         transform.Translate(0, currentSensibility, 0);
                     }
-                }
 
-                //Animation Controllers
-
-                if (Input.GetButtonDown("Jump"))
-                {
-                    SetJump();
+                    break;
                 }
-
-                if (velocity.y > 0)
+            case ScreenStates.GAME_PAUSED:
                 {
-                    Player.SetBool("VelocityUp", true);
-                }
-                else
-                {
-                    Player.SetBool("VelocityUp", false);
-                }
-
-                //Detect floor
-                if (controller.collisions.below)
-                {
-                    Player.SetBool("isJumping", false);
-                    jumpCounter = 0;
-                }
-                else
-                {
-                    jumpCounter += Time.deltaTime;
-
-                    if (jumpTimeAnim < jumpCounter)
+                    if (Input.GetKeyUp(KeyCode.Escape))
                     {
-                        Player.SetBool("isJumping", true);
-                    }   
+                        ExitPause();
+                    }
+
+                    break;
                 }
-
-
-                //INTRO
-                if (!isIntroEnded)
+            case ScreenStates.GAME_INTRO:
                 {
-                    timerIntro += Time.deltaTime;
-
-                    if (timerIntro >= 5)
+                    if (introFallAnim == true)
                     {
-                        timerIntro = 0;
-                        isIntroEnded = true;
+                        Player.SetTrigger("IntroFall");
+                    }
+
+                    if (isIntroEnded)
+                    {
+                        playerManagerAnim.enabled = false;
+                        FlyingShip.SetActive(false);
                         TimeScoreUI.SetActive(true);
 
-                        if (isLifeDecreasing)
+                        if (isPlayerOverpowered)
                         {
                             lifeBar.SetActive(true);
+                            deadCounterUI.SetActive(true);
+                            isLifeDecreasing = true;
+                            deadCounterUI.SetActive(true);
+                            deadCounterAnim.SetTrigger("dead");
+                            lifeBar.SetActive(true);
+                            graphics.material.SetTexture("_MainTex",LidricBad);
                         }
+                        SetGameRunning();
                     }
+
+                    break;
                 }
-            }
-            else if (isLevelEnded)
-            {
-                SetScore();
-            }
+            case ScreenStates.GAME_END:
+                {
+                    break;
+                }
+            case ScreenStates.SCRIPTED:
+                {
+                    break;
+                }
         }
             
         //////////////////////////////
@@ -438,16 +426,6 @@ public class PlayerMOD : MonoBehaviour {
                     UpdateJump();
                     break;  
                 }
-            case States.ATTACK:
-                {
-                    UpdateAttack();
-                    break;  
-                }
-            case States.STRONG_ATTACK:
-                {
-                    UpdateStrongAttack();
-                    break;  
-                }
             case States.DAMAGE:
                 {
                     //UpdateDamage();
@@ -458,14 +436,8 @@ public class PlayerMOD : MonoBehaviour {
                     UpdateDead();
                     break;  
                 }
-            case States.PAUSE:
-                {
-                    UpdatePause();
-                    break;  
-                }
             case States.SCORE:
                 {
-                    UpdateScore();
                     break;  
                 }
             default:
@@ -516,33 +488,39 @@ public class PlayerMOD : MonoBehaviour {
             SetIdle();
         }
     }
-    //------------------------------
-    void UpdateAttack()
-    {
-    }
-    //------------------------------
-    void UpdateStrongAttack()
-    {
-    }
-    //------------------------------
     public void SetDead()
     {
         state = States.DEAD;
+        screenState = PlayerMOD.ScreenStates.SCRIPTED;
     }
     void UpdateDead()
     {
+        CalculateVelocity();
+
+        if (controller.collisions.above || controller.collisions.below)
+        {
+            if (controller.collisions.slidingDownMaxSlope)
+            {
+                velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;
+            }
+            else
+            {
+                velocity.y = 0;
+            }
+        }
+
         if (deadState == 0)
         {
             hit.Play();
             Player.SetTrigger("SetDead");
             isDeadAnim = true;
-            isScripted = true;
+            graphics.material.color = Color.red;
+            Instantiate(splatterPrefab, transform.position, transform.rotation);
 
             deadState = 1;
         }
         else if (deadState == 1)
         {
-            //deadAnimTime
             deadTimer += Time.deltaTime;
 
             if (deadTimer >= 0.8f)
@@ -561,6 +539,7 @@ public class PlayerMOD : MonoBehaviour {
         else if (deadState == 2)
         {
             deadTimer += Time.deltaTime;
+            graphics.material.color = color;
 
             if (deadTimer >= 2f)
             {
@@ -570,49 +549,11 @@ public class PlayerMOD : MonoBehaviour {
                 isScripted = false;
 
                 SetIdle();
+                SetGameRunning();
             }
         }
     }
-    //------------------------------
-    void SetPause()
-    {
-        state = States.PAUSE;
-        optionsUI.SetActive(true);
-        pause = true;
-        pauseTimer = 0;
-        Cursor.visible = true;
 
-        Debug.Log("Set Pause");
-    }
-    float pauseTimer;
-    void UpdatePause()
-    {
-        pauseTimer += Time.deltaTime;
-
-        if (pauseTimer > 0.05f)
-        {
-            Time.timeScale = 0;
-            if (Input.GetKeyUp(KeyCode.Escape))
-            {
-                ExitPause();//ExitPause
-            }
-        }
-
-
-        Debug.Log("Update Pause " + pauseTimer);
-    }
-    public void ExitPause()
-    {
-        state = States.IDLE;
-        optionsUI.SetActive(false);
-        Time.timeScale = 1;
-        pause = false;
-        pauseTimer = 0;
-        Cursor.visible = false;
-
-        Debug.Log("Exit Pause");
-    }
-    //------------------------------
     public void SetScore()
     {
         state = States.SCORE;
@@ -620,42 +561,6 @@ public class PlayerMOD : MonoBehaviour {
         playerUI.SetActive(false);
         isScoreScreen = true;
         win.Play();
-    }
-    void UpdateScore()
-    {
-//        if (scoreState == 0)
-//        {
-//            if (isAbilityLearned)
-//            {
-//                newAbility.SetActive(true);
-//                Cursor.visible = true;
-//
-//                scoreCounter += Time.deltaTime;
-//
-//                if (scoreCounter > 1)
-//                {
-//                    if (Input.anyKey)
-//                    {
-//                        scoreCounter = 0;
-//                        scoreState = 1;
-//                    }
-//                }
-//            }
-//            else
-//            {
-//                scoreState = 1;
-//            }
-//        }
-//        else if (scoreState == 1)
-//        {
-//            scoreUI.SetActive(true);
-//        }
-//
-//
-//        if (Input.anyKey)
-//            {
-//                SceneManager.LoadScene ("Main menu");
-//            }
     }
     //////////////////////////////////
 
@@ -782,7 +687,10 @@ public class PlayerMOD : MonoBehaviour {
         //Life descreasing
         if (isLifeDecreasing)
         {
-            currentLife -= lifeDecreasingVelocity * Time.deltaTime;
+            if (!isGodModeOn || !isInmune)
+            {
+                currentLife -= lifeDecreasingVelocity * Time.deltaTime;
+            }
         }
 
         //ClampMaxHealth
@@ -837,12 +745,7 @@ public class PlayerMOD : MonoBehaviour {
     {
         SetDead();
         optionsUI.SetActive(false);
-        Time.timeScale = 1;
-        pause = false;
-        pauseTimer = 0;
         Cursor.visible = false;
-
-        Debug.Log("Exit Pause");
     }
 
     public void StrongAttack()
@@ -938,5 +841,75 @@ public class PlayerMOD : MonoBehaviour {
         graphicsTransform.localScale = newScale;
 
         isFacingRight = !isFacingRight;
+    }
+
+    public void SetPlayerOverpowered()
+    {
+        isPlayerOverpowered = true;
+      
+        swordMesh.SetActive(true);
+
+        lifeBar.SetActive(true);
+    }
+
+    public void SetPlayerWallSlide()
+    {
+        isPlayerHaveWallSlide = true;
+    }
+
+    public void SetPlayerAngularSlide()
+    {
+        isPlayerHaveAngularSlide = true;
+    }
+
+    public void SetCollectionable()
+    {
+        isCollectionableCollected = true;
+        collectionable.SetActive(true);
+    }
+
+    void SetGameRunning()
+    {
+        screenState = ScreenStates.GAME_RUNNING;
+    }
+
+    void SetGodMode()
+    {
+        screenState = ScreenStates.GODMODE;
+        UIgodMode.SetActive(true);
+    }
+
+    void SetPause()
+    {
+        screenState = ScreenStates.GAME_PAUSED;
+        optionsUI.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.visible = true;
+        blurEffect.enabled = true;
+        lowpassFilter.enabled = true;
+        if (isPlayerOverpowered)
+        {
+            deadCounterAnim.SetBool("isPause", true);
+        }
+        if (isCollectionableCollected == true)
+        {
+            collectionable.SetActive(true);
+        }
+
+       
+    }
+    public void ExitPause()
+    {
+        SetGameRunning();
+        optionsUI.SetActive(false);
+        Cursor.visible = false;
+        Time.timeScale = 1;
+        blurEffect.enabled = false;
+        lowpassFilter.enabled = false;
+        if (isPlayerOverpowered)
+        {
+            deadCounterAnim.SetBool("isPause", false);
+        }
+        collectionable.SetActive(false);
     }
 }

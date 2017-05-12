@@ -397,8 +397,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4261141732661618}
-  - component: {fileID: 33506810529957942}
-  - component: {fileID: 23974792259136916}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -612,7 +610,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1945115285839674}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5858228, y: -0.40013677, z: -0.23}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4261141732661618}
@@ -1067,44 +1065,6 @@ Transform:
   m_Father: {fileID: 4689721526900150}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23974792259136916
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1766275475886924}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &33506810529957942
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1766275475886924}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!50 &50899719951415682
 Rigidbody2D:
   serializedVersion: 4
@@ -1136,9 +1096,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.049896777}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5}
+  m_Size: {x: 1, y: 1.4002064}
 --- !u!61 &61361843316985054
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -1150,9 +1110,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.2, y: 0}
+  m_Offset: {x: 0.20000002, y: -0.100982785}
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 1.6}
+  m_Size: {x: 1.1, y: 1.3980204}
 --- !u!61 &61366116657917856
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -1164,9 +1124,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.15}
+  m_Offset: {x: 1.0160751, y: -0.15000004}
   serializedVersion: 2
-  m_Size: {x: 7, y: 1.4}
+  m_Size: {x: 4.9678497, y: 1.4}
 --- !u!61 &61649776009874318
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -1192,9 +1152,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.052495062}
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 1.6}
+  m_Size: {x: 1.1, y: 1.4950099}
 --- !u!95 &95070434782718338
 Animator:
   serializedVersion: 3
@@ -1247,7 +1207,7 @@ MonoBehaviour:
   enemySight: {fileID: 1817511584967948}
   enemieVelocity: 3
   currentVelocity: 0
-  rageVelocity: 10
+  rageVelocity: 6
   direction: 1
   target: {fileID: 0}
   distanceFromTarget: 0
@@ -1261,9 +1221,9 @@ MonoBehaviour:
   isObstacle: 0
   isFloor: 0
   isGrounded: 0
-  obstacleDisDet: 1.2
-  floorDisDet: 2.6
-  groundDisDet: 1
+  obstacleDisDet: 1.5
+  floorDisDet: 10
+  groundDisDet: 6
   directionDelay: 0
   _spawner: {fileID: 0}
   attack: {fileID: 61361843316985054}
