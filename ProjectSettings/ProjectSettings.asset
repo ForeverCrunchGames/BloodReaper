@@ -122,7 +122,10 @@ PlayerSettings:
     Others: 0
   bundleIdentifier: com.Company.ProductName
   bundleVersion: 1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 1945115285839674, guid: 53112091bd648423797a334081426c91, type: 2}
+  - {fileID: 1623276972283382, guid: 8662259fc404b46328c89d8e9d0915d5, type: 2}
+  - {fileID: 2800000, guid: d4f6bbc383c28429f87b5a7cfbf821ac, type: 3}
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 0
@@ -212,7 +215,11 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
+<<<<<<< HEAD
       m_Icon: {fileID: 2800000, guid: a94174c9f20da594cb85bd806693dba1, type: 3}
+=======
+      m_Icon: {fileID: 2800000, guid: 5a5bad506800546ad8728b52b76edfb8, type: 3}
+>>>>>>> develop
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching:
@@ -222,7 +229,7 @@ PlayerSettings:
   m_BuildTargetGraphicsAPIs:
   - m_BuildTarget: MacStandaloneSupport
     m_APIs: 1000000011000000
-    m_Automatic: 0
+    m_Automatic: 1
   - m_BuildTarget: WindowsStandaloneSupport
     m_APIs: 0200000001000000
     m_Automatic: 1

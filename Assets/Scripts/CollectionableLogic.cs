@@ -26,7 +26,7 @@ public class CollectionableLogic : MonoBehaviour {
         if (other.tag == "Player")
         {
             Instantiate(explosionPrefab, transform.position, transform.localRotation); 
-            Player.isCollectionableCollected = true;
+            Player.SetCollectionable();
             score.AddScoreCollectable();
             Destroy(gameObject);
         }

@@ -5,7 +5,7 @@ using System.Collections;
 public class MenuLogic : MonoBehaviour
 {
     LevelLogic levelLogic;
-  public AudioSource pauseButton; 
+    public AudioSource pauseButton; 
 	private AudioSource clic;
     public GameObject options;
     PlayerMOD player;
@@ -15,7 +15,6 @@ public class MenuLogic : MonoBehaviour
 	public void Start ()
 	{
         levelLogic = GameObject.FindGameObjectWithTag("LevelMnanager").GetComponent<LevelLogic>();
-
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
         clic = GetComponent<AudioSource>();
         options.SetActive(false);

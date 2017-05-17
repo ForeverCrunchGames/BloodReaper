@@ -74,7 +74,7 @@ public class SceneLoader : MonoBehaviour
 
 				if(!levelLogic.IsLastScene())
                 {
-                    SceneManager.UnloadScene(levelLogic.currentScene);
+                    SceneManager.UnloadSceneAsync(levelLogic.currentScene);
                 }
                 async = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
         }

@@ -19,7 +19,7 @@ public class LevelOptions : MonoBehaviour
         if (isSword == true)
         {
             player.isPlayerOverpowered = true;
-            player.isLifeDecreasing = true;
+            player.swordMesh.SetActive(true);
         }
 
         if (isWallSlide == true)

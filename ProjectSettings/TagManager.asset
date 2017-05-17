@@ -38,8 +38,8 @@ TagManager:
   - TargetAttack
   - Hazzard
   - TargetGround
-  - 
-  - 
+  - CanProject
+  - NotProject
   - 
   - 
   - 

@@ -8,6 +8,8 @@ public class AttackLogic : MonoBehaviour {
     public AudioSource hit02;
     public AudioSource hit03;
 
+    public int enemyMeleeLifeRestore;
+
     int random;
 
     PlayerMOD player;
@@ -48,13 +50,13 @@ public class AttackLogic : MonoBehaviour {
                 player.rageCounter = 0;
 
                 cam.isShaking = true;
-                cam.shakeTime = 0.2f;
-                cam.shakePower = 0.1f;
+                cam.shakeTime = 0.3f;
+                cam.shakePower = 0.35f;
 
-                Time.timeScale = 0.0f;
+                //Time.timeScale = 0.0f;
 
                 score.AddScoreEnemyMelee();
-                player.currentLife += 5;
+                player.currentLife += enemyMeleeLifeRestore;
                 state = 1;
                 //StartCoroutine(Wait());
             } 

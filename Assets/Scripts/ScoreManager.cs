@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
 
@@ -10,6 +11,10 @@ public class ScoreManager : MonoBehaviour {
     public GameObject textObj;
     public GameObject finalStatsObj;
     public GameObject abilityObj;
+
+    public Text score;
+    public Text deaths;
+    public Text time;
 
     public bool isAbilityLearned;
 
@@ -65,6 +70,10 @@ public class ScoreManager : MonoBehaviour {
         else if (scoreState == 2)
         {
             finalStatsObj.SetActive(true);
+
+            score.text = ("" + player.playerScore);
+            deaths.text = ("" + player.deadCounter);
+            time.text = ("" + (int)player.time);
         }
 	}
 

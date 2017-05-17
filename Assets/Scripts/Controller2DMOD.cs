@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Controller2DMOD : RaycastController {
+public class Controller2DMOD : RaycastControllerMOD {
 
 	public float maxSlopeAngle = 80;
     public float minSlopeAngle = 30;
     public float currentSlopeAngle;
+
 
 	public CollisionInfo collisions;
 	[HideInInspector]
@@ -25,7 +26,8 @@ public class Controller2DMOD : RaycastController {
 	}
 
 	public void Move(Vector2 moveAmount, Vector2 input, bool standingOnPlatform = false) {
-		UpdateRaycastOrigins ();
+
+        UpdateRaycastOrigins ();
 
 		collisions.Reset ();
 		collisions.moveAmountOld = moveAmount;

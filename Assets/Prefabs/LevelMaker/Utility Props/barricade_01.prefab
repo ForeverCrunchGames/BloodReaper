@@ -325,9 +325,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1821384804364136}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 214.5, y: -16, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27.02, y: -10, z: -0.007520864}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4698505468283208}
   - {fileID: 4773433702666064}
@@ -1038,7 +1038,7 @@ AreaEffector2D:
     serializedVersion: 2
     m_Bits: 262144
   m_UseGlobalAngle: 1
-  m_ForceAngle: 30
+  m_ForceAngle: 160
   m_ForceMagnitude: 30
   m_ForceVariation: 15
   m_ForceTarget: 0
