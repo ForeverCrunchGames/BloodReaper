@@ -15,10 +15,13 @@ public class InstaDeath : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            if (player.state != PlayerMOD.States.DEAD)
+            if (player.screenState != PlayerMOD.ScreenStates.GODMODE)
             {
-                player.SetDead();
-                player.screenState = PlayerMOD.ScreenStates.SCRIPTED;
+                if (player.state != PlayerMOD.States.DEAD)
+                {
+                    player.SetDead();
+                    player.screenState = PlayerMOD.ScreenStates.SCRIPTED;
+                }
             }
         }
     }

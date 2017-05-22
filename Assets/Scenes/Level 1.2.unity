@@ -5378,6 +5378,18 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1783454380932478, guid: 8662259fc404b46328c89d8e9d0915d5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266763668803804, guid: 8662259fc404b46328c89d8e9d0915d5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939672013851100, guid: 8662259fc404b46328c89d8e9d0915d5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8662259fc404b46328c89d8e9d0915d5, type: 2}
   m_IsPrefabParent: 0
@@ -12671,6 +12683,10 @@ MonoBehaviour:
   isSword: 1
   isWallSlide: 0
   isAngularSlide: 0
+  isAbilityLearned: 0
+  levelSpawners: 2
+  levelMaxDeaths: 5
+  levelMaxTime: 120
 --- !u!1001 &938088189
 Prefab:
   m_ObjectHideFlags: 0

@@ -11,14 +11,15 @@ public class ScoreSystem : MonoBehaviour {
     public GameObject PopUp;
     public AudioSource sound1;
     public AudioSource sound2;
+    private PlayerMOD player;
 
     [Space]
 
     [Header("Score Table")]
-    public int scoreEnemyMelee = 100;
-    public int scoreBarricade = 100;
-    public int scoreSpawner = 100;
-    public int scoreCollectable = 100;
+    public int scoreEnemyMelee = 0;
+    public int scoreBarricade = 0;
+    public int scoreSpawner = 1;
+    public int scoreCollectable = 0;
 
     [Space]
 
@@ -27,7 +28,7 @@ public class ScoreSystem : MonoBehaviour {
     public float timeInterpolation = 1f;
 
     float scoreTotal = 0;
-    float scoreCurrent = 0;
+    public float scoreCurrent = 0;
     float scorePopCurrent = 0;
 
     bool isAddScore;
@@ -38,12 +39,12 @@ public class ScoreSystem : MonoBehaviour {
     void Start () 
     {
         PopUp.SetActive(false);
-        scoreUI.text = "" + (int)scoreCurrent;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
 	}
 	
 	void Update () 
     {
-        scoreUI.text = "" + (int)scoreCurrent;
+        scoreUI.text = "" + (int)scoreCurrent + "/" + player.levelSpawners;
         scorePopUpUI.text = "+" + (int)scorePopCurrent;
 
 
@@ -92,18 +93,18 @@ public class ScoreSystem : MonoBehaviour {
 
     public void AddScoreEnemyMelee()
     {
-        scoreTotal += (float)scoreEnemyMelee;
-        scorePopCurrent += (float)scoreEnemyMelee;
+        //scoreTotal += (float)scoreEnemyMelee;
+        //scorePopCurrent += (float)scoreEnemyMelee;
 
-        isAddScore = true;
+        //isAddScore = true;
     }
 
     public void AddScoreBarricade()
     {
-        scoreTotal += (float)scoreBarricade;
-        scorePopCurrent += (float)scoreBarricade;
+        //scoreTotal += (float)scoreBarricade;
+        //scorePopCurrent += (float)scoreBarricade;
 
-        isAddScore = true;
+        //isAddScore = true;
     }
 
     public void AddScoreSpawner()
@@ -116,10 +117,10 @@ public class ScoreSystem : MonoBehaviour {
 
     public void AddScoreCollectable()
     {
-        scoreTotal += (float)scoreCollectable;
-        scorePopCurrent += (float)scoreCollectable;
+        //scoreTotal += (float)scoreCollectable;
+        //scorePopCurrent += (float)scoreCollectable;
 
-        isAddScore = true;
+        //isAddScore = true;
     }
         
 }
