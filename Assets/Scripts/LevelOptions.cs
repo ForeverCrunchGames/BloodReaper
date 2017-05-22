@@ -10,6 +10,12 @@ public class LevelOptions : MonoBehaviour
     public bool isSword;
     public bool isWallSlide;
     public bool isAngularSlide;
+    public bool isAbilityLearned;
+
+    [Header("Level Options")]
+    public int levelSpawners;
+    public int levelMaxDeaths;
+    public int levelMaxTime;
 
 	// Use this for initialization
 	void Start () 
@@ -20,6 +26,11 @@ public class LevelOptions : MonoBehaviour
         {
             player.isPlayerOverpowered = true;
             player.swordMesh.SetActive(true);
+            player.isLifeDecreasing = true;
+        }
+        else
+        {
+            player.isLifeDecreasing = false;
         }
 
         if (isWallSlide == true)
@@ -31,6 +42,15 @@ public class LevelOptions : MonoBehaviour
         {
             player.isPlayerHaveAngularSlide = true;
         }
+
+        if (isAbilityLearned == true)
+            player.isAbilityLearned = true;
+        else
+        {
+            player.isAbilityLearned = false;
+        }
+
+        player.levelSpawners = levelSpawners;
 
 	}
 	

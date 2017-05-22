@@ -37,6 +37,7 @@ public class PlayerMOD : MonoBehaviour {
     private float deadTimer;
     public bool isScripted;
     public int jumpFrameDelay;
+    public int levelSpawners;
 
     [Header("Attacks")]
     public bool enableIntro;
@@ -125,6 +126,7 @@ public class PlayerMOD : MonoBehaviour {
     public GameObject TimeScoreUI;
     public GameObject newAbility;
     public GameObject FlyingShip;
+    public GameObject scoreUIObject;
 
     public Texture2D LidricWell;
     public Texture2D LidricBad;
@@ -171,12 +173,14 @@ public class PlayerMOD : MonoBehaviour {
         deadCounterUI.SetActive(false);
         deadCounter = 0;
         graphics.material.SetTexture("_MainTex",LidricWell);
+        scoreUIObject.SetActive(false);
 
         if (isPlayerOverpowered)
         {
             graphics.material.SetTexture("_MainTex",LidricBad);
             swordMesh.SetActive(true);
             isLifeDecreasing = true;
+            scoreUIObject.SetActive(true);
         }
 
         if (enableIntro == true)
@@ -893,10 +897,6 @@ public class PlayerMOD : MonoBehaviour {
         Cursor.visible = true;
         blurEffect.enabled = true;
         lowpassFilter.enabled = true;
-        if (isPlayerOverpowered)
-        {
-            deadCounterAnim.SetBool("isPause", true);
-        }
         if (isCollectionableCollected == true)
         {
             collectionable.SetActive(true);
@@ -912,10 +912,6 @@ public class PlayerMOD : MonoBehaviour {
         Time.timeScale = 1;
         blurEffect.enabled = false;
         lowpassFilter.enabled = false;
-        if (isPlayerOverpowered)
-        {
-            deadCounterAnim.SetBool("isPause", false);
-        }
         collectionable.SetActive(false);
     }
 }

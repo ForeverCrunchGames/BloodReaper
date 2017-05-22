@@ -20,7 +20,6 @@ public class EnemyMeleeLogic : MonoBehaviour
 
     public GameObject enemyGraphics;
     public GameObject enemyBounds;
-    //public GameObject enemyExplosion;
     public GameObject enemySight;
 
     public float enemieVelocity = 1f;

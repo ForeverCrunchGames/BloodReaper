@@ -18,6 +18,8 @@ TagManager:
   - Manager
   - PlayerGraphics
   - LevelMnanager
+  - LifeIndicator
+  - LevelOptions
   layers:
   - Default
   - TransparentFX
