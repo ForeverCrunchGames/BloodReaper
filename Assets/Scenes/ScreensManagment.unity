@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.114801995, g: 0.11976765, b: 0.10575671, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -206,6 +206,10 @@ MonoBehaviour:
   mainMenuState: 0
   isLvl1Done: 0
   isLvl2Done: 0
+  isLvl3Done: 0
+  lvl1Christals: 0
+  lvl2Christals: 0
+  lvl3Christals: 0
 --- !u!4 &1520617861
 Transform:
   m_ObjectHideFlags: 0

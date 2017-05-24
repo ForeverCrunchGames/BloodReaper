@@ -91,7 +91,8 @@ public class ScoreManager : MonoBehaviour {
                     levelOptions.levelSpawners = 1;
                 }
 
-                scoreSlider.value = (int)scoreSystem.scoreCurrent / levelOptions.levelSpawners;
+                if (player.isCollectionableCollected)
+                    scoreSlider.value = 1;
                 deathsSlider.value = levelOptions.levelMaxDeaths / player.deadCounter;
                 timeSlider.value = levelOptions.levelMaxTime / player.time;
 
@@ -121,7 +122,13 @@ public class ScoreManager : MonoBehaviour {
                     allChristals.SetActive(true);
                 }
 
-                score.text = "" + (int)scoreSystem.scoreCurrent;
+                if (player.isCollectionableCollected)
+                    score.text = "Collected!";
+                else
+                {
+                    score.text = "Not Collected!";
+                }
+
                 deaths.text = "" + player.deadCounter;
                 time.text = "" + (int)player.time;
 

@@ -38,21 +38,21 @@ public class ScoreSystem : MonoBehaviour {
 
     void Start () 
     {
-        PopUp.SetActive(false);
+        //PopUp.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
 	}
 	
 	void Update () 
     {
-        scoreUI.text = "" + (int)scoreCurrent + "/" + player.levelSpawners;
-        scorePopUpUI.text = "+" + (int)scorePopCurrent;
+        //scoreUI.text = "" + (int)scoreCurrent + "/" + player.levelSpawners;
+        //scorePopUpUI.text = "+" + (int)scorePopCurrent;
 
 
         if (isAddScore)
         {
             if (state == 0)
             {
-                PopUp.SetActive(true);
+                //PopUp.SetActive(true);
                 StartCoroutine(WaitPopUp());
                 sound1.Play();
                 state = 1;
@@ -73,7 +73,7 @@ public class ScoreSystem : MonoBehaviour {
                     sound2.Stop();
                     scoreCurrent = scoreTotal;
                     scorePopCurrent = 0;
-                    PopUp.SetActive(false);
+                    //PopUp.SetActive(false);
                     isAddScore = false;
                     state = 0;
                 }

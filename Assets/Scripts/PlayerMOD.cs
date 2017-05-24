@@ -173,14 +173,14 @@ public class PlayerMOD : MonoBehaviour {
         deadCounterUI.SetActive(false);
         deadCounter = 0;
         graphics.material.SetTexture("_MainTex",LidricWell);
-        scoreUIObject.SetActive(false);
+        //scoreUIObject.SetActive(false);
 
         if (isPlayerOverpowered)
         {
             graphics.material.SetTexture("_MainTex",LidricBad);
             swordMesh.SetActive(true);
             isLifeDecreasing = true;
-            scoreUIObject.SetActive(true);
+            //scoreUIObject.SetActive(true);
         }
 
         if (enableIntro == true)

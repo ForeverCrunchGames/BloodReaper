@@ -195,6 +195,7 @@ public class MainMenuLogic : MonoBehaviour
             if (levelLogic.isLvl1Done == true)
             {
                 lvl1Passed.SetActive(true);
+                lvl2NoPassedButton.interactable = true;
 
                 if (levelLogic.lvl1Christals == 1)
                 {
@@ -217,6 +218,7 @@ public class MainMenuLogic : MonoBehaviour
             if (levelLogic.isLvl2Done == true)
             {
                 lvl2Passed.SetActive(true);
+                //lvl2NoPassedButton.interactable = true;
 
                 if (levelLogic.lvl2Christals == 1)
                 {
