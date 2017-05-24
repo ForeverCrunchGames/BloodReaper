@@ -17,6 +17,9 @@ public class LevelOptions : MonoBehaviour
     public int levelMaxDeaths;
     public int levelMaxTime;
 
+    [Header("Saving Options")]
+    public int levelNumber;
+
 	// Use this for initialization
 	void Start () 
     {

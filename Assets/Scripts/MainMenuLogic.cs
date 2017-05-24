@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenuLogic : MonoBehaviour 
@@ -31,6 +32,26 @@ public class MainMenuLogic : MonoBehaviour
     public GameObject titleScreen;
     public GameObject startText;
     public Animator titleAnim;
+
+    //LevelSelector
+    public int levelsPassed;
+
+    public Button lvl1NoPassedButton;
+    public GameObject lvl1NoPassed;
+    public GameObject lvl1Passed;
+    public Button lvl1Christal1;
+    public Button lvl1Christal2;
+    public Button lvl1Christal3;
+    public GameObject lvl1Effect;
+
+    public Button lvl2NoPassedButton;
+    public GameObject lvl2NoPassed;
+    public GameObject lvl2Passed;
+    public Button lvl2Christal1;
+    public Button lvl2Christal2;
+    public Button lvl2Christal3;
+    public GameObject lvl2Effect;
+
 
 	void Start () 
     {
@@ -154,7 +175,66 @@ public class MainMenuLogic : MonoBehaviour
         }        
         else if (State == 4) //Menu 3 (Select Level)
         {
+            if (Input.GetKeyDown(KeyCode.F10))
+            {
+                levelLogic.isLvl1Done = true;
+                levelLogic.isLvl2Done = true;
+                levelLogic.isLvl3Done = true;
 
+                lvl1Christal1.interactable = true;
+                lvl1Christal2.interactable = true;
+                lvl1Christal3.interactable = true;
+                lvl1Effect.SetActive(true);
+
+                lvl2Christal1.interactable = true;
+                lvl2Christal2.interactable = true;
+                lvl2Christal3.interactable = true;
+                lvl2Effect.SetActive(true);
+            }
+
+            if (levelLogic.isLvl1Done == true)
+            {
+                lvl1Passed.SetActive(true);
+
+                if (levelLogic.lvl1Christals == 1)
+                {
+                    lvl1Christal1.interactable = true;
+                }
+                else if (levelLogic.lvl1Christals == 2)
+                {
+                    lvl1Christal1.interactable = true;
+                    lvl1Christal2.interactable = true;
+                }
+                else if (levelLogic.lvl1Christals == 3)
+                {
+                    lvl1Christal1.interactable = true;
+                    lvl1Christal2.interactable = true;
+                    lvl1Christal3.interactable = true;
+                    lvl1Effect.SetActive(true);
+                }
+            }
+
+            if (levelLogic.isLvl2Done == true)
+            {
+                lvl2Passed.SetActive(true);
+
+                if (levelLogic.lvl2Christals == 1)
+                {
+                    lvl2Christal1.interactable = true;
+                }
+                else if (levelLogic.lvl2Christals == 2)
+                {
+                    lvl2Christal1.interactable = true;
+                    lvl2Christal2.interactable = true;
+                }
+                else if (levelLogic.lvl2Christals == 3)
+                {
+                    lvl2Christal1.interactable = true;
+                    lvl2Christal2.interactable = true;
+                    lvl2Christal3.interactable = true;
+                    lvl2Effect.SetActive(true);
+                }
+            }
         }
         else if (State == 5) //NewGame
         {

@@ -16,12 +16,18 @@ public class LevelLogic : MonoBehaviour
 	private int _managerScene;
 	private int _sceneCountInBuildSettings;
 
-    //Storing
+    [Header("Storing")]
     bool introScene;
 
     public int mainMenuState;
+
     public bool isLvl1Done;
     public bool isLvl2Done;
+    public bool isLvl3Done;
+
+    public int lvl1Christals;
+    public int lvl2Christals;
+    public int lvl3Christals;
 
 	void Awake()
 	{
@@ -81,5 +87,9 @@ public class LevelLogic : MonoBehaviour
     public void LoadScene(int i)
     {
         _loader.Load(i);
+    }
+
+    public void SaveStats(int levelNumber)
+    {
     }
 }

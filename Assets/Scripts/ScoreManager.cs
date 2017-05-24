@@ -13,6 +13,7 @@ public class ScoreManager : MonoBehaviour {
     public GameObject textObj;
     public GameObject finalStatsObj;
     public GameObject abilityObj;
+    public GameObject allChristals;
 
     public Text score;
     public Text deaths;
@@ -26,8 +27,7 @@ public class ScoreManager : MonoBehaviour {
     public Button cristalDeaths;
     public Button cristalTime;
 
-    public bool isAbilityLearned;
-
+    int christalCount;
     int scoreState;
     float counter;
 
@@ -42,6 +42,7 @@ public class ScoreManager : MonoBehaviour {
         textObj.SetActive(true);
         finalStatsObj.SetActive(false);
         abilityObj.SetActive(false);
+        allChristals.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -60,7 +61,7 @@ public class ScoreManager : MonoBehaviour {
         }
         else if (scoreState == 1) //Ability
         {
-            if (isAbilityLearned)
+            if (levelOptions.isAbilityLearned)
             {
                 abilityObj.SetActive(true);
                 Cursor.visible = true;
@@ -77,38 +78,70 @@ public class ScoreManager : MonoBehaviour {
             else
             {
                 scoreState = 2;
+
+                finalStatsObj.SetActive(true);
+
+                if (player.deadCounter == 0)
+                {
+                    player.deadCounter = 1;
+                }
+
+                if (levelOptions.levelSpawners == 0)
+                {
+                    levelOptions.levelSpawners = 1;
+                }
+
+                scoreSlider.value = (int)scoreSystem.scoreCurrent / levelOptions.levelSpawners;
+                deathsSlider.value = levelOptions.levelMaxDeaths / player.deadCounter;
+                timeSlider.value = levelOptions.levelMaxTime / player.time;
+
+                if (scoreSlider.value >= 1)
+                {
+                    cristalScore.interactable = true;
+                    christalCount++;
+                }
+                else cristalScore.interactable = false;
+
+                if (deathsSlider.value >= 1)
+                {
+                    cristalDeaths.interactable = true;
+                    christalCount++;
+                }
+                else cristalDeaths.interactable = false;
+
+                if (timeSlider.value >= 1)
+                {
+                    cristalTime.interactable = true;
+                    christalCount++;
+                }
+                else cristalTime.interactable = false;
+
+                if (cristalScore.interactable == true && cristalDeaths.interactable == true && cristalTime.interactable == true)
+                {
+                    allChristals.SetActive(true);
+                }
+
+                score.text = "" + (int)scoreSystem.scoreCurrent;
+                deaths.text = "" + player.deadCounter;
+                time.text = "" + (int)player.time;
+
+                if (levelOptions.levelNumber == 1)
+                {
+                    levelLogic.isLvl1Done = true;
+                    levelLogic.lvl1Christals = christalCount;
+                }
+                else if (levelOptions.levelNumber == 2)
+                {
+                    levelLogic.isLvl2Done = true;
+                    levelLogic.lvl2Christals = christalCount;
+                }
+
+
             }
         }
         else if (scoreState == 2)
         {
-            finalStatsObj.SetActive(true);
-
-            scoreSlider.value = (int)scoreSystem.scoreCurrent / player.levelSpawners;
-            deathsSlider.value = levelOptions.levelMaxDeaths/ player.deadCounter;
-            timeSlider.value = levelOptions.levelMaxTime/ player.time;
-
-            if (scoreSlider.value >= 1)
-            {
-                cristalScore.interactable = true;
-            }
-            else cristalScore.interactable = false;
-
-            if (deathsSlider.value >= 1)
-            {
-                cristalDeaths.interactable = true;
-            }
-            else cristalDeaths.interactable = false;
-
-            if (timeSlider.value >= 1)
-            {
-                cristalTime.interactable = true;
-            }
-            else cristalTime.interactable = false;
-
-            score.text = "" + (int)scoreSystem.scoreCurrent + "/" + player.levelSpawners;
-            score.text = ("" + score);
-            deaths.text = ("" + player.deadCounter);
-            time.text = ("" + (int)player.time);
+            
         }
 	}
 
