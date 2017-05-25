@@ -11,7 +11,7 @@ public class ScoreSystem : MonoBehaviour {
     public GameObject PopUp;
     public AudioSource sound1;
     public AudioSource sound2;
-    private PlayerMOD player;
+    //private PlayerMOD player;
 
     [Space]
 
@@ -39,7 +39,7 @@ public class ScoreSystem : MonoBehaviour {
     void Start () 
     {
         //PopUp.SetActive(false);
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
+        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
 	}
 	
 	void Update () 

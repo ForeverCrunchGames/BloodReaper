@@ -16,6 +16,7 @@ public class MainMenuLogic : MonoBehaviour
     public GameObject menu3;
     public GameObject menuTesting;
     public GameObject options;
+    public GameObject introVideo;
 
     float textCounter;
     public float startTextInterval = 1;
@@ -51,6 +52,14 @@ public class MainMenuLogic : MonoBehaviour
     public Button lvl2Christal2;
     public Button lvl2Christal3;
     public GameObject lvl2Effect;
+
+    public Button lvl3NoPassedButton;
+    public GameObject lvl3NoPassed;
+    public GameObject lvl3Passed;
+    public Button lvl3Christal1;
+    public Button lvl3Christal2;
+    public Button lvl3Christal3;
+    public GameObject lvl3Effect;
 
 
 	void Start () 
@@ -92,6 +101,7 @@ public class MainMenuLogic : MonoBehaviour
 	void Update () 
     {
         levelLogic.mainMenuState = State;
+
 
         if (State == 0)
         {
@@ -190,6 +200,8 @@ public class MainMenuLogic : MonoBehaviour
                 lvl2Christal2.interactable = true;
                 lvl2Christal3.interactable = true;
                 lvl2Effect.SetActive(true);
+
+                lvl3NoPassedButton.interactable = true;
             }
 
             if (levelLogic.isLvl1Done == true)
@@ -218,7 +230,7 @@ public class MainMenuLogic : MonoBehaviour
             if (levelLogic.isLvl2Done == true)
             {
                 lvl2Passed.SetActive(true);
-                //lvl2NoPassedButton.interactable = true;
+                lvl3NoPassedButton.interactable = true;
 
                 if (levelLogic.lvl2Christals == 1)
                 {
@@ -282,6 +294,7 @@ public class MainMenuLogic : MonoBehaviour
         State = 4;
         menu1.SetActive(false);
         menu3.SetActive(true);
+        introVideo.SetActive(true);
     }
     public void SetTesting ()
     {

@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: new_last_props
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHATEST_ON _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+  m_ShaderKeywords: _ALPHATEST_ON _EMISSION _NORMALMAP
   m_LightmapFlags: 1
   m_CustomRenderQueue: 2450
   stringTagMap:
@@ -76,7 +76,7 @@ Material:
       second: 1
     - first:
         name: _Cutoff
-      second: 0.944
+      second: 0.85
     - first:
         name: _DetailNormalMapScale
       second: 1
@@ -88,7 +88,7 @@ Material:
       second: 0
     - first:
         name: _Glossiness
-      second: 0.5
+      second: 0
     - first:
         name: _GlossyReflections
       second: 1

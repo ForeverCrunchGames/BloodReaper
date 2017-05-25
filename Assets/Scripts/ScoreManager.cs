@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour {
 
     PlayerMOD player;
     LevelLogic levelLogic;
-    ScoreSystem scoreSystem;
+    //ScoreSystem scoreSystem;
     LevelOptions levelOptions;
 
     public GameObject textObj;
@@ -35,7 +35,7 @@ public class ScoreManager : MonoBehaviour {
 	void Start () 
     {
         levelLogic = GameObject.FindGameObjectWithTag("LevelMnanager").GetComponent<LevelLogic>();
-        scoreSystem = GameObject.FindGameObjectWithTag("Manager").GetComponent<ScoreSystem>();
+        //scoreSystem = GameObject.FindGameObjectWithTag("Manager").GetComponent<ScoreSystem>();
         levelOptions = GameObject.FindGameObjectWithTag("LevelOptions").GetComponent<LevelOptions>();
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
@@ -79,6 +79,9 @@ public class ScoreManager : MonoBehaviour {
             {
                 scoreState = 2;
 
+                deaths.text = "" + player.deadCounter;
+                time.text = "" + (int)player.time;
+
                 finalStatsObj.SetActive(true);
 
                 if (player.deadCounter == 0)
@@ -86,13 +89,15 @@ public class ScoreManager : MonoBehaviour {
                     player.deadCounter = 1;
                 }
 
-                if (levelOptions.levelSpawners == 0)
+                if (player.isCollectionableCollected)
                 {
-                    levelOptions.levelSpawners = 1;
+                    scoreSlider.value = 1;
+                }
+                else
+                {
+                    scoreSlider.value = 0;
                 }
 
-                if (player.isCollectionableCollected)
-                    scoreSlider.value = 1;
                 deathsSlider.value = levelOptions.levelMaxDeaths / player.deadCounter;
                 timeSlider.value = levelOptions.levelMaxTime / player.time;
 
@@ -123,14 +128,11 @@ public class ScoreManager : MonoBehaviour {
                 }
 
                 if (player.isCollectionableCollected)
-                    score.text = "Collected!";
+                    score.text = "YES!";
                 else
                 {
-                    score.text = "Not Collected!";
+                    score.text = "NO";
                 }
-
-                deaths.text = "" + player.deadCounter;
-                time.text = "" + (int)player.time;
 
                 if (levelOptions.levelNumber == 1)
                 {
