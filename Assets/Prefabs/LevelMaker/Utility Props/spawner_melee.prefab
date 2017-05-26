@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 33422579172845470}
   - component: {fileID: 23191904380255164}
   - component: {fileID: 95156456414078740}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: effect (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1497032157529138}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.5, y: 7, z: 0}
+  m_LocalPosition: {x: 0.5, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4320164787409402}
@@ -561,7 +561,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 7abd679b742354a1792624b9059599d9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -675,7 +675,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4293918719
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -722,7 +722,7 @@ MonoBehaviour:
   spawnRate: 1
   lifeRegenSpeed: 40
   maxEnemies: 5
-  spawnDirection: 0
+  spawnDirection: 1
   counter: -1
 --- !u!114 &114996489973333356
 MonoBehaviour:
@@ -792,7 +792,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -46933285
+  randomSeed: -1524331562
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5904,7 +5904,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -439482489
+  randomSeed: 1721178633
   InitialModule:
     serializedVersion: 3
     enabled: 1

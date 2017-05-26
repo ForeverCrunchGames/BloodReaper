@@ -5,7 +5,8 @@ using UnityEngine;
 public class SpawnerLogic : MonoBehaviour 
 {
     PlayerMOD Player;
-    //ScoreSystem score;
+    ScoreSystem score;
+    LifeIndicator lifeIndicator;
 
     public GameObject hitPoint;
     public GameObject explosionParticles;
@@ -32,7 +33,8 @@ public class SpawnerLogic : MonoBehaviour
     void Start () 
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
-        //score = GameObject.FindGameObjectWithTag("Manager").GetComponent<ScoreSystem>();
+        score = GameObject.FindGameObjectWithTag("Manager").GetComponent<ScoreSystem>();
+        lifeIndicator = GameObject.FindGameObjectWithTag("LifeIndicator").GetComponent<LifeIndicator>();
 
         explosionParticles.SetActive(false);
         //healParticles.SetActive(false);
@@ -41,6 +43,16 @@ public class SpawnerLogic : MonoBehaviour
         counter = maxEnemies;
 
         InvokeRepeating("Spawn", spawnRate, spawnRate);
+
+        if (isDestroyed)
+        {
+            if (isDestroyedState)
+            {
+                hitPoint.SetActive(false);
+                isDestroyedState = false;
+                CancelInvoke();
+            }
+        }
     }
 
     // Update is called once per frame
@@ -52,26 +64,22 @@ public class SpawnerLogic : MonoBehaviour
             {
                 explosionParticles.SetActive(true);
                 hitPoint.SetActive(false);
-                //score.AddScoreSpawner();
+                score.AddScoreSpawner();
                 isDestroyedState = false;
                 CancelInvoke();
             }
 
             if (isPlayerInside == true)
             {
-                //healParticles.SetActive(true);
                 healParticles.Play();
                 Player.currentLife += lifeRegenSpeed * Time.deltaTime;
+                lifeIndicator.LifeGlowing();
                 Player.spawn = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
             }
             else
             {
-                //healParticles.SetActive(false);
                 healParticles.Stop();
             }
-        }
-        else
-        {
         }
     }
         
@@ -90,7 +98,7 @@ public class SpawnerLogic : MonoBehaviour
         else
         {
             //Instanciate Prefab
-            GameObject go = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+            GameObject go = Instantiate(enemyPrefab, new Vector3(spawnPoint.position.x,spawnPoint.position.y,spawnPoint.position.z + Random.Range(-3, 3)), spawnPoint.rotation);
             go.GetComponent<EnemyMeleeLogic> ().Init (this);
             go.transform.parent = transform;
             counter--;

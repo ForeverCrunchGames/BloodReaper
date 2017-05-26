@@ -13,7 +13,13 @@ public class LifeIndicator : MonoBehaviour {
 
     Image thisImage;
 
-    AudioSource beat;
+    public Image lifeGlow;
+    public float glowVelocity;
+    float glowAlpha;
+    int glowState;
+
+    public AudioSource beat;
+    public AudioSource dyingSound;
 
     float delay = 0.4f;
     float counter;
@@ -29,6 +35,11 @@ public class LifeIndicator : MonoBehaviour {
         thisImage = GetComponent<Image>();
 
         beat = GetComponent<AudioSource>();
+
+        glowAlpha = 1;
+        glowState = 0;
+
+        dyingSound.volume = 0;
 	}
 	
 	// Update is called once per frame
@@ -48,12 +59,13 @@ public class LifeIndicator : MonoBehaviour {
 
         currentValue = Mathf.Lerp(currentValue, wantedValue, 5 * Time.deltaTime);
 
-        thisImage.color = new Color(1, 1, 1, 0.75f - currentValue);
+        thisImage.color = new Color(1, 1, 1, 0.85f - currentValue);
 
         lifebarMov.distanceY = 4 * (1 - currentValue);
         lifebarMov.velocityY = 20 * (1 - currentValue);
 
         beat.volume = 1 - currentValue;
+        dyingSound.volume = 0.85f - currentValue;
 
         counter += Time.deltaTime;
 
@@ -63,7 +75,7 @@ public class LifeIndicator : MonoBehaviour {
             counter = 0;
         }
 
-        if (currentValue < 0.1)
+        if (currentValue < 0.25f)
         {
             cam.isShaking = true;
             cam.shakePower = 0.1f;
@@ -74,5 +86,29 @@ public class LifeIndicator : MonoBehaviour {
             currentValue = 1;
             cam.isShaking = false;
         }
+    }
+
+    public void LifeGlowing()
+    {
+            if (glowState == 0)
+            {
+            glowAlpha = Mathf.Lerp(glowAlpha, 1, glowVelocity * Time.unscaledDeltaTime); 
+
+                if (glowAlpha > 0.9f)
+                {
+                    glowState = 1;
+                }
+            }
+            else if (glowState == 1)
+            {
+            glowAlpha = Mathf.Lerp(glowAlpha, 0, glowVelocity * Time.unscaledDeltaTime);
+
+                if (glowAlpha < 0.1f)
+                {
+                    glowState = 0;
+                }
+            }
+
+            lifeGlow.color = new Color(1, 1, 1, glowAlpha);
     }
 }

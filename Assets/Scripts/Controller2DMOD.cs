@@ -7,6 +7,7 @@ public class Controller2DMOD : RaycastControllerMOD {
     public float minSlopeAngle = 30;
     public float currentSlopeAngle;
 
+
 	public CollisionInfo collisions;
 	[HideInInspector]
 	public Vector2 playerInput;
@@ -25,7 +26,8 @@ public class Controller2DMOD : RaycastControllerMOD {
 	}
 
 	public void Move(Vector2 moveAmount, Vector2 input, bool standingOnPlatform = false) {
-		UpdateRaycastOrigins ();
+
+        UpdateRaycastOrigins ();
 
 		collisions.Reset ();
 		collisions.moveAmountOld = moveAmount;

@@ -8,7 +8,10 @@ public class OverpoweredTrigger : MonoBehaviour {
     public AudioSource doom;
 
     PlayerMOD player;
+    public GameObject swordVid;
     public GameObject sword;
+
+    public int state;
 
     // Use this for initialization
 	void Start () 
@@ -19,12 +22,7 @@ public class OverpoweredTrigger : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-		
-	}
-
-    void OnTriggerEnter2D (Collider2D other)
-    {
-        if (other.tag == "Player")
+        if (state == 1)
         {
             player.isPlayerOverpowered = true;
             player.isLifeDecreasing = true;
@@ -37,6 +35,17 @@ public class OverpoweredTrigger : MonoBehaviour {
             doom.Play();
 
             Destroy(gameObject);
+        }
+	}
+
+    void OnTriggerEnter2D (Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            if (state == 0)
+            {
+                swordVid.SetActive(true);
+            }
         }
     }
 }

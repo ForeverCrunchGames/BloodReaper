@@ -16,7 +16,7 @@ namespace UnityStandardAssets.Effects
             // be pushed by physics force
             yield return null;
 
-            float multiplier = GetComponent<ParticleSystemMultiplier>().multiplier;
+            float multiplier = 1;
 
             float r = 10*multiplier;
             var cols = Physics.OverlapSphere(transform.position, r);

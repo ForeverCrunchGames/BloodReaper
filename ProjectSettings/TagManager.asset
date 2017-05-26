@@ -18,6 +18,8 @@ TagManager:
   - Manager
   - PlayerGraphics
   - LevelMnanager
+  - LifeIndicator
+  - LevelOptions
   layers:
   - Default
   - TransparentFX
@@ -38,8 +40,8 @@ TagManager:
   - TargetAttack
   - Hazzard
   - TargetGround
-  - 
-  - 
+  - CanProject
+  - NotProject
   - 
   - 
   - 
