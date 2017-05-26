@@ -1325,9 +1325,10 @@ MonoBehaviour:
   direction: 1
   target: {fileID: 0}
   distanceFromTarget: 0
+  distanceFromTargetY: 0
   huntRange: 10
   attackRange: 0
-  damage: 20
+  damage: 33
   isPlayerDetected: 0
   obstacleMask:
     serializedVersion: 2

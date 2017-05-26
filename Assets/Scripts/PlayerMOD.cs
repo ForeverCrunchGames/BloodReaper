@@ -509,6 +509,7 @@ public class PlayerMOD : MonoBehaviour {
     {
         if (deadState == 0)
         {
+            Time.timeScale = 1;
             hit.Play();
             Player.SetTrigger("SetDead");
             isDeadAnim = true;
@@ -826,6 +827,7 @@ public class PlayerMOD : MonoBehaviour {
             {
                 attackBounds.SetActive(false);
                 swordTrail.Emit = false;
+                Time.timeScale = 1;
             }
         }
         else

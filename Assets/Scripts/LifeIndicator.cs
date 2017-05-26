@@ -92,7 +92,7 @@ public class LifeIndicator : MonoBehaviour {
     {
             if (glowState == 0)
             {
-                glowAlpha = Mathf.Lerp(glowAlpha, 1, glowVelocity * Time.deltaTime); 
+            glowAlpha = Mathf.Lerp(glowAlpha, 1, glowVelocity * Time.unscaledDeltaTime); 
 
                 if (glowAlpha > 0.9f)
                 {
@@ -101,7 +101,7 @@ public class LifeIndicator : MonoBehaviour {
             }
             else if (glowState == 1)
             {
-                glowAlpha = Mathf.Lerp(glowAlpha, 0, glowVelocity * Time.deltaTime);
+            glowAlpha = Mathf.Lerp(glowAlpha, 0, glowVelocity * Time.unscaledDeltaTime);
 
                 if (glowAlpha < 0.1f)
                 {
