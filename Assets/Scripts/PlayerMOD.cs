@@ -97,6 +97,7 @@ public class PlayerMOD : MonoBehaviour {
     float velocityXSmoothing;
 
     [Header("Definitions")]
+    public MeleeWeaponTrail swordTrail;
     public Text deadCounterText;
     public Text timeText;
     public GameObject scoreUI;
@@ -104,7 +105,6 @@ public class PlayerMOD : MonoBehaviour {
     public GameObject optionsUI;
     public GameObject hitUI;
     public GameObject deadCounterUI;
-    //public GameObject playerGraphics;
     public SkinnedMeshRenderer playerMeshRenderer;
     public SkinnedMeshRenderer swordMeshRenderer;
     public Image lifeUI;
@@ -173,14 +173,13 @@ public class PlayerMOD : MonoBehaviour {
         deadCounterUI.SetActive(false);
         deadCounter = 0;
         graphics.material.SetTexture("_MainTex",LidricWell);
-        //scoreUIObject.SetActive(false);
+        swordTrail.Emit = false;
 
         if (isPlayerOverpowered)
         {
             graphics.material.SetTexture("_MainTex",LidricBad);
             swordMesh.SetActive(true);
             isLifeDecreasing = true;
-            //scoreUIObject.SetActive(true);
         }
 
         if (enableIntro == true)
@@ -812,6 +811,7 @@ public class PlayerMOD : MonoBehaviour {
             if (isAttacking)
             {
                 attackBounds.SetActive(true);
+                swordTrail.Emit = true;
 
                 timer += Time.deltaTime;
 
@@ -825,6 +825,7 @@ public class PlayerMOD : MonoBehaviour {
             else
             {
                 attackBounds.SetActive(false);
+                swordTrail.Emit = false;
             }
         }
         else

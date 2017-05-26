@@ -25,8 +25,8 @@ public class PlayerInputMOD : MonoBehaviour {
             player.Attack ();
         }
 
-        if (Input.GetButtonDown ("Fire3")) {
-            player.Defense ();
-        }
+//        if (Input.GetButtonDown ("Fire3")) {
+//            player.Defense ();
+//        }
 	}
 }
