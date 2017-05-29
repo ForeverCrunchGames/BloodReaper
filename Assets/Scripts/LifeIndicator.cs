@@ -59,7 +59,7 @@ public class LifeIndicator : MonoBehaviour {
 
         currentValue = Mathf.Lerp(currentValue, wantedValue, 5 * Time.deltaTime);
 
-        thisImage.color = new Color(1, 1, 1, 0.85f - currentValue);
+        thisImage.color = new Color(1, 1, 1, 1 - currentValue);
 
         lifebarMov.distanceY = 4 * (1 - currentValue);
         lifebarMov.velocityY = 20 * (1 - currentValue);
