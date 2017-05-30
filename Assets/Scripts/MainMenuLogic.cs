@@ -52,6 +52,7 @@ public class MainMenuLogic : MonoBehaviour
     public Button lvl2Christal2;
     public Button lvl2Christal3;
     public GameObject lvl2Effect;
+    public GameObject island2;
 
     public Button lvl3NoPassedButton;
     public GameObject lvl3NoPassed;
@@ -60,6 +61,7 @@ public class MainMenuLogic : MonoBehaviour
     public Button lvl3Christal2;
     public Button lvl3Christal3;
     public GameObject lvl3Effect;
+    public GameObject island3;
 
 
 	void Start () 
@@ -196,6 +198,9 @@ public class MainMenuLogic : MonoBehaviour
                 lvl1Christal3.interactable = true;
                 lvl1Effect.SetActive(true);
 
+                island2.SetActive(true);
+                island3.SetActive(true);
+
                 lvl2Christal1.interactable = true;
                 lvl2Christal2.interactable = true;
                 lvl2Christal3.interactable = true;
@@ -208,6 +213,7 @@ public class MainMenuLogic : MonoBehaviour
             {
                 lvl1Passed.SetActive(true);
                 lvl2NoPassedButton.interactable = true;
+                island2.SetActive(true);
 
                 if (levelLogic.lvl1Christals == 1)
                 {
@@ -231,6 +237,7 @@ public class MainMenuLogic : MonoBehaviour
             {
                 lvl2Passed.SetActive(true);
                 lvl3NoPassedButton.interactable = true;
+                island3.SetActive(true);
 
                 if (levelLogic.lvl2Christals == 1)
                 {

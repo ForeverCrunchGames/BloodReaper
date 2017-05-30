@@ -17,6 +17,7 @@ public class IntroVideoLogic : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            Time.timeScale = 1;
             Destroy(this.gameObject);
         }
 

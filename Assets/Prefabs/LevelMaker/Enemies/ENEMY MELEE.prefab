@@ -1321,7 +1321,7 @@ MonoBehaviour:
   enemySight: {fileID: 1817511584967948}
   enemieVelocity: 3
   currentVelocity: 0
-  rageVelocity: 10
+  rageVelocity: 8
   direction: 1
   target: {fileID: 0}
   distanceFromTarget: 0

@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f5e018c4f6f4ff8916df03042b8dd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 1026455684184152, guid: 419140bf10af84ecc9017a23f5c5da43,
+  explosionPrefab: {fileID: 1899724461870960, guid: 59df0f563f95c764e87867ff8ddcdb83,
     type: 2}
 --- !u!212 &212733468671615436
 SpriteRenderer:
