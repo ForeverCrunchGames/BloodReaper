@@ -295,12 +295,35 @@ public class PlayerMOD : MonoBehaviour {
                     }
 
                     //JUMP
-                    if (Input.GetButtonDown("Jump"))
-                    {
-                        SetJump();
-                    }
+//                    if (Input.GetButtonDown("Jump"))
+//                    {
+//                        SetJump();
+//                    }
 
                     //CONTROLLERS
+                    if (controller.collisions.slopeAngle > 30)
+                    {
+                        if (controller.collisions.descendingSlope == true)
+                        {
+                            Player.SetBool("isRunningDown", true);
+                            Player.SetBool("isRunningUp", false);
+                        }
+                        else
+                        {
+                            Player.SetBool("isRunningUp", true);
+                            Player.SetBool("isRunningDown", false);
+                        }
+                    }
+                    else
+                    {
+                        Player.SetBool("isRunningUp", false);
+
+                        Player.SetBool("isRunningDown", false);
+                    }
+
+
+                    Player.SetFloat("RunVelocity", Mathf.Abs(velocity.x));
+
                     if (velocity.y > 0)
                     {
                         Player.SetBool("VelocityUp", true);
@@ -312,8 +335,15 @@ public class PlayerMOD : MonoBehaviour {
                         
                     if (controller.collisions.below)
                     {
+
                         Player.SetBool("isJumping", false);
                         jumpCounter = 0;
+
+                        if (Input.GetButtonDown("Jump"))
+                        {
+                            SetJump();
+                        }
+
                     }
                     else
                     {
@@ -491,6 +521,7 @@ public class PlayerMOD : MonoBehaviour {
     void SetJump()
     {
         state = States.JUMP;
+
         Player.SetTrigger("JumpPush");
     }
     void UpdateJump()
