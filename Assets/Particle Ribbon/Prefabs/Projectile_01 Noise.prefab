@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 4285754348467742}
   - component: {fileID: 198784103993327754}
   - component: {fileID: 199719672662131290}
+  - component: {fileID: 114111310042755434}
   m_Layer: 0
   m_Name: Projectile_01 Noise
   m_TagString: Untagged
@@ -165,6 +166,19 @@ Transform:
   m_Father: {fileID: 4285754348467742}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114111310042755434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1899724461870960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37fac21d1f093d344816942d1abce94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TimeOut: 2
+  m_DetachChildren: 0
 --- !u!198 &198018591032566760
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -2727,7 +2741,7 @@ ParticleSystem:
   serializedVersion: 5
   lengthInSec: 500
   speed: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   autoRandomSeed: 1
@@ -7983,7 +7997,7 @@ ParticleSystem:
   serializedVersion: 5
   lengthInSec: 5
   speed: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   autoRandomSeed: 1

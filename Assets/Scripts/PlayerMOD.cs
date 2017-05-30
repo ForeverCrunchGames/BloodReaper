@@ -98,6 +98,7 @@ public class PlayerMOD : MonoBehaviour {
 
     [Header("Definitions")]
     public MeleeWeaponTrail swordTrail;
+    public AttackLogic attackLogic;
     public Text deadCounterText;
     public Text timeText;
     public GameObject scoreUI;
@@ -859,6 +860,7 @@ public class PlayerMOD : MonoBehaviour {
                 attackBounds.SetActive(false);
                 swordTrail.Emit = false;
                 Time.timeScale = 1;
+                attackLogic.lifeFlash.SetActive(false);
             }
         }
         else

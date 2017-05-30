@@ -11203,8 +11203,8 @@ MonoBehaviour:
   maxJumpHeight: 2.75
   minJumpHeight: 0
   timeToJumpApex: 0.4
-  accelerationTimeAirborne: 0.175
-  accelerationTimeGrounded: 0.175
+  accelerationTimeAirborne: 0.16
+  accelerationTimeGrounded: 0.16
   moveSpeed: 8
   wallJumpClimb: {x: 10, y: 25}
   wallJumpOff: {x: 25, y: 25}
@@ -11217,6 +11217,7 @@ MonoBehaviour:
   minJumpVelocity: 0
   velocity: {x: 0, y: 0, z: 0}
   swordTrail: {fileID: 114359711106049708}
+  attackLogic: {fileID: 114795090404835470}
   deadCounterText: {fileID: 114365802035543128}
   timeText: {fileID: 114199773364564496}
   scoreUI: {fileID: 1266763668803804}
