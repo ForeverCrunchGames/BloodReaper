@@ -147,6 +147,8 @@ public class PlayerMOD : MonoBehaviour {
     public AudioSource avraeScream;
     public AudioSource win;
     public AudioSource button;
+    public AudioSource lidricDead;
+    public AudioSource jump;
 
 	void Start() 
     {   
@@ -522,7 +524,7 @@ public class PlayerMOD : MonoBehaviour {
     void SetJump()
     {
         state = States.JUMP;
-
+        jump.Play();
         Player.SetTrigger("JumpPush");
     }
     void UpdateJump()
@@ -542,7 +544,7 @@ public class PlayerMOD : MonoBehaviour {
         if (deadState == 0)
         {
             Time.timeScale = 1;
-            hit.Play();
+            lidricDead.Play();
             Player.SetTrigger("SetDead");
             isDeadAnim = true;
             graphics.material.color = Color.red;

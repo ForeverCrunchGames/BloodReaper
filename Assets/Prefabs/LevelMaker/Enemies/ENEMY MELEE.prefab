@@ -1328,7 +1328,7 @@ MonoBehaviour:
   distanceFromTargetY: 0
   huntRange: 10
   attackRange: 0
-  damage: 33
+  damage: 30
   isPlayerDetected: 0
   obstacleMask:
     serializedVersion: 2
