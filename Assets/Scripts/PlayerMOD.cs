@@ -98,6 +98,7 @@ public class PlayerMOD : MonoBehaviour {
 
     [Header("Definitions")]
     public MeleeWeaponTrail swordTrail;
+    public AttackLogic attackLogic;
     public Text deadCounterText;
     public Text timeText;
     public GameObject scoreUI;
@@ -146,6 +147,8 @@ public class PlayerMOD : MonoBehaviour {
     public AudioSource avraeScream;
     public AudioSource win;
     public AudioSource button;
+    public AudioSource lidricDead;
+    public AudioSource jump;
 
 	void Start() 
     {   
@@ -521,7 +524,7 @@ public class PlayerMOD : MonoBehaviour {
     void SetJump()
     {
         state = States.JUMP;
-
+        jump.Play();
         Player.SetTrigger("JumpPush");
     }
     void UpdateJump()
@@ -541,7 +544,7 @@ public class PlayerMOD : MonoBehaviour {
         if (deadState == 0)
         {
             Time.timeScale = 1;
-            hit.Play();
+            lidricDead.Play();
             Player.SetTrigger("SetDead");
             isDeadAnim = true;
             graphics.material.color = Color.red;
@@ -859,6 +862,7 @@ public class PlayerMOD : MonoBehaviour {
                 attackBounds.SetActive(false);
                 swordTrail.Emit = false;
                 Time.timeScale = 1;
+                attackLogic.lifeFlash.SetActive(false);
             }
         }
         else

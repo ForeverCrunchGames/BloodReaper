@@ -51,6 +51,7 @@ public class AttackLogic : MonoBehaviour {
         else
         {
             Time.timeScale = 1;
+            lifeFlash.SetActive(false);
         }
     }
 
@@ -91,7 +92,28 @@ public class AttackLogic : MonoBehaviour {
                 lifeFlash.SetActive(true);
                 state = 1;
                 Time.timeScale = 0.2f;
-            } 
+            }
+            else
+            {
+                //other.GetComponentInParent<EnemyMeleeLogic>().SetDamage(1);
+                //player.currentLife += enemyMeleeLifeRestore;
+                lifeFlash.SetActive(false);
+
+//                random = Random.Range(0, 3);
+//                if (random == 0)
+//                {
+//                    hit01.Play();
+//                }
+//                else if (random == 1)
+//                {
+//                    hit02.Play();
+//                }
+//                else if (random == 2)
+//                {
+//                    hit03.Play();
+//                }
+            }
+                
           
             Debug.Log ("Attacked");
         }
