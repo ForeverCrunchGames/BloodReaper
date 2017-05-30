@@ -49,7 +49,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: b766ae0d2da104f27a82874b5e49c83b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 83981382eea3944a79b540e450e231e0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -73,7 +73,7 @@ Material:
     m_Floats:
     - first:
         name: _BumpScale
-      second: 2
+      second: 1
     - first:
         name: _Cutoff
       second: 0.7
