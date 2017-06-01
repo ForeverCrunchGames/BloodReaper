@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnerLogic : MonoBehaviour 
 {
     PlayerMOD Player;
-    ScoreSystem score;
+    //ScoreSystem score;
     LifeIndicator lifeIndicator;
 
     public GameObject hitPoint;
@@ -33,7 +33,7 @@ public class SpawnerLogic : MonoBehaviour
     void Start () 
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
-        score = GameObject.FindGameObjectWithTag("Manager").GetComponent<ScoreSystem>();
+        //score = GameObject.FindGameObjectWithTag("Manager").GetComponent<ScoreSystem>();
         lifeIndicator = GameObject.FindGameObjectWithTag("LifeIndicator").GetComponent<LifeIndicator>();
 
         explosionParticles.SetActive(false);
@@ -64,7 +64,7 @@ public class SpawnerLogic : MonoBehaviour
             {
                 explosionParticles.SetActive(true);
                 hitPoint.SetActive(false);
-                score.AddScoreSpawner();
+                //score.AddScoreSpawner();
                 isDestroyedState = false;
                 CancelInvoke();
             }

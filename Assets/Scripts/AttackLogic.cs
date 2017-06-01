@@ -44,6 +44,10 @@ public class AttackLogic : MonoBehaviour {
                 Time.timeScale = 1;
                 counter = 0;
                 lifeFlash.SetActive(false);
+
+                cam.isShaking = true;
+                cam.shakeTime = 0.3f;
+                cam.shakePower = 0.2f;
             }
 
 
@@ -85,9 +89,9 @@ public class AttackLogic : MonoBehaviour {
                 gainLife.Play();
                 swordLife.Play();
 
-                cam.isShaking = true;
-                cam.shakeTime = 0.3f;
-                cam.shakePower = 0.35f;
+//                cam.isShaking = true;
+//                cam.shakeTime = 0.3f;
+//                cam.shakePower = 0.2f;
 
                 lifeFlash.SetActive(true);
                 state = 1;
