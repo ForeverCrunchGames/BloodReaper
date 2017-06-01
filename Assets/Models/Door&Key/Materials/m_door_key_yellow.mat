@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: m_door_key
+  m_Name: m_door_key_yellow
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP
   m_LightmapFlags: 1
@@ -124,4 +124,4 @@ Material:
       second: {r: 0.9879458, g: 1, b: 0.99997056, a: 1}
     - first:
         name: _EmissionColor
-      second: {r: 0, g: 1, b: 0.8758621, a: 1}
+      second: {r: 0.9862069, g: 1, b: 0, a: 1}
