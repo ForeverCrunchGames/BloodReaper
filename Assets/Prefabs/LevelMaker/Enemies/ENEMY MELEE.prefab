@@ -1339,7 +1339,7 @@ MonoBehaviour:
   isEnemie: 0
   isGrounded: 0
   obstacleDisDet: 1.4
-  floorDisDet: 10
+  floorDisDet: 100
   currentDirectionDelay: 0
   directionDelay: 0
   jumpDelay: 0
