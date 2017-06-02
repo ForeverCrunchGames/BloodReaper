@@ -20,6 +20,7 @@ TagManager:
   - LevelMnanager
   - LifeIndicator
   - LevelOptions
+  - FinalExplosion
   layers:
   - Default
   - TransparentFX

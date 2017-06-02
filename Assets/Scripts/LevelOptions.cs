@@ -11,6 +11,7 @@ public class LevelOptions : MonoBehaviour
     public bool isWallSlide;
     public bool isAngularSlide;
     public bool isAbilityLearned;
+    public bool isIntroDisabled;
 
     [Header("Level Options")]
     public int levelSpawners;
@@ -20,10 +21,30 @@ public class LevelOptions : MonoBehaviour
     [Header("Saving Options")]
     public int levelNumber;
 
+    [Header("Tiles Color")]
+    public int tileColor;
+    public Material tilesMaterial;
+    public Texture2D tileColor0;
+    public Texture2D tileColor1;
+
 	// Use this for initialization
 	void Start () 
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
+
+        if (isIntroDisabled == true)
+        {
+            player.isIntroEnded = true;
+        }
+
+        if (tileColor == 0)
+        {
+            tilesMaterial.SetTexture("_MainTex", tileColor0);
+        }
+        else if (tileColor == 1)
+        {
+            tilesMaterial.SetTexture("_MainTex", tileColor1);
+        }
 
         if (isSword == true)
         {
