@@ -594,7 +594,7 @@ Prefab:
     - target: {fileID: 114103353771430830, guid: 8662259fc404b46328c89d8e9d0915d5,
         type: 2}
       propertyPath: isPlayerHaveWallSlide
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114103353771430830, guid: 8662259fc404b46328c89d8e9d0915d5,
         type: 2}
@@ -683,6 +683,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1623276972283382, guid: 8662259fc404b46328c89d8e9d0915d5, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114103353771430830, guid: 8662259fc404b46328c89d8e9d0915d5,
+        type: 2}
+      propertyPath: isIntroEnded
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1497,15 +1502,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4674378241579504, guid: d9fc3b8cbec804b0e97391857d85636a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.214556
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4674378241579504, guid: d9fc3b8cbec804b0e97391857d85636a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.3906558
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4674378241579504, guid: d9fc3b8cbec804b0e97391857d85636a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.34252
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4674378241579504, guid: d9fc3b8cbec804b0e97391857d85636a, type: 2}
       propertyPath: m_LocalRotation.x
