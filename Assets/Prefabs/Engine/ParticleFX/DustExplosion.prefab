@@ -37,6 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4165001169345726}
+  - component: {fileID: 114495386780038088}
   m_Layer: 0
   m_Name: DustExplosion
   m_TagString: Untagged
@@ -65,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1210298584289176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.92, y: 0.55, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4165001169345726}
@@ -80,24 +81,24 @@ ParticleAnimator:
   Does Animate Color?: 1
   colorAnimation[0]:
     serializedVersion: 2
-    rgba: 419430399
+    rgba: 391691774
   colorAnimation[1]:
     serializedVersion: 2
-    rgba: 3036676095
+    rgba: 3025317373
   colorAnimation[2]:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4281832444
   colorAnimation[3]:
     serializedVersion: 2
-    rgba: 3036676095
+    rgba: 3023533308
   colorAnimation[4]:
     serializedVersion: 2
-    rgba: 184549375
+    rgba: 168317180
   worldRotationAxis: {x: 0, y: 0, z: 0}
   localRotationAxis: {x: 0, y: 0, z: 0}
   sizeGrow: 2
   rndForce: {x: 0, y: 0, z: 0}
-  force: {x: -1, y: 2, z: 0}
+  force: {x: -1, y: 1, z: 0}
   damping: 1
   stopSimulation: 0
   autodestruct: 1
@@ -111,9 +112,9 @@ EllipsoidParticleEmitter:
   m_Enabled: 1
   m_Emit: 1
   minSize: 1
-  maxSize: 2
+  maxSize: 1.5
   minEnergy: 1.5
-  maxEnergy: 2
+  maxEnergy: 1.5
   minEmission: 5
   maxEmission: 10
   worldVelocity: {x: 1, y: 0, z: 1}
@@ -169,3 +170,16 @@ ParticleRenderer:
     x Tile: 1
     y Tile: 1
     cycles: 1
+--- !u!114 &114495386780038088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590278165971766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37fac21d1f093d344816942d1abce94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TimeOut: 3
+  m_DetachChildren: 0
