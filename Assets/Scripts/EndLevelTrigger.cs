@@ -39,7 +39,8 @@ public class EndLevelTrigger : MonoBehaviour {
             anim.SetBool("Bridge_Open", true);
             anim.SetBool("Wings_Open", true);
             anim.SetFloat("HelicesVelocity", 3);
-            player.isScripted = true;
+            //player.isScripted = true;
+            //player.screenState = PlayerMOD.ScreenStates.SCRIPTED;
             Cursor.visible = true;
             cam.minZoom = 200;
             cam.maxZoom = 200;
