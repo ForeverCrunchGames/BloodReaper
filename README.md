@@ -8,10 +8,15 @@ Meet LIDRIC, a cursed mercenary carrying and ancient sword who will face an unst
 ## Social media:
 
 WEBPAGE: https://forevercrunchgames.wixsite.com/bloodreaper
+
 FACEBOOK: https://www.facebook.com/ForeverCrunchGames
+
 INSTAGRAM: https://www.instagram.com/forever_crunch
+
 MAIL: forevercrunchgames@gmail.com
+
 ITCH.IO: https://forevercrunch.itch.io
+
 Web page: https://forevercrunchgames.wixsite.com/bloodreaper
 
 ### Give us some feedback here!
