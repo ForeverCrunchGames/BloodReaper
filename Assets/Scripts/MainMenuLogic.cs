@@ -70,6 +70,8 @@ public class MainMenuLogic : MonoBehaviour
     public GameObject lore2;
     public GameObject lore3;
 
+    public GameObject AboutUs;
+
 
 	void Start () 
     {
@@ -432,6 +434,52 @@ public class MainMenuLogic : MonoBehaviour
         lore1.SetActive(false);
         lore2.SetActive(false);
         lore3.SetActive(false);
+    }
+
+    public void FeedbackURL()
+    {
+        Application.OpenURL("https://docs.google.com/forms/d/17q-svBMO1nEEo8JER2TW75xLSPCCExRETQpkq0q2fmA/edit");
+        buttonSound.Play();
+    }
+
+    public void WebURL()
+    {
+        Application.OpenURL("https://forevercrunchgames.wixsite.com/bloodreaper");
+        buttonSound.Play();
+    }
+
+    public void FacebookURL()
+    {
+        Application.OpenURL("https://www.facebook.com/ForeverCrunchGames");
+        buttonSound.Play();
+    }
+
+    public void TwitterURL()
+    {
+        Application.OpenURL("https://twitter.com/Forever_Crunch");
+        buttonSound.Play();
+    }
+
+    public void IntagramURL()
+    {
+        Application.OpenURL("https://www.instagram.com/forever_crunch");
+        buttonSound.Play();
+    }
+
+    public void GitHubURL()
+    {
+        Application.OpenURL("https://github.com/ForeverCrunchGames/BloodReaper");
+        buttonSound.Play();
+    }
+
+    public void AboutUsIn()
+    {
+        AboutUs.SetActive(true);
+    }
+
+    public void AboutUsOut()
+    {
+        AboutUs.SetActive(false);
     }
 
 }

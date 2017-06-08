@@ -66,6 +66,11 @@ public class ScoreManager : MonoBehaviour {
                 scoreState = 1;
                 textObj.SetActive(false);
                 animator.SetTrigger("In1");
+
+                if (videoNumber == 0)
+                {
+                    finalMusic.Play();
+                }
             }
         }
         else if (scoreState == 1)
@@ -87,7 +92,6 @@ public class ScoreManager : MonoBehaviour {
                 {
                     scoreState = 3;
                     counter = 0;
-                    finalMusic.Play();
                 }
             }
         }
@@ -98,6 +102,7 @@ public class ScoreManager : MonoBehaviour {
                 if (video1.activeSelf == false)
                 {
                     scoreState = 3;
+                    finalMusic.Play();
                 }
             }
             else if (videoNumber == 2)
@@ -105,14 +110,13 @@ public class ScoreManager : MonoBehaviour {
                 if (video2.activeSelf == false)
                 {
                     scoreState = 3;
+                    finalMusic.Play();
                 }
             }
         }
         else if (scoreState == 3)
         {
             animator.SetTrigger("In2");
-
-            finalMusic.Play();
 
             scoreState = 4;
 
