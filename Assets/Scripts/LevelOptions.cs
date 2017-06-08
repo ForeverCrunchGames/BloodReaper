@@ -10,7 +10,7 @@ public class LevelOptions : MonoBehaviour
     public bool isSword;
     public bool isWallSlide;
     public bool isAngularSlide;
-    public bool isAbilityLearned;
+    public int videoNumber;
     public bool isIntroDisabled;
 
     [Header("Level Options")]
@@ -65,13 +65,6 @@ public class LevelOptions : MonoBehaviour
         if (isAngularSlide == true)
         {
             player.isPlayerHaveAngularSlide = true;
-        }
-
-        if (isAbilityLearned == true)
-            player.isAbilityLearned = true;
-        else
-        {
-            player.isAbilityLearned = false;
         }
 
         player.levelSpawners = levelSpawners;

@@ -12,6 +12,11 @@ public class FinalExplosionLogic : MonoBehaviour {
     public float explosionVelocity;
     public float preExplosionVelocity;
 
+    public AudioSource ballSound;
+    public AudioSource energySound;
+    public AudioSource levelMusic;
+    public AudioSource levelBackGroundSounds;
+
     public float preliminarTime;
 
     public GameObject preExplosionEffect;
@@ -43,14 +48,25 @@ public class FinalExplosionLogic : MonoBehaviour {
                 isRunnerRestarted = true;
             }
 
+            if (isRunnerRestarted)
+            {
+                Reset();
+                explosionRange = 0;
+                isRunnerRestarted = false;
+            }
+
             if (explosionStates == 0)
             {
+                levelMusic.Stop();
+                levelBackGroundSounds.Stop();
                 cam.isShaking = true;
                 cam.shakeTime = 4f;
                 cam.shakePower = 0.5f;
                 preExplosionEffect.SetActive(true);
                 explosionBall.SetActive(true);
                 explosionStates = 1;
+                ballSound.Stop();
+                energySound.Play();
             }
             else if (explosionStates == 1)
             {
@@ -66,6 +82,7 @@ public class FinalExplosionLogic : MonoBehaviour {
                     cam.isShaking = true;
                     cam.shakeTime = 1f;
                     cam.shakePower = 1f;
+                    ballSound.Play();
 
                 }
             }
@@ -78,13 +95,21 @@ public class FinalExplosionLogic : MonoBehaviour {
                 explosionRange += explosionVelocity * Time.deltaTime;
                 explosionBall.transform.localScale = new Vector3(explosionRange, explosionRange, explosionRange);
             }
-        }
 
-        if (isRunnerRestarted)
-        {
-            Reset();
-            isRunnerRestarted = false;
+            if (player.screenState != PlayerMOD.ScreenStates.GAME_RUNNING)
+            {
+                ballSound.Stop();
+                explosionRange = 0;
+            }
+                
         }
+            
+
+//        if (isRunnerRestarted)
+//        {
+//            Reset();
+//            isRunnerRestarted = false;
+//        }
 	}
 
     public void Reset()
@@ -95,5 +120,6 @@ public class FinalExplosionLogic : MonoBehaviour {
         preExplosionEffect2.SetActive(false);
         explosionBall.SetActive(true);
         preliminarTime = 3;
+        ballSound.Stop();
     }
 }

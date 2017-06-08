@@ -150,6 +150,8 @@ public class PlayerMOD : MonoBehaviour {
     public AudioSource lidricDead;
     public AudioSource jump;
 
+    public AudioListener audioListener;
+
 	void Start() 
     {   
         //Calls
@@ -167,7 +169,7 @@ public class PlayerMOD : MonoBehaviour {
         optionsUI.SetActive(false);
         slideParticles.SetActive(false);
         TimeScoreUI.SetActive(true);
-        newAbility.SetActive(false);
+        //newAbility.SetActive(false);
         lifeBar.SetActive(true);
         swordMesh.SetActive(false);
         playerManagerAnim.enabled = false;
@@ -861,7 +863,10 @@ public class PlayerMOD : MonoBehaviour {
             {
                 attackBounds.SetActive(false);
                 swordTrail.Emit = false;
-                Time.timeScale = 1;
+                if (screenState != ScreenStates.GAME_PAUSED)
+                {
+                    Time.timeScale = 1;
+                }
                 attackLogic.lifeFlash.SetActive(false);
             }
         }

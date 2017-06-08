@@ -38,6 +38,7 @@ public class MainMenuLogic : MonoBehaviour
     public int levelsPassed;
 
     public Button lvl1NoPassedButton;
+    public Button lvl1LoreButton;
     public GameObject lvl1NoPassed;
     public GameObject lvl1Passed;
     public Button lvl1Christal1;
@@ -46,6 +47,7 @@ public class MainMenuLogic : MonoBehaviour
     public GameObject lvl1Effect;
 
     public Button lvl2NoPassedButton;
+    public Button lvl2LoreButton;
     public GameObject lvl2NoPassed;
     public GameObject lvl2Passed;
     public Button lvl2Christal1;
@@ -55,6 +57,7 @@ public class MainMenuLogic : MonoBehaviour
     public GameObject island2;
 
     public Button lvl3NoPassedButton;
+    public Button lvl3LoreButton;
     public GameObject lvl3NoPassed;
     public GameObject lvl3Passed;
     public Button lvl3Christal1;
@@ -62,6 +65,10 @@ public class MainMenuLogic : MonoBehaviour
     public Button lvl3Christal3;
     public GameObject lvl3Effect;
     public GameObject island3;
+
+    public GameObject lore1;
+    public GameObject lore2;
+    public GameObject lore3;
 
 
 	void Start () 
@@ -197,6 +204,7 @@ public class MainMenuLogic : MonoBehaviour
                 lvl1Christal2.interactable = true;
                 lvl1Christal3.interactable = true;
                 lvl1Effect.SetActive(true);
+                lvl1LoreButton.interactable = true;
 
                 island2.SetActive(true);
                 island3.SetActive(true);
@@ -205,8 +213,15 @@ public class MainMenuLogic : MonoBehaviour
                 lvl2Christal2.interactable = true;
                 lvl2Christal3.interactable = true;
                 lvl2Effect.SetActive(true);
+                lvl2LoreButton.interactable = true;
 
-                lvl3NoPassedButton.interactable = true;
+                lvl3Christal1.interactable = true;
+                lvl3Christal2.interactable = true;
+                lvl3Christal3.interactable = true;
+                lvl3Effect.SetActive(true);
+                lvl3LoreButton.interactable = true;
+
+                //lvl3NoPassedButton.interactable = true;
             }
 
             if (levelLogic.isLvl1Done == true)
@@ -230,6 +245,7 @@ public class MainMenuLogic : MonoBehaviour
                     lvl1Christal2.interactable = true;
                     lvl1Christal3.interactable = true;
                     lvl1Effect.SetActive(true);
+                    lvl1LoreButton.interactable = true;
                 }
             }
 
@@ -254,6 +270,31 @@ public class MainMenuLogic : MonoBehaviour
                     lvl2Christal2.interactable = true;
                     lvl2Christal3.interactable = true;
                     lvl2Effect.SetActive(true);
+                    lvl2LoreButton.interactable = true;
+                }
+            }
+
+            if (levelLogic.isLvl3Done == true)
+            {
+                lvl3Passed.SetActive(true);
+
+                if (levelLogic.lvl3Christals == 1)
+                {
+                    lvl3Christal1.interactable = true;
+                }
+                else if (levelLogic.lvl3Christals == 2)
+                {
+                    lvl3Christal1.interactable = true;
+                    lvl3Christal2.interactable = true;
+                }
+                else if (levelLogic.lvl3Christals == 3)
+                {
+                    lvl3Christal1.interactable = true;
+                    lvl3Christal2.interactable = true;
+                    lvl3Christal3.interactable = true;
+                    lvl3Effect.SetActive(true);
+                    lvl3LoreButton.interactable = true;
+
                 }
             }
         }
@@ -365,4 +406,28 @@ public class MainMenuLogic : MonoBehaviour
     {
         buttonSound.Play();
     }
+
+    public void OpenLore(int i)
+    {
+        if (i == 1)
+        {
+            lore1.SetActive(true);
+        }
+        else if (i == 2)
+        {
+            lore2.SetActive(true);
+        }
+        else if (i == 3)
+        {
+            lore3.SetActive(true);
+        }
+    }
+
+    public void CloseLore()
+    {
+        lore1.SetActive(false);
+        lore2.SetActive(false);
+        lore3.SetActive(false);
+    }
+
 }

@@ -65,7 +65,10 @@ public class AttackLogic : MonoBehaviour {
         {
             if (state == 0)
             {
-                other.GetComponentInParent<EnemyMeleeLogic>().SetDamage(1);
+                if (other.GetComponentInParent<EnemyMeleeLogic>())
+                {
+                    other.GetComponentInParent<EnemyMeleeLogic>().SetDamage(1);
+                }
 
                 //Blood sounds
                 random = Random.Range(0, 3);

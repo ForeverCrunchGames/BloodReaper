@@ -9,6 +9,8 @@ public class SwordVideoLogic : MonoBehaviour {
     public MovieTexture movie;
     public OverpoweredTrigger trigger;
 
+    int states;
+
 	void Start () 
     {
         movie.Play();
@@ -17,11 +19,28 @@ public class SwordVideoLogic : MonoBehaviour {
 	
 	void Update () 
     {
+        if (states == 0)
+        {
+            movie.Play();
+            states = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Time.timeScale = 1;
+            trigger.state = 1;
+            gameObject.SetActive(false);
+            movie.Stop();
+            states = 0;
+        }
+
         if (movie.isPlaying == false)
         {
             Time.timeScale = 1;
             trigger.state = 1;
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
+            movie.Stop();
+            states = 0;
         }
 	}
 }
