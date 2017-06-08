@@ -15,10 +15,14 @@ public class SwordVideoLogic : MonoBehaviour {
     {
         movie.Play();
         Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 	}
 	
 	void Update () 
     {
+        Time.timeScale = 0;
+
         if (states == 0)
         {
             movie.Play();
@@ -32,6 +36,8 @@ public class SwordVideoLogic : MonoBehaviour {
             gameObject.SetActive(false);
             movie.Stop();
             states = 0;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         if (movie.isPlaying == false)
@@ -41,6 +47,19 @@ public class SwordVideoLogic : MonoBehaviour {
             gameObject.SetActive(false);
             movie.Stop();
             states = 0;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.None;
         }
 	}
+
+    public void Skip()
+    {
+        Time.timeScale = 1;
+        trigger.state = 1;
+        gameObject.SetActive(false);
+        movie.Stop();
+        states = 0;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
+    }
 }

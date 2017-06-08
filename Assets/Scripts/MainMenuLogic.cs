@@ -112,6 +112,10 @@ public class MainMenuLogic : MonoBehaviour
         levelLogic.mainMenuState = State;
 
 
+        //Cursor clamp
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         if (State == 0)
         {
             if (Input.anyKey)

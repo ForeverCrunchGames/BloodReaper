@@ -201,6 +201,10 @@ public class ScoreManager : MonoBehaviour {
                 animator.SetTrigger("In3");
                 counter = 0;
                 scoreState = 5;
+
+                //Cursor clamp
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
         }
         else if (scoreState == 5)

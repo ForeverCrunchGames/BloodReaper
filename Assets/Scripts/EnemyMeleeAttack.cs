@@ -6,6 +6,8 @@ public class EnemyMeleeAttack : MonoBehaviour {
 
     public EnemyMeleeLogic enemy;
 
+    public AudioSource enemyAttack;
+
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -13,6 +15,7 @@ public class EnemyMeleeAttack : MonoBehaviour {
             if (enemy.player.isInmune == false)
             {
                 enemy.player.RecieveDamage(enemy.damage);
+                enemyAttack.Play();
             }
         }
     }

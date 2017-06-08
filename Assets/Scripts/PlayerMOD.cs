@@ -149,6 +149,7 @@ public class PlayerMOD : MonoBehaviour {
     public AudioSource button;
     public AudioSource lidricDead;
     public AudioSource jump;
+    public AudioSource splash;
 
     public AudioListener audioListener;
 
@@ -202,6 +203,7 @@ public class PlayerMOD : MonoBehaviour {
 		minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
 
         //Cursor
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 	}
 
@@ -547,6 +549,7 @@ public class PlayerMOD : MonoBehaviour {
         {
             Time.timeScale = 1;
             lidricDead.Play();
+            splash.Play();
             Player.SetTrigger("SetDead");
             isDeadAnim = true;
             graphics.material.color = Color.red;
@@ -938,6 +941,7 @@ public class PlayerMOD : MonoBehaviour {
         optionsUI.SetActive(true);
         Time.timeScale = 0;
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         blurEffect.enabled = true;
         lowpassFilter.enabled = true;
         if (isCollectionableCollected == true)
@@ -951,6 +955,7 @@ public class PlayerMOD : MonoBehaviour {
     {
         SetGameRunning();
         optionsUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;
         blurEffect.enabled = false;

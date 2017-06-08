@@ -13,6 +13,8 @@ public class IntroVideoLogic : MonoBehaviour {
     {
         movie.Play();
         Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 	}
 
     void Init()
@@ -35,6 +37,8 @@ public class IntroVideoLogic : MonoBehaviour {
             gameObject.SetActive(false);
             movie.Stop();
             states = 0;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         if (movie.isPlaying == false)
@@ -43,6 +47,18 @@ public class IntroVideoLogic : MonoBehaviour {
             gameObject.SetActive(false);
             movie.Stop();
             states = 0;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.None;
         }
 	}
+
+    public void Skip()
+    {
+        Time.timeScale = 1;
+        gameObject.SetActive(false);
+        movie.Stop();
+        states = 0;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
+    }
 }
