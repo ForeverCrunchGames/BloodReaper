@@ -19,8 +19,6 @@ MAIL: forevercrunchgames@gmail.com
 
 ITCH.IO: https://forevercrunch.itch.io
 
-Web page: https://forevercrunchgames.wixsite.com/bloodreaper
-
 ### Give us some feedback here!
 
 https://docs.google.com/forms/d/17q-svBMO1nEEo8JER2TW75xLSPCCExRETQpkq0q2fmA
