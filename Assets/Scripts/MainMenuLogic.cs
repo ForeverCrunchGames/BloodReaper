@@ -37,6 +37,9 @@ public class MainMenuLogic : MonoBehaviour
     //LevelSelector
     public int levelsPassed;
 
+    //Options
+    public Animator optionsAnimator;
+
     public Button lvl1NoPassedButton;
     public Button lvl1LoreButton;
     public GameObject lvl1NoPassed;
@@ -480,6 +483,16 @@ public class MainMenuLogic : MonoBehaviour
     public void AboutUsOut()
     {
         AboutUs.SetActive(false);
+    }
+
+    public void OptionsIn()
+    {
+        optionsAnimator.SetTrigger("In");
+    }
+
+    public void OptionsOut()
+    {
+        optionsAnimator.SetTrigger("Out");
     }
 
 }

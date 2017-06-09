@@ -9,7 +9,7 @@ public class OptionsManager : MonoBehaviour {
     public Dropdown qualityDropdown;
     public Slider sliderVolume;
     public Slider sliderGamma;
-    public Animator popup;
+    public Animator optionsAnimator;
 
     public Color ambientDarkest;
     public Color ambientLightest;
@@ -17,7 +17,7 @@ public class OptionsManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -110,7 +110,7 @@ public class OptionsManager : MonoBehaviour {
 
     public void Back()
     {
-        popup.SetTrigger("popupinverse");
+        //popup.SetTrigger("popupinverse");
 
         StartCoroutine(SetInactive());
     }
@@ -128,5 +128,15 @@ public class OptionsManager : MonoBehaviour {
     IEnumerator SetInactive() {
         yield return new WaitForSecondsRealtime(0.5f);
         gameObject.SetActive(false);
+    }
+
+    public void OptionsIn()
+    {
+        optionsAnimator.SetTrigger("In");
+    }
+
+    public void OptionsOut()
+    {
+        optionsAnimator.SetTrigger("Out");
     }
 }

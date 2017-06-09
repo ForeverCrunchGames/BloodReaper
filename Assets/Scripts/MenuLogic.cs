@@ -7,7 +7,7 @@ public class MenuLogic : MonoBehaviour
     LevelLogic levelLogic;
     public AudioSource pauseButton; 
 	private AudioSource clic;
-    public GameObject options;
+    //public GameObject options;
     PlayerMOD player;
 
     int activeScreen;
@@ -17,7 +17,7 @@ public class MenuLogic : MonoBehaviour
         levelLogic = GameObject.FindGameObjectWithTag("LevelMnanager").GetComponent<LevelLogic>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMOD>();
         clic = GetComponent<AudioSource>();
-        options.SetActive(false);
+        //options.SetActive(false);
     }
 
 	public void ResetScene()
@@ -40,7 +40,7 @@ public class MenuLogic : MonoBehaviour
 
     public void Options()
     {
-        options.SetActive(true);
+        //options.SetActive(true);
     }
 
     public void LoadScene(int i)
