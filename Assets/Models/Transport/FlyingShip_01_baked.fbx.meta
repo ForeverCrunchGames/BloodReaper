@@ -1,0 +1,755 @@
+fileFormatVersion: 2
+guid: 866b4d0dc1a4d41b0a5bfa2572d3f615
+timeCreated: 1491107654
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Ala_sup_L1_group47_polySurface37
+    100002: Ales
+    100004: Animable
+    100006: Engine
+    100008: engranatge
+    100010: engranatge7
+    100012: engranatge8
+    100014: engranatge9
+    100016: Engranatge_gran
+    100018: //RootNode
+    100020: group46
+    100022: group60
+    100024: group61
+    100026: group62
+    100028: group63
+    100030: group64
+    100032: group65
+    100034: group66
+    100036: group68
+    100038: group69
+    100040: group71
+    100042: pCube22
+    100044: pCube63
+    100046: pistoinf
+    100048: pistoinf 1
+    100050: pistoinf 2
+    100052: pistoinf 3
+    100054: pistosup
+    100056: pistosup 1
+    100058: pistosup 2
+    100060: pistosup 3
+    100062: polySurface2
+    100064: polySurface37
+    100066: Pont
+    100068: Static
+    100070: Timo
+    100072: Trampilla_Inferior
+    100074: TrampillaSuperior
+    400000: Ala_sup_L1_group47_polySurface37
+    400002: Ales
+    400004: Animable
+    400006: Engine
+    400008: engranatge
+    400010: engranatge7
+    400012: engranatge8
+    400014: engranatge9
+    400016: Engranatge_gran
+    400018: //RootNode
+    400020: group46
+    400022: group60
+    400024: group61
+    400026: group62
+    400028: group63
+    400030: group64
+    400032: group65
+    400034: group66
+    400036: group68
+    400038: group69
+    400040: group71
+    400042: pCube22
+    400044: pCube63
+    400046: pistoinf
+    400048: pistoinf 1
+    400050: pistoinf 2
+    400052: pistoinf 3
+    400054: pistosup
+    400056: pistosup 1
+    400058: pistosup 2
+    400060: pistosup 3
+    400062: polySurface2
+    400064: polySurface37
+    400066: Pont
+    400068: Static
+    400070: Timo
+    400072: Trampilla_Inferior
+    400074: TrampillaSuperior
+    2300000: Ala_sup_L1_group47_polySurface37
+    2300002: engranatge
+    2300004: engranatge7
+    2300006: engranatge8
+    2300008: engranatge9
+    2300010: Engranatge_gran
+    2300012: group46
+    2300014: group60
+    2300016: group68
+    2300018: group69
+    2300020: group71
+    2300022: pCube22
+    2300024: pCube63
+    2300026: pistoinf
+    2300028: pistoinf 1
+    2300030: pistoinf 2
+    2300032: pistoinf 3
+    2300034: pistosup
+    2300036: pistosup 1
+    2300038: pistosup 2
+    2300040: pistosup 3
+    2300042: polySurface2
+    2300044: polySurface37
+    2300046: Static
+    2300048: Timo
+    2300050: TrampillaSuperior
+    3300000: Ala_sup_L1_group47_polySurface37
+    3300002: engranatge
+    3300004: engranatge7
+    3300006: engranatge8
+    3300008: engranatge9
+    3300010: Engranatge_gran
+    3300012: group46
+    3300014: group60
+    3300016: group68
+    3300018: group69
+    3300020: group71
+    3300022: pCube22
+    3300024: pCube63
+    3300026: pistoinf
+    3300028: pistoinf 1
+    3300030: pistoinf 2
+    3300032: pistoinf 3
+    3300034: pistosup
+    3300036: pistosup 1
+    3300038: pistosup 2
+    3300040: pistosup 3
+    3300042: polySurface2
+    3300044: polySurface37
+    3300046: Static
+    3300048: Timo
+    3300050: TrampillaSuperior
+    4300000: Static
+    4300002: TrampillaSuperior
+    4300004: pCube22
+    4300006: engranatge
+    4300008: engranatge7
+    4300010: pCube63
+    4300012: group68
+    4300014: group69
+    4300016: group71
+    4300018: Engranatge_gran
+    4300020: group60
+    4300022: group46
+    4300024: pistoinf
+    4300026: pistosup
+    4300028: pistoinf
+    4300030: pistosup
+    4300032: pistoinf
+    4300034: pistosup
+    4300036: pistosup
+    4300038: pistoinf
+    4300040: Ala_sup_L1_group47_polySurface37
+    4300042: polySurface37
+    4300044: Timo
+    4300046: engranatge8
+    4300048: polySurface2
+    4300050: engranatge9
+    7400000: Pont
+    7400002: Trampilla
+    7400004: Fosa
+    7400006: Helices
+    7400008: Ales
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Pont
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Animable
+        weight: 1
+      - path: Animable/Ales
+        weight: 1
+      - path: Animable/Ales/Ala_sup_L1_group47_polySurface37
+        weight: 1
+      - path: Animable/Ales/group65
+        weight: 1
+      - path: Animable/Ales/group65/group61
+        weight: 1
+      - path: Animable/Ales/group65/group61/pistoinf
+        weight: 1
+      - path: Animable/Ales/group65/group61/pistosup
+        weight: 1
+      - path: Animable/Ales/group65/group62
+        weight: 1
+      - path: Animable/Ales/group65/group62/pistoinf 1
+        weight: 1
+      - path: Animable/Ales/group65/group62/pistosup 1
+        weight: 1
+      - path: Animable/Ales/group65/group63
+        weight: 1
+      - path: Animable/Ales/group65/group63/pistoinf 2
+        weight: 1
+      - path: Animable/Ales/group65/group63/pistosup 2
+        weight: 1
+      - path: Animable/Ales/group65/group64
+        weight: 1
+      - path: Animable/Ales/group65/group64/pistoinf 3
+        weight: 1
+      - path: Animable/Ales/group65/group64/pistosup 3
+        weight: 1
+      - path: Animable/Ales/group66
+        weight: 1
+      - path: Animable/Ales/group66/group46
+        weight: 1
+      - path: Animable/Ales/group66/group60
+        weight: 1
+      - path: Animable/Ales/polySurface37
+        weight: 1
+      - path: Animable/Engine
+        weight: 1
+      - path: Animable/Engine/Engranatge_gran
+        weight: 1
+      - path: Animable/Engine/group68
+        weight: 1
+      - path: Animable/Engine/group69
+        weight: 1
+      - path: Animable/Engine/group71
+        weight: 1
+      - path: Animable/Pont
+        weight: 1
+      - path: Animable/Pont/engranatge
+        weight: 1
+      - path: Animable/Pont/engranatge7
+        weight: 1
+      - path: Animable/Pont/pCube22
+        weight: 1
+      - path: Animable/Pont/pCube63
+        weight: 1
+      - path: Animable/Timo
+        weight: 1
+      - path: Animable/Trampilla_Inferior
+        weight: 1
+      - path: Animable/Trampilla_Inferior/engranatge8
+        weight: 1
+      - path: Animable/Trampilla_Inferior/engranatge9
+        weight: 1
+      - path: Animable/Trampilla_Inferior/polySurface2
+        weight: 1
+      - path: Animable/TrampillaSuperior
+        weight: 1
+      - path: Static
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Trampilla
+      takeName: Take 001
+      firstFrame: 51
+      lastFrame: 91
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Animable
+        weight: 1
+      - path: Animable/Ales
+        weight: 1
+      - path: Animable/Ales/Ala_sup_L1_group47_polySurface37
+        weight: 1
+      - path: Animable/Ales/group65
+        weight: 1
+      - path: Animable/Ales/group65/group61
+        weight: 1
+      - path: Animable/Ales/group65/group61/pistoinf
+        weight: 1
+      - path: Animable/Ales/group65/group61/pistosup
+        weight: 1
+      - path: Animable/Ales/group65/group62
+        weight: 1
+      - path: Animable/Ales/group65/group62/pistoinf 1
+        weight: 1
+      - path: Animable/Ales/group65/group62/pistosup 1
+        weight: 1
+      - path: Animable/Ales/group65/group63
+        weight: 1
+      - path: Animable/Ales/group65/group63/pistoinf 2
+        weight: 1
+      - path: Animable/Ales/group65/group63/pistosup 2
+        weight: 1
+      - path: Animable/Ales/group65/group64
+        weight: 1
+      - path: Animable/Ales/group65/group64/pistoinf 3
+        weight: 1
+      - path: Animable/Ales/group65/group64/pistosup 3
+        weight: 1
+      - path: Animable/Ales/group66
+        weight: 1
+      - path: Animable/Ales/group66/group46
+        weight: 1
+      - path: Animable/Ales/group66/group60
+        weight: 1
+      - path: Animable/Ales/polySurface37
+        weight: 1
+      - path: Animable/Engine
+        weight: 1
+      - path: Animable/Engine/Engranatge_gran
+        weight: 1
+      - path: Animable/Engine/group68
+        weight: 1
+      - path: Animable/Engine/group69
+        weight: 1
+      - path: Animable/Engine/group71
+        weight: 1
+      - path: Animable/Pont
+        weight: 1
+      - path: Animable/Pont/engranatge
+        weight: 1
+      - path: Animable/Pont/engranatge7
+        weight: 1
+      - path: Animable/Pont/pCube22
+        weight: 1
+      - path: Animable/Pont/pCube63
+        weight: 1
+      - path: Animable/Timo
+        weight: 1
+      - path: Animable/Trampilla_Inferior
+        weight: 1
+      - path: Animable/Trampilla_Inferior/engranatge8
+        weight: 1
+      - path: Animable/Trampilla_Inferior/engranatge9
+        weight: 1
+      - path: Animable/Trampilla_Inferior/polySurface2
+        weight: 1
+      - path: Animable/TrampillaSuperior
+        weight: 1
+      - path: Static
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fosa
+      takeName: Take 001
+      firstFrame: 92
+      lastFrame: 142
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Animable
+        weight: 1
+      - path: Animable/Ales
+        weight: 1
+      - path: Animable/Ales/Ala_sup_L1_group47_polySurface37
+        weight: 1
+      - path: Animable/Ales/group65
+        weight: 1
+      - path: Animable/Ales/group65/group61
+        weight: 1
+      - path: Animable/Ales/group65/group61/pistoinf
+        weight: 1
+      - path: Animable/Ales/group65/group61/pistosup
+        weight: 1
+      - path: Animable/Ales/group65/group62
+        weight: 1
+      - path: Animable/Ales/group65/group62/pistoinf 1
+        weight: 1
+      - path: Animable/Ales/group65/group62/pistosup 1
+        weight: 1
+      - path: Animable/Ales/group65/group63
+        weight: 1
+      - path: Animable/Ales/group65/group63/pistoinf 2
+        weight: 1
+      - path: Animable/Ales/group65/group63/pistosup 2
+        weight: 1
+      - path: Animable/Ales/group65/group64
+        weight: 1
+      - path: Animable/Ales/group65/group64/pistoinf 3
+        weight: 1
+      - path: Animable/Ales/group65/group64/pistosup 3
+        weight: 1
+      - path: Animable/Ales/group66
+        weight: 1
+      - path: Animable/Ales/group66/group46
+        weight: 1
+      - path: Animable/Ales/group66/group60
+        weight: 1
+      - path: Animable/Ales/polySurface37
+        weight: 1
+      - path: Animable/Engine
+        weight: 1
+      - path: Animable/Engine/Engranatge_gran
+        weight: 1
+      - path: Animable/Engine/group68
+        weight: 1
+      - path: Animable/Engine/group69
+        weight: 1
+      - path: Animable/Engine/group71
+        weight: 1
+      - path: Animable/Pont
+        weight: 1
+      - path: Animable/Pont/engranatge
+        weight: 1
+      - path: Animable/Pont/engranatge7
+        weight: 1
+      - path: Animable/Pont/pCube22
+        weight: 1
+      - path: Animable/Pont/pCube63
+        weight: 1
+      - path: Animable/Timo
+        weight: 1
+      - path: Animable/Trampilla_Inferior
+        weight: 1
+      - path: Animable/Trampilla_Inferior/engranatge8
+        weight: 1
+      - path: Animable/Trampilla_Inferior/engranatge9
+        weight: 1
+      - path: Animable/Trampilla_Inferior/polySurface2
+        weight: 1
+      - path: Animable/TrampillaSuperior
+        weight: 1
+      - path: Static
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Helices
+      takeName: Take 001
+      firstFrame: 143
+      lastFrame: 193
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Animable
+        weight: 1
+      - path: Animable/Ales
+        weight: 1
+      - path: Animable/Ales/Ala_sup_L1_group47_polySurface37
+        weight: 1
+      - path: Animable/Ales/group65
+        weight: 1
+      - path: Animable/Ales/group65/group61
+        weight: 1
+      - path: Animable/Ales/group65/group61/pistoinf
+        weight: 1
+      - path: Animable/Ales/group65/group61/pistosup
+        weight: 1
+      - path: Animable/Ales/group65/group62
+        weight: 1
+      - path: Animable/Ales/group65/group62/pistoinf 1
+        weight: 1
+      - path: Animable/Ales/group65/group62/pistosup 1
+        weight: 1
+      - path: Animable/Ales/group65/group63
+        weight: 1
+      - path: Animable/Ales/group65/group63/pistoinf 2
+        weight: 1
+      - path: Animable/Ales/group65/group63/pistosup 2
+        weight: 1
+      - path: Animable/Ales/group65/group64
+        weight: 1
+      - path: Animable/Ales/group65/group64/pistoinf 3
+        weight: 1
+      - path: Animable/Ales/group65/group64/pistosup 3
+        weight: 1
+      - path: Animable/Ales/group66
+        weight: 1
+      - path: Animable/Ales/group66/group46
+        weight: 1
+      - path: Animable/Ales/group66/group60
+        weight: 1
+      - path: Animable/Ales/polySurface37
+        weight: 1
+      - path: Animable/Engine
+        weight: 1
+      - path: Animable/Engine/Engranatge_gran
+        weight: 1
+      - path: Animable/Engine/group68
+        weight: 1
+      - path: Animable/Engine/group69
+        weight: 1
+      - path: Animable/Engine/group71
+        weight: 1
+      - path: Animable/Pont
+        weight: 1
+      - path: Animable/Pont/engranatge
+        weight: 1
+      - path: Animable/Pont/engranatge7
+        weight: 1
+      - path: Animable/Pont/pCube22
+        weight: 1
+      - path: Animable/Pont/pCube63
+        weight: 1
+      - path: Animable/Timo
+        weight: 1
+      - path: Animable/Trampilla_Inferior
+        weight: 1
+      - path: Animable/Trampilla_Inferior/engranatge8
+        weight: 1
+      - path: Animable/Trampilla_Inferior/engranatge9
+        weight: 1
+      - path: Animable/Trampilla_Inferior/polySurface2
+        weight: 1
+      - path: Animable/TrampillaSuperior
+        weight: 1
+      - path: Static
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Ales
+      takeName: Take 001
+      firstFrame: 194
+      lastFrame: 244
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Animable
+        weight: 1
+      - path: Animable/Ales
+        weight: 1
+      - path: Animable/Ales/Ala_sup_L1_group47_polySurface37
+        weight: 1
+      - path: Animable/Ales/group65
+        weight: 1
+      - path: Animable/Ales/group65/group61
+        weight: 1
+      - path: Animable/Ales/group65/group61/pistoinf
+        weight: 1
+      - path: Animable/Ales/group65/group61/pistosup
+        weight: 1
+      - path: Animable/Ales/group65/group62
+        weight: 1
+      - path: Animable/Ales/group65/group62/pistoinf 1
+        weight: 1
+      - path: Animable/Ales/group65/group62/pistosup 1
+        weight: 1
+      - path: Animable/Ales/group65/group63
+        weight: 1
+      - path: Animable/Ales/group65/group63/pistoinf 2
+        weight: 1
+      - path: Animable/Ales/group65/group63/pistosup 2
+        weight: 1
+      - path: Animable/Ales/group65/group64
+        weight: 1
+      - path: Animable/Ales/group65/group64/pistoinf 3
+        weight: 1
+      - path: Animable/Ales/group65/group64/pistosup 3
+        weight: 1
+      - path: Animable/Ales/group66
+        weight: 1
+      - path: Animable/Ales/group66/group46
+        weight: 1
+      - path: Animable/Ales/group66/group60
+        weight: 1
+      - path: Animable/Ales/polySurface37
+        weight: 1
+      - path: Animable/Engine
+        weight: 1
+      - path: Animable/Engine/Engranatge_gran
+        weight: 1
+      - path: Animable/Engine/group68
+        weight: 1
+      - path: Animable/Engine/group69
+        weight: 1
+      - path: Animable/Engine/group71
+        weight: 1
+      - path: Animable/Pont
+        weight: 1
+      - path: Animable/Pont/engranatge
+        weight: 1
+      - path: Animable/Pont/engranatge7
+        weight: 1
+      - path: Animable/Pont/pCube22
+        weight: 1
+      - path: Animable/Pont/pCube63
+        weight: 1
+      - path: Animable/Timo
+        weight: 1
+      - path: Animable/Trampilla_Inferior
+        weight: 1
+      - path: Animable/Trampilla_Inferior/engranatge8
+        weight: 1
+      - path: Animable/Trampilla_Inferior/engranatge9
+        weight: 1
+      - path: Animable/Trampilla_Inferior/polySurface2
+        weight: 1
+      - path: Animable/TrampillaSuperior
+        weight: 1
+      - path: Static
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,223 @@
+fileFormatVersion: 2
+guid: 13ea421079eee4fde804f1c8c26ad3cf
+timeCreated: 1493958905
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: J_Ankle_L
+    100004: J_Ankle_R
+    100006: J_Arm_L
+    100008: J_Arm_R
+    100010: J_Back
+    100012: J_Codo_L
+    100014: J_Codo_L 1
+    100016: J_Codo_R
+    100018: J_Codo_R 1
+    100020: J_Cog
+    100022: J_Falanges_L
+    100024: J_Falanges_R
+    100026: J_Fingers_L
+    100028: J_Fingers_R
+    100030: J_Hand_L
+    100032: J_Hand_R
+    100034: J_Head
+    100036: J_Mouth
+    100038: J_Neck
+    100040: J_ReverseFoot_L
+    100042: J_ReverseFoot_R
+    100044: J_Shoulder_L
+    100046: J_Shoulder_R
+    100048: J_Sobaco
+    100050: J_Sobaco1
+    100052: J_Toes_L
+    100054: J_Toes_R
+    100056: polySurface2
+    400000: //RootNode
+    400002: J_Ankle_L
+    400004: J_Ankle_R
+    400006: J_Arm_L
+    400008: J_Arm_R
+    400010: J_Back
+    400012: J_Codo_L
+    400014: J_Codo_L 1
+    400016: J_Codo_R
+    400018: J_Codo_R 1
+    400020: J_Cog
+    400022: J_Falanges_L
+    400024: J_Falanges_R
+    400026: J_Fingers_L
+    400028: J_Fingers_R
+    400030: J_Hand_L
+    400032: J_Hand_R
+    400034: J_Head
+    400036: J_Mouth
+    400038: J_Neck
+    400040: J_ReverseFoot_L
+    400042: J_ReverseFoot_R
+    400044: J_Shoulder_L
+    400046: J_Shoulder_R
+    400048: J_Sobaco
+    400050: J_Sobaco1
+    400052: J_Toes_L
+    400054: J_Toes_R
+    400056: polySurface2
+    4300000: polySurface2
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: polySurface2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 11
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: J_Cog
+        weight: 1
+      - path: J_Cog/J_Back
+        weight: 1
+      - path: J_Cog/J_Back/J_Neck
+        weight: 1
+      - path: J_Cog/J_Back/J_Neck/J_Head
+        weight: 1
+      - path: J_Cog/J_Back/J_Neck/J_Mouth
+        weight: 1
+      - path: J_Cog/J_Shoulder_L
+        weight: 1
+      - path: J_Cog/J_Shoulder_L/J_Arm_L
+        weight: 1
+      - path: J_Cog/J_Shoulder_L/J_Arm_L/J_Codo_L 1
+        weight: 1
+      - path: J_Cog/J_Shoulder_L/J_Arm_L/J_Codo_L 1/J_Ankle_L
+        weight: 1
+      - path: J_Cog/J_Shoulder_L/J_Arm_L/J_Codo_L 1/J_Ankle_L/J_ReverseFoot_L
+        weight: 1
+      - path: J_Cog/J_Shoulder_L/J_Arm_L/J_Codo_L 1/J_Ankle_L/J_ReverseFoot_L/J_Toes_L
+        weight: 1
+      - path: J_Cog/J_Shoulder_R
+        weight: 1
+      - path: J_Cog/J_Shoulder_R/J_Arm_R
+        weight: 1
+      - path: J_Cog/J_Shoulder_R/J_Arm_R/J_Codo_R 1
+        weight: 1
+      - path: J_Cog/J_Shoulder_R/J_Arm_R/J_Codo_R 1/J_Ankle_R
+        weight: 1
+      - path: J_Cog/J_Shoulder_R/J_Arm_R/J_Codo_R 1/J_Ankle_R/J_ReverseFoot_R
+        weight: 1
+      - path: J_Cog/J_Shoulder_R/J_Arm_R/J_Codo_R 1/J_Ankle_R/J_ReverseFoot_R/J_Toes_R
+        weight: 1
+      - path: J_Cog/J_Sobaco
+        weight: 1
+      - path: J_Cog/J_Sobaco/J_Codo_L
+        weight: 1
+      - path: J_Cog/J_Sobaco/J_Codo_L/J_Hand_L
+        weight: 1
+      - path: J_Cog/J_Sobaco/J_Codo_L/J_Hand_L/J_Falanges_L
+        weight: 1
+      - path: J_Cog/J_Sobaco/J_Codo_L/J_Hand_L/J_Falanges_L/J_Fingers_L
+        weight: 1
+      - path: J_Cog/J_Sobaco1
+        weight: 1
+      - path: J_Cog/J_Sobaco1/J_Codo_R
+        weight: 1
+      - path: J_Cog/J_Sobaco1/J_Codo_R/J_Hand_R
+        weight: 1
+      - path: J_Cog/J_Sobaco1/J_Codo_R/J_Hand_R/J_Falanges_R
+        weight: 1
+      - path: J_Cog/J_Sobaco1/J_Codo_R/J_Hand_R/J_Falanges_R/J_Fingers_R
+        weight: 1
+      - path: polySurface2
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

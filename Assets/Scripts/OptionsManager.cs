@@ -7,18 +7,22 @@ public class OptionsManager : MonoBehaviour {
 
     public Dropdown resolutionDropdown;
     public Dropdown qualityDropdown;
+    public Slider sliderVolume;
+    public Slider sliderGamma;
+    public Animator optionsAnimator;
 
-    public Animator popup;
+    public Color ambientDarkest;
+    public Color ambientLightest;
 
 	// Use this for initialization
 	void Start () 
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update () 
+    {
 	}
 
     public void SetResolution()
@@ -106,13 +110,33 @@ public class OptionsManager : MonoBehaviour {
 
     public void Back()
     {
-        popup.SetTrigger("popupinverse");
+        //popup.SetTrigger("popupinverse");
 
         StartCoroutine(SetInactive());
+    }
+
+    public void Volume()
+    {
+        AudioListener.volume = sliderVolume.value;
+    }
+
+    public void Gamma()
+    {
+        RenderSettings.ambientLight = Color.Lerp(ambientDarkest, ambientLightest, sliderGamma.value);
     }
 
     IEnumerator SetInactive() {
         yield return new WaitForSecondsRealtime(0.5f);
         gameObject.SetActive(false);
+    }
+
+    public void OptionsIn()
+    {
+        optionsAnimator.SetTrigger("In");
+    }
+
+    public void OptionsOut()
+    {
+        optionsAnimator.SetTrigger("Out");
     }
 }

@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class BarricadeLogic : MonoBehaviour {
 
+    ScoreSystem score;
+    public GameObject bounds;
+
+    public AudioSource barricadeSound;
+
     public RecieveAttack recieveAttack;
 
     // Use this for initialization
 	void Start () 
     {
-		
+        score = GameObject.FindGameObjectWithTag("Manager").GetComponent<ScoreSystem>();
 	}
 	
 	// Update is called once per frame
@@ -24,7 +29,17 @@ public class BarricadeLogic : MonoBehaviour {
             //Dissolve
 
             //Destroy barricade
-            Destroy(gameObject);
+            score.AddScoreBarricade();
+            bounds.SetActive(false);
+            Debug.Log("Barricade destroyed");
+            PlayBarricadeSound();
+            enabled = false;
         }
+
+  
 	}
+        public void PlayBarricadeSound()
+        {
+            barricadeSound.Play();
+        }
 }

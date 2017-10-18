@@ -1,0 +1,718 @@
+Version = 1.10.6.31671;
+CParticleEffect	$LOCAL$/Resource
+{
+	EditorInfosPosition = int2(73, 52);
+	OnSpawn = "$LOCAL$/Spawner";
+	LayerGroups = 
+	{
+		"$LOCAL$/ButterFly_Landing",
+		"$LOCAL$/ButterFly_Flying",
+	};
+	CustomAttributes = "$LOCAL$/_GlobalAttributes";
+	Autostart = true;
+}
+CParticleAttributeList	$LOCAL$/_GlobalAttributes
+{
+	EditorInfosPosition = int2(-599, -20);
+	AttributeList = 
+	{
+		"$LOCAL$/CParticleAttributeDeclaration_E3C7C8AB",
+		"$LOCAL$/CParticleAttributeDeclaration_78DF6F4A",
+		"$LOCAL$/CParticleAttributeDeclaration_C93F8736",
+		"$LOCAL$/CParticleAttributeDeclaration_634F47E0",
+	};
+	SamplerList = 
+	{
+		"$LOCAL$/CParticleSamplerProceduralTurbulence_8DCBA894",
+	};
+}
+CActionFactoryWithChilds	$LOCAL$/Spawner
+{
+	EditorInfosPosition = int2(-162, -81);
+	ChildList = 
+	{
+		"$LOCAL$/ButterFly_Main",
+	};
+}
+CParticleSamplerProceduralTurbulence	$LOCAL$/CParticleSamplerProceduralTurbulence_8DCBA894
+{
+	SamplerName = "Butterfly_Turb";
+	Wavelength = 1.0000000e+000;
+	Strength = 1.0000000e+000;
+	Octaves = 1;
+	Gain = 1.0000000e+000;
+}
+CParticleAttributeDeclaration	$LOCAL$/CParticleAttributeDeclaration_E3C7C8AB
+{
+	AttributeName = "RGB";
+	AttributeType = float3;
+	DefaultValueF4 = float4(1.0000000e+000, 5.0000000e-001, 1.0000000e+000, 0.0000000e+000);
+	HasMin = true;
+	HasMax = true;
+	MaxValueF4 = float4(1.0000000e+000, 1.0000000e+000, 1.0000000e+000, 1.0000000e+000);
+	MaxValueI4 = int4(10, 10, 10, 10);
+}
+CParticleAttributeDeclaration	$LOCAL$/CParticleAttributeDeclaration_78DF6F4A
+{
+	AttributeName = "RGBVar";
+	AttributeType = float3;
+	DefaultValueF4 = float4(5.0000000e-001, 2.5000000e-001, 5.0000000e-001, 0.0000000e+000);
+	HasMin = true;
+	HasMax = true;
+	MaxValueF4 = float4(1.0000000e+000, 1.0000000e+000, 1.0000000e+000, 1.0000000e+000);
+	MaxValueI4 = int4(10, 10, 10, 10);
+}
+CParticleEvolver_Script	$LOCAL$/CParticleEvolver_Script_6E30A2C2
+{
+	CustomName = "Script";
+	Expression = "$LOCAL$/CCompilerSyntaxNodeExpression_3FD8B7AD";
+}
+CParticleRenderer_List	$LOCAL$/CParticleRenderer_List_5B3D39FC
+{
+	CustomName = "List";
+	Renderers = 
+	{
+		"$LOCAL$/CParticleRenderer_Billboard_A2FB226F",
+		"$LOCAL$/CParticleRenderer_Billboard_52F92A5E",
+	};
+}
+CCompilerSyntaxNodeExpression	$LOCAL$/CCompilerSyntaxNodeExpression_6E869E89
+{
+	EditorInfosIsBlockMinimized = 0;
+	Expression = "function void	Eval()
+{
+	Life = rand(1, 4);
+	Size = parent.Size;
+	Dir = parent.Velocity;
+	Time = rand(0, 10);
+	Color = parent.Color;
+	TextureID = rand(0, 4);
+}
+";
+}
+CCompilerSyntaxNodeExpression	$LOCAL$/CCompilerSyntaxNodeExpression_3FD8B7AD
+{
+	Expression = "function void	Eval()
+{
+	float3	nVel = safe_normalize(Dir);
+	float3	side = safe_normalize(cross(nVel, float3(0,1,0)), float3(1,0,0), 1.0e-6);
+	float	angle = sin(Time+scene.Time*10);
+	
+	AxisR=rotate(side, nVel, angle);
+	AxisUpR=cross(AxisR, nVel);
+	
+	AxisL=rotate(-side, nVel, -angle);
+	AxisUpL=cross(AxisL, nVel);
+	
+	float	offset = Size * 0.5;
+	PosR=Position + AxisR * offset;
+	PosL=Position + AxisL * offset;
+}
+";
+}
+CParticleAttributeDeclaration	$LOCAL$/CParticleAttributeDeclaration_C93F8736
+{
+	AttributeName = "Scale";
+	DefaultValueF4 = float4(1.0000000e+000, 0.0000000e+000, 0.0000000e+000, 0.0000000e+000);
+	HasMin = true;
+	MaxValueF4 = float4(1.0000000e+000, 1.0000000e+000, 1.0000000e+000, 1.0000000e+000);
+	MaxValueI4 = int4(10, 10, 10, 10);
+}
+CParticleAttributeDeclaration	$LOCAL$/CParticleAttributeDeclaration_634F47E0
+{
+	AttributeName = "Flux";
+	DefaultValueF4 = float4(1.0000000e+000, 0.0000000e+000, 0.0000000e+000, 0.0000000e+000);
+	HasMin = true;
+	MaxValueF4 = float4(1.0000000e+002, 1.0000000e+000, 1.0000000e+000, 1.0000000e+000);
+	MaxValueI4 = int4(10, 10, 10, 10);
+}
+CParticleRenderer_Billboard	$LOCAL$/CParticleRenderer_Billboard_A2FB226F
+{
+	CustomName = "Billboard";
+	BillboardingMaterial = AlphaBlend_Additive_Soft;
+	Diffuse = "Textures/Fx/ButterFly_02.png";
+	AtlasDefinition = "Textures/Fx/AtlasX2.pkat";
+	BillboardMode = PlanarAlignedQuad;
+	VFlipUVs = true;
+	PositionField = "PosL";
+	AxisField = "AxisL";
+	Axis2Field = "AxisUpL";
+	AxisScale = 2.0000000e+000;
+	SoftnessDistance = 2.0000001e-003;
+}
+CParticleRenderer_Billboard	$LOCAL$/CParticleRenderer_Billboard_52F92A5E
+{
+	CustomName = "Billboard";
+	BillboardingMaterial = AlphaBlend_Additive_Soft;
+	Diffuse = "Textures/Fx/ButterFly_02.png";
+	AtlasDefinition = "Textures/Fx/AtlasX2.pkat";
+	BillboardMode = PlanarAlignedQuad;
+	VFlipUVs = true;
+	PositionField = "PosR";
+	AxisField = "AxisR";
+	Axis2Field = "AxisUpR";
+	AxisScale = 2.0000000e+000;
+	SoftnessDistance = 2.0000001e-003;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_0B6DC979
+{
+	FieldName = "Size";
+}
+CParticleDescriptor	$LOCAL$/CParticleDescriptor_B52E0415
+{
+	Renderer = "$LOCAL$/CParticleRenderer_List_5B3D39FC";
+	CustomFields = 
+	{
+		"$LOCAL$/CParticleFieldDeclaration_0B6DC979",
+		"$LOCAL$/CParticleFieldDeclaration_8522C6F2",
+		"$LOCAL$/CParticleFieldDeclaration_AD681024",
+		"$LOCAL$/CParticleFieldDeclaration_1178BE7B",
+		"$LOCAL$/CParticleFieldDeclaration_EAD5B15A",
+		"$LOCAL$/CParticleFieldDeclaration_357D1E25",
+		"$LOCAL$/CParticleFieldDeclaration_FE9E554C",
+		"$LOCAL$/CParticleFieldDeclaration_F990A64B",
+	};
+	CustomEvents = 
+	{
+		"$LOCAL$/CParticleEventDeclaration_D5B02CF8",
+	};
+	VirtualParentFields = 
+	{
+		"$LOCAL$/CParticleFieldDeclaration_F7540B47",
+		"$LOCAL$/CParticleFieldDeclaration_9A1A2D91",
+		"$LOCAL$/CParticleFieldDeclaration_8A6BA328",
+		"$LOCAL$/CParticleFieldDeclaration_2863ED0B",
+		"$LOCAL$/CParticleFieldDeclaration_66C23B2A",
+		"$LOCAL$/CParticleFieldDeclaration_31CC8435",
+		"$LOCAL$/CParticleFieldDeclaration_5CCC2768",
+	};
+	SpawnEvaluator = "$LOCAL$/CCompilerSyntaxNodeExpression_6E869E89";
+	States = 
+	{
+		"$LOCAL$/CParticleState_44BFEB80",
+	};
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_AD681024
+{
+	FieldName = "Time";
+}
+CParticleEventDeclaration	$LOCAL$/CParticleEventDeclaration_D5B02CF8
+{
+	EventName = "OnDeath";
+	EventAction = "$LOCAL$/ButterFly_Flying";
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_1178BE7B
+{
+	FieldName = "AxisR";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_EAD5B15A
+{
+	FieldName = "AxisL";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_357D1E25
+{
+	FieldName = "AxisUpR";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_FE9E554C
+{
+	FieldName = "AxisUpL";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_31CC8435
+{
+	FieldName = "AxisUpL";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CActionFactoryParticleSpawnerBase	$LOCAL$/ButterFly_Landing
+{
+	Descriptor = "$LOCAL$/CParticleDescriptor_B52E0415";
+}
+CParticleState	$LOCAL$/CParticleState_44BFEB80
+{
+	StateName = "State_0";
+	Evolvers = 
+	{
+		"$LOCAL$/CParticleEvolver_Physics_38273043",
+		"$LOCAL$/CParticleEvolver_Script_6E30A2C2",
+	};
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_F7540B47
+{
+	FieldName = "Color";
+	FieldType = float4;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_9A1A2D91
+{
+	FieldName = "Size";
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_8A6BA328
+{
+	FieldName = "AxisUpR";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_2863ED0B
+{
+	FieldName = "AxisR";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_66C23B2A
+{
+	FieldName = "AxisL";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_8522C6F2
+{
+	FieldName = "Color";
+	FieldType = float4;
+}
+CParticleEvolver_Physics	$LOCAL$/CParticleEvolver_Physics_38273043
+{
+	CustomName = "Physics";
+	DieOnContact = true;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_5CCC2768
+{
+	FieldName = "Velocity";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_F990A64B
+{
+	FieldName = "Dir";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleDescriptor	$LOCAL$/CParticleDescriptor_CA3DB83D
+{
+	Renderer = "$LOCAL$/CParticleRenderer_List_AEF76D44";
+	CustomFields = 
+	{
+		"$LOCAL$/CParticleFieldDeclaration_1493E121",
+		"$LOCAL$/CParticleFieldDeclaration_131695F8",
+		"$LOCAL$/CParticleFieldDeclaration_0CAD701B",
+		"$LOCAL$/CParticleFieldDeclaration_3C09737A",
+		"$LOCAL$/CParticleFieldDeclaration_5C9CFAC5",
+		"$LOCAL$/CParticleFieldDeclaration_D6371E6C",
+		"$LOCAL$/CParticleFieldDeclaration_747FA79F",
+		"$LOCAL$/CParticleFieldDeclaration_CC587F4E",
+		"$LOCAL$/CParticleFieldDeclaration_96144929",
+		"$LOCAL$/CParticleFieldDeclaration_41539AA0",
+	};
+	CustomEvents = 
+	{
+		"$LOCAL$/CParticleEventDeclaration_C5FEFDE3",
+	};
+	SpawnEvaluator = "$LOCAL$/CCompilerSyntaxNodeExpression_12F7B0E2";
+	States = 
+	{
+		"$LOCAL$/CParticleState_8927D04D",
+	};
+}
+CParticleRenderer_List	$LOCAL$/CParticleRenderer_List_AEF76D44
+{
+	CustomName = "List";
+	Renderers = 
+	{
+		"$LOCAL$/CParticleRenderer_Billboard_E2043357",
+		"$LOCAL$/CParticleRenderer_Billboard_67059966",
+	};
+}
+CParticleRenderer_Billboard	$LOCAL$/CParticleRenderer_Billboard_E2043357
+{
+	CustomName = "Billboard";
+	BillboardingMaterial = AlphaBlend_Additive_Soft;
+	Diffuse = "Textures/Fx/ButterFly_02.png";
+	AtlasDefinition = "Textures/Fx/AtlasX2.pkat";
+	BillboardMode = PlanarAlignedQuad;
+	VFlipUVs = true;
+	PositionField = "PosL";
+	AxisField = "AxisL";
+	Axis2Field = "AxisUpL";
+	AxisScale = 2.0000000e+000;
+	SoftnessDistance = 2.0000001e-003;
+}
+CParticleRenderer_Billboard	$LOCAL$/CParticleRenderer_Billboard_67059966
+{
+	CustomName = "Billboard";
+	BillboardingMaterial = AlphaBlend_Additive_Soft;
+	Diffuse = "Textures/Fx/ButterFly_02.png";
+	AtlasDefinition = "Textures/Fx/AtlasX2.pkat";
+	BillboardMode = PlanarAlignedQuad;
+	VFlipUVs = true;
+	PositionField = "PosR";
+	AxisField = "AxisR";
+	Axis2Field = "AxisUpR";
+	AxisScale = 2.0000000e+000;
+	SoftnessDistance = 2.0000001e-003;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_1493E121
+{
+	FieldName = "Size";
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_131695F8
+{
+	FieldName = "Color";
+	FieldType = float4;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_0CAD701B
+{
+	FieldName = "VelocityField";
+	FieldType = float3;
+	TransformFilter = full;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_3C09737A
+{
+	FieldName = "Time";
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_5C9CFAC5
+{
+	FieldName = "Invert";
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_D6371E6C
+{
+	FieldName = "Fly";
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_747FA79F
+{
+	FieldName = "AxisR";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_CC587F4E
+{
+	FieldName = "AxisL";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_96144929
+{
+	FieldName = "AxisUpR";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_41539AA0
+{
+	FieldName = "AxisUpL";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleEventDeclaration	$LOCAL$/CParticleEventDeclaration_C5FEFDE3
+{
+	EventName = "OnCollide";
+	EventAction = "$LOCAL$/ButterFly_Landing";
+}
+CCompilerSyntaxNodeExpression	$LOCAL$/CCompilerSyntaxNodeExpression_12F7B0E2
+{
+	Expression = "function void	Eval()
+{
+	Life = infinity;
+	Size = rand(0.05, 0.1) * Scale;
+	
+	Velocity = vrand().x0z + float3(0, rand(0, 1), 0);
+	
+	Time = rand(0, 10);
+	
+	float3	colorVariation = rand(RGB-RGBVar*RGB,RGB);
+	Color = float4(colorVariation,1);
+	
+	Fly = rand(30, 50);
+	TextureID = rand(0, 4);
+	
+}
+";
+}
+CParticleState	$LOCAL$/CParticleState_8927D04D
+{
+	StateName = "State_0";
+	Evolvers = 
+	{
+		"$LOCAL$/CParticleEvolver_Physics_BD705E94",
+		"$LOCAL$/CParticleEvolver_Script_A59C56E7",
+	};
+}
+CParticleEvolver_Physics	$LOCAL$/CParticleEvolver_Physics_BD705E94
+{
+	CustomName = "Physics";
+	ConstantAcceleration = float3(0.0000000e+000, -1.0000000e+000, 0.0000000e+000);
+	Drag = 1.0000000e+000;
+	VelocityFieldSampler = "Butterfly_Turb";
+	WorldInteractionMode = OneWay;
+	DieOnContact = true;
+}
+CParticleEvolver_Script	$LOCAL$/CParticleEvolver_Script_A59C56E7
+{
+	CustomName = "Script";
+	Expression = "$LOCAL$/CCompilerSyntaxNodeExpression_F6F7BC36";
+}
+CCompilerSyntaxNodeExpression	$LOCAL$/CCompilerSyntaxNodeExpression_F6F7BC36
+{
+	Expression = "function void	Eval()
+{
+	float3	nVel = safe_normalize(Velocity);
+	float3	sideVel = cross(nVel, float3(0, 1, 0));
+	float3	side = safe_normalize(sideVel, float3(1, 0, 0), 1.0e-6);
+	
+	float	timeVariation = Time + scene.Time;
+	
+	float	flyTime = timeVariation * Fly;
+	float	flyAngleTime = sin(flyTime);
+	
+	AxisR = rotate(side, nVel, flyAngleTime);
+	AxisUpR = cross(AxisR, nVel);
+	
+	AxisL = rotate(-side, nVel, -flyAngleTime);
+	AxisUpL = cross(AxisL, nVel);
+	
+	int searchID = rand(0, 1) < 0.5;
+	
+	float4	frontCast = scene.intersect(Position, nVel, 4);
+	float4	groundCast = scene.intersect(Position, float3(0, -1, 0), 2);
+	
+	float4 	raycast = select(groundCast, frontCast, searchID);
+
+	float3	turbu = Butterfly_Turb.sample(Position);
+	
+	float	sinMotion = Invert * sin(timeVariation);
+	float	cosMotion = cos(scene.Time+Time);
+	float	frontAvoid = (4 - clamp(raycast.w, 0, 4) ) * 4;
+	float	groundAvoid = (1 - clamp(raycast.w, 0, 2) ) * 4;
+	float	risingMotion = select(groundAvoid, frontAvoid, searchID);
+	
+	float3	motion = float3(sinMotion, risingMotion, cosMotion);
+
+	VelocityField = turbu + motion;
+	
+	float	offset = Size * 0.5;
+	
+	PosR = Position + AxisR * offset;
+	PosL = Position + AxisL * offset;
+}
+";
+}
+CActionFactoryParticleSpawnerBase	$LOCAL$/ButterFly_Main
+{
+	Descriptor = "$LOCAL$/CParticleDescriptor_CA3DB83D";
+	FluxFactorExpression = "Flux";
+}
+CParticleDescriptor	$LOCAL$/CParticleDescriptor_06273452
+{
+	Renderer = "$LOCAL$/CParticleRenderer_List_8932E07D";
+	CustomFields = 
+	{
+		"$LOCAL$/CParticleFieldDeclaration_40214CA6",
+		"$LOCAL$/CParticleFieldDeclaration_2B73F561",
+		"$LOCAL$/CParticleFieldDeclaration_8BF21F38",
+		"$LOCAL$/CParticleFieldDeclaration_39BF125B",
+		"$LOCAL$/CParticleFieldDeclaration_BD0EA2BA",
+		"$LOCAL$/CParticleFieldDeclaration_28A63B05",
+		"$LOCAL$/CParticleFieldDeclaration_659D43AC",
+		"$LOCAL$/CParticleFieldDeclaration_CB6215DF",
+		"$LOCAL$/CParticleFieldDeclaration_3BD86A8E",
+		"$LOCAL$/CParticleFieldDeclaration_EC90F569",
+	};
+	CustomEvents = 
+	{
+		"$LOCAL$/CParticleEventDeclaration_A53B9BE0",
+	};
+	SpawnEvaluator = "$LOCAL$/CCompilerSyntaxNodeExpression_945A7823";
+	States = 
+	{
+		"$LOCAL$/CParticleState_BF9F9822",
+	};
+}
+CParticleRenderer_List	$LOCAL$/CParticleRenderer_List_8932E07D
+{
+	CustomName = "List";
+	Renderers = 
+	{
+		"$LOCAL$/CParticleRenderer_Billboard_3C439A84",
+		"$LOCAL$/CParticleRenderer_Billboard_E2414997",
+	};
+}
+CParticleRenderer_Billboard	$LOCAL$/CParticleRenderer_Billboard_3C439A84
+{
+	CustomName = "Billboard";
+	BillboardingMaterial = AlphaBlend_Additive_Soft;
+	Diffuse = "Textures/Fx/ButterFly_02.png";
+	AtlasDefinition = "Textures/Fx/AtlasX2.pkat";
+	BillboardMode = PlanarAlignedQuad;
+	VFlipUVs = true;
+	PositionField = "PosL";
+	AxisField = "AxisL";
+	Axis2Field = "AxisUpL";
+	AxisScale = 2.0000000e+000;
+	SoftnessDistance = 2.0000001e-003;
+}
+CParticleRenderer_Billboard	$LOCAL$/CParticleRenderer_Billboard_E2414997
+{
+	CustomName = "Billboard";
+	BillboardingMaterial = AlphaBlend_Additive_Soft;
+	Diffuse = "Textures/Fx/ButterFly_02.png";
+	AtlasDefinition = "Textures/Fx/AtlasX2.pkat";
+	BillboardMode = PlanarAlignedQuad;
+	VFlipUVs = true;
+	PositionField = "PosR";
+	AxisField = "AxisR";
+	Axis2Field = "AxisUpR";
+	AxisScale = 2.0000000e+000;
+	SoftnessDistance = 2.0000001e-003;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_40214CA6
+{
+	FieldName = "Size";
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_2B73F561
+{
+	FieldName = "Color";
+	FieldType = float4;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_8BF21F38
+{
+	FieldName = "VelocityField";
+	FieldType = float3;
+	TransformFilter = full;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_39BF125B
+{
+	FieldName = "Time";
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_BD0EA2BA
+{
+	FieldName = "Invert";
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_28A63B05
+{
+	FieldName = "Fly";
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_659D43AC
+{
+	FieldName = "AxisR";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_CB6215DF
+{
+	FieldName = "AxisL";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_3BD86A8E
+{
+	FieldName = "AxisUpR";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleFieldDeclaration	$LOCAL$/CParticleFieldDeclaration_EC90F569
+{
+	FieldName = "AxisUpL";
+	FieldType = float3;
+	TransformFilter = rotate;
+}
+CParticleEventDeclaration	$LOCAL$/CParticleEventDeclaration_A53B9BE0
+{
+	EventName = "OnCollide";
+	EventAction = "$LOCAL$/ButterFly_Landing";
+}
+CCompilerSyntaxNodeExpression	$LOCAL$/CCompilerSyntaxNodeExpression_945A7823
+{
+	Expression = "function void	Eval()
+{
+	Life = infinity;
+	Size = rand(0.05, 0.1) * Scale;
+	
+	Velocity = vrand().x0z + float3(0, rand(0, 1), 0);
+	
+	Time = rand(0, 10);
+	
+	float3	colorVariation = rand(RGB-RGBVar*RGB,RGB);
+	Color = float4(colorVariation,1);
+	
+	Fly = rand(30, 50);
+	TextureID = rand(0, 4);
+	
+}
+";
+}
+CParticleState	$LOCAL$/CParticleState_BF9F9822
+{
+	StateName = "State_0";
+	Evolvers = 
+	{
+		"$LOCAL$/CParticleEvolver_Physics_9BAE288D",
+		"$LOCAL$/CParticleEvolver_Script_E00D7BD4",
+	};
+}
+CParticleEvolver_Physics	$LOCAL$/CParticleEvolver_Physics_9BAE288D
+{
+	CustomName = "Physics";
+	ConstantAcceleration = float3(0.0000000e+000, -1.0000000e+000, 0.0000000e+000);
+	Drag = 1.0000000e+000;
+	VelocityFieldSampler = "Butterfly_Turb";
+	WorldInteractionMode = OneWay;
+	DieOnContact = true;
+}
+CParticleEvolver_Script	$LOCAL$/CParticleEvolver_Script_E00D7BD4
+{
+	CustomName = "Script";
+	Expression = "$LOCAL$/CCompilerSyntaxNodeExpression_7C051D27";
+}
+CCompilerSyntaxNodeExpression	$LOCAL$/CCompilerSyntaxNodeExpression_7C051D27
+{
+	Expression = "function void	Eval()
+{
+	float3	nVel = safe_normalize(Velocity);
+	float3	sideVel = cross(nVel, float3(0, 1, 0));
+	float3	side = safe_normalize(sideVel, float3(1, 0, 0), 1.0e-6);
+	
+	float	timeVariation = Time + scene.Time;
+	
+	float	flyTime = timeVariation * Fly;
+	float	flyAngleTime = sin(flyTime);
+	
+	AxisR = rotate(side, nVel, flyAngleTime);
+	AxisUpR = cross(AxisR, nVel);
+	
+	AxisL = rotate(-side, nVel, -flyAngleTime);
+	AxisUpL = cross(AxisL, nVel);
+	
+	int searchID = rand(0, 1) < 0.5;
+	
+	float4	frontCast = scene.intersect(Position, nVel, 4);
+	float4	groundCast = scene.intersect(Position, float3(0, -1, 0), 2);
+	
+	float4 	raycast = select(groundCast, frontCast, searchID);
+
+	float3	turbu = Butterfly_Turb.sample(Position);
+	
+	float	sinMotion = Invert * sin(timeVariation);
+	float	cosMotion = cos(scene.Time+Time);
+	float	frontAvoid = (4 - clamp(raycast.w, 0, 4) ) * 4;
+	float	groundAvoid = (1 - clamp(raycast.w, 0, 2) ) * 4;
+	float	risingMotion = select(groundAvoid, frontAvoid, searchID);
+	
+	float3	motion = float3(sinMotion, risingMotion, cosMotion);
+
+	VelocityField = turbu + motion;
+	
+	float	offset = Size * 0.5;
+	
+	PosR = Position + AxisR * offset;
+	PosL = Position + AxisL * offset;
+}
+";
+}
+CActionFactoryParticleSpawnerBase	$LOCAL$/ButterFly_Flying
+{
+	Descriptor = "$LOCAL$/CParticleDescriptor_06273452";
+}
